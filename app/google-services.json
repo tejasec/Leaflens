@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "876081736804",
+    "project_id": "agriculture-f5e8c",
+    "storage_bucket": "agriculture-f5e8c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876081736804:android:fbb657082e5a0a0c620371",
+        "android_client_info": {
+          "package_name": "com.example.smartagriculture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876081736804-ol1t3uvgp957hfs2ub686dbgi334hvrf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartagriculture",
+            "certificate_hash": "ba618676736e399ca19a103be181ab4d9665fb8c"
+          }
+        },
+        {
+          "client_id": "876081736804-gimf9upa4lu24vihbcodisl5ohivsnk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMG2iEf5ujVwOGBP71eCB4sVbEEmRa_-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876081736804-gimf9upa4lu24vihbcodisl5ohivsnk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

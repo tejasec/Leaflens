@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.smartagriculture.fragments.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.smartagriculture.fragments.LanguageFragment"
+        android:label="LanguageFragment"
+        tools:layout="@layout/fragment_language">
+        <action
+            android:id="@+id/action_languageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_languageFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.smartagriculture.fragments.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.smartagriculture.fragments.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.smartagriculture.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_schemesFragment"
+            app:destination="@id/schemesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_soilFragment"
+            app:destination="@id/soilFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fertilizerFragment"
+            app:destination="@id/fertilizerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pestFragment"
+            app:destination="@id/pestFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_helplineFragment"
+            app:destination="@id/helplineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/schemesFragment"
+        android:name="com.example.smartagriculture.fragments.SchemesFragment"
+        android:label="SchemesFragment"
+        tools:layout="@layout/fragment_info_list">
+        <action
+            android:id="@+id/action_schemesFragment_to_schemeDetailFragment"
+            app:destination="@id/schemeDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/schemeDetailFragment"
+        android:name="com.example.smartagriculture.fragments.SchemeDetailFragment"
+        android:label="SchemeDetailFragment"
+        tools:layout="@layout/fragment_scheme_detail" />
+
+    <fragment
+        android:id="@+id/soilFragment"
+        android:name="com.example.smartagriculture.fragments.SoilFragment"
+        android:label="SoilFragment"
+        tools:layout="@layout/fragment_placeholder" />
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.smartagriculture.fragments.CalendarFragment"
+        android:label="CalendarFragment"
+        tools:layout="@layout/fragment_placeholder" />
+
+    <fragment
+        android:id="@+id/fertilizerFragment"
+        android:name="com.example.smartagriculture.fragments.FertilizerFragment"
+        android:label="FertilizerFragment"
+        tools:layout="@layout/fragment_fertilizer" />
+
+    <fragment
+        android:id="@+id/pestFragment"
+        android:name="com.example.smartagriculture.fragments.PestFragment"
+        android:label="PestFragment"
+        tools:layout="@layout/fragment_info_list" />
+
+    <fragment
+        android:id="@+id/helplineFragment"
+        android:name="com.example.smartagriculture.fragments.HelplineFragment"
+        android:label="HelplineFragment"
+        tools:layout="@layout/fragment_helpline" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.smartagriculture.fragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+         <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.smartagriculture.fragments.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/cropGuideFragment"
+        android:name="com.example.smartagriculture.fragments.CropGuideFragment"
+        android:label="CropGuideFragment"
+        tools:layout="@layout/fragment_crop_guide">
+        <action
+            android:id="@+id/action_cropGuideFragment_to_allCropsFragment"
+            app:destination="@id/allCropsFragment" />
+        <action
+            android:id="@+id/action_cropGuideFragment_to_cropDetailsFragment"
+            app:destination="@id/cropDetailsFragment" />
+        <action
+            android:id="@+id/action_cropGuideFragment_to_myCropsFragment"
+            app:destination="@id/myCropsFragment" />
+        <action
+            android:id="@+id/action_cropGuideFragment_to_cropInsightsFragment"
+            app:destination="@id/cropInsightsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allCropsFragment"
+        android:name="com.example.smartagriculture.fragments.AllCropsFragment"
+        android:label="AllCropsFragment"
+        tools:layout="@layout/fragment_all_crops">
+        <action
+            android:id="@+id/action_allCropsFragment_to_cropDetailsFragment"
+            app:destination="@id/cropDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cropDetailsFragment"
+        android:name="com.example.smartagriculture.fragments.CropDetailsFragment"
+        android:label="CropDetailsFragment"
+        tools:layout="@layout/fragment_crop_details">
+        <action
+            android:id="@+id/action_cropDetailsFragment_to_diseaseDetailsFragment"
+            app:destination="@id/diseaseDetailsFragment" />
+        <action
+            android:id="@+id/action_cropDetailsFragment_to_careGuideFragment"
+            app:destination="@id/careGuideFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/diseaseDetailsFragment"
+        android:name="com.example.smartagriculture.fragments.DiseaseDetailsFragment"
+        android:label="DiseaseDetailsFragment"
+        tools:layout="@layout/fragment_disease_details">
+        <action
+            android:id="@+id/action_diseaseDetailsFragment_to_careGuideFragment"
+            app:destination="@id/careGuideFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/careGuideFragment"
+        android:name="com.example.smartagriculture.fragments.CareGuideFragment"
+        android:label="CareGuideFragment"
+        tools:layout="@layout/fragment_care_guide" />
+
+    <fragment
+        android:id="@+id/myCropsFragment"
+        android:name="com.example.smartagriculture.fragments.MyCropsFragment"
+        android:label="MyCropsFragment"
+        tools:layout="@layout/fragment_my_crops">
+        <action
+            android:id="@+id/action_myCropsFragment_to_addToMyCropsFragment"
+            app:destination="@id/addToMyCropsFragment" />
+        <action
+            android:id="@+id/action_myCropsFragment_to_cropProgressFragment"
+            app:destination="@id/cropProgressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addToMyCropsFragment"
+        android:name="com.example.smartagriculture.fragments.AddToMyCropsFragment"
+        android:label="AddToMyCropsFragment"
+        tools:layout="@layout/fragment_add_to_my_crops">
+        <action
+            android:id="@+id/action_addToMyCropsFragment_to_allCropsFragment"
+            app:destination="@id/allCropsFragment" />
+        <action
+            android:id="@+id/action_addToMyCropsFragment_to_myCropsFragment"
+            app:destination="@id/myCropsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cropProgressFragment"
+        android:name="com.example.smartagriculture.fragments.CropProgressFragment"
+        android:label="CropProgressFragment"
+        tools:layout="@layout/fragment_crop_progress">
+        <action
+            android:id="@+id/action_cropProgressFragment_to_cropInsightsFragment"
+            app:destination="@id/cropInsightsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cropInsightsFragment"
+        android:name="com.example.smartagriculture.fragments.CropInsightsFragment"
+        android:label="CropInsightsFragment"
+        tools:layout="@layout/fragment_crop_insights" />
+
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.smartagriculture.fragments.WeatherFragment"
+        android:label="WeatherFragment"
+        tools:layout="@layout/fragment_weather" />
+
+    <fragment
+        android:id="@+id/marketFragment"
+        android:name="com.example.smartagriculture.fragments.MarketFragment"
+        android:label="MarketFragment"
+        tools:layout="@layout/fragment_market">
+        <action
+            android:id="@+id/action_marketFragment_to_marketDetailFragment"
+            app:destination="@id/marketDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/marketDetailFragment"
+        android:name="com.example.smartagriculture.fragments.MarketDetailFragment"
+        android:label="MarketDetailFragment"
+        tools:layout="@layout/fragment_market_detail">
+        <argument
+            android:name="marketPrice"
+            app:argType="com.example.smartagriculture.model.MarketPrice" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.example.smartagriculture.fragments.MoreFragment"
+        android:label="MoreFragment"
+        tools:layout="@layout/fragment_more">
+        <action
+            android:id="@+id/action_moreFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_helpSupportFragment"
+            app:destination="@id/helpSupportFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/helpSupportFragment"
+        android:name="com.example.smartagriculture.fragments.HelpSupportFragment"
+        android:label="HelpSupportFragment"
+        tools:layout="@layout/fragment_help_support" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.smartagriculture.fragments.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.example.smartagriculture.fragments.ScanFragment"
+        android:label="ScanFragment"
+        tools:layout="@layout/fragment_scan">
+        <action
+            android:id="@+id/action_scanFragment_to_scanQualityFragment"
+            app:destination="@id/scanQualityFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanQualityFragment"
+        android:name="com.example.smartagriculture.fragments.ScanQualityFragment"
+        android:label="ScanQualityFragment"
+        tools:layout="@layout/fragment_scan_quality">
+        <action
+            android:id="@+id/action_scanQualityFragment_to_scanAnalyzingFragment"
+            app:destination="@id/scanAnalyzingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanAnalyzingFragment"
+        android:name="com.example.smartagriculture.fragments.ScanAnalyzingFragment"
+        android:label="ScanAnalyzingFragment"
+        tools:layout="@layout/fragment_scan_analyzing">
+        <action
+            android:id="@+id/action_scanAnalyzingFragment_to_scanResultFragment"
+            app:destination="@id/scanResultFragment" />
+        <action
+            android:id="@+id/action_scanAnalyzingFragment_to_scanLowConfidenceFragment"
+            app:destination="@id/scanLowConfidenceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanResultFragment"
+        android:name="com.example.smartagriculture.fragments.ScanResultFragment"
+        android:label="ScanResultFragment"
+        tools:layout="@layout/fragment_scan_result">
+        <action
+            android:id="@+id/action_scanResultFragment_to_scanHeatmapFragment"
+            app:destination="@id/scanHeatmapFragment" />
+        <action
+            android:id="@+id/action_scanResultFragment_to_scanCareGuideFragment"
+            app:destination="@id/scanCareGuideFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanHeatmapFragment"
+        android:name="com.example.smartagriculture.fragments.ScanHeatmapFragment"
+        android:label="ScanHeatmapFragment"
+        tools:layout="@layout/fragment_scan_heatmap" />
+
+    <fragment
+        android:id="@+id/scanCareGuideFragment"
+        android:name="com.example.smartagriculture.fragments.ScanCareGuideFragment"
+        android:label="ScanCareGuideFragment"
+        tools:layout="@layout/fragment_scan_care_guide" />
+
+    <fragment
+        android:id="@+id/scanLowConfidenceFragment"
+        android:name="com.example.smartagriculture.fragments.ScanLowConfidenceFragment"
+        android:label="ScanLowConfidenceFragment"
+        tools:layout="@layout/fragment_scan_low_confidence">
+        <action
+            android:id="@+id/action_scanLowConfidenceFragment_to_scanResultFragment"
+            app:destination="@id/scanResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.smartagriculture.fragments.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_historyFragment_to_scanDetailsFragment"
+            app:destination="@id/scanDetailsFragment" />
+        <action
+            android:id="@+id/action_historyFragment_to_scanResultFragment"
+            app:destination="@id/scanResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanDetailsFragment"
+        android:name="com.example.smartagriculture.fragments.ScanDetailsFragment"
+        android:label="ScanDetailsFragment"
+        tools:layout="@layout/fragment_scan_details">
+        <action
+            android:id="@+id/action_scanDetailsFragment_to_scanHeatmapFragment"
+            app:destination="@id/scanHeatmapFragment" />
+        <action
+            android:id="@+id/action_scanDetailsFragment_to_scanCareGuideFragment"
+            app:destination="@id/scanCareGuideFragment" />
+        <action
+            android:id="@+id/action_scanDetailsFragment_to_recaptureCameraFragment"
+            app:destination="@id/recaptureCameraFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recaptureCameraFragment"
+        android:name="com.example.smartagriculture.fragments.RecaptureCameraFragment"
+        android:label="RecaptureCameraFragment"
+        tools:layout="@layout/fragment_scan">
+        <action
+            android:id="@+id/action_recaptureCameraFragment_to_replaceHistoryFragment"
+            app:destination="@id/replaceHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/replaceHistoryFragment"
+        android:name="com.example.smartagriculture.fragments.ReplaceHistoryFragment"
+        android:label="ReplaceHistoryFragment"
+        tools:layout="@layout/fragment_replace_history" />
+
+</navigation>

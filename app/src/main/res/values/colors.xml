@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Green (#2E7D32) -->
+    <color name="primary">#2E7D32</color>
+    <color name="colorPrimary">#2E7D32</color>
+    <color name="colorPrimaryVariant">#1B5E20</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Basic Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Secondary Light Green (#81C784) -->
+    <color name="colorSecondary">#81C784</color>
+    <color name="colorSecondaryVariant">#66BB6A</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <!-- Accent Yellow (#FBC02D) -->
+    <color name="colorAccent">#FBC02D</color>
+    
+    <!-- Backgrounds -->
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnBackground">#212121</color>
+    <color name="colorOnSurface">#212121</color>
+    
+    <!-- Semantics -->
+    <color name="colorSuccess">#388E3C</color>
+    <color name="colorError">#D32F2F</color>
+    <color name="colorWarning">#F57C00</color>
+    <color name="colorInfo">#1976D2</color>
+</resources>

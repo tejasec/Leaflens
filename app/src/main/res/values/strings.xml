@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Smart Agriculture</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="language_array">
+        <item>English</item>
+        <item>हिंदी</item>
+        <item>ਪੰਜਾਬੀ</item>
+    </string-array>
+</resources>
