@@ -1,6 +1,6 @@
-# SmartAgri-Android 🌾
+# Leaflens-Android 🌾
 
-A comprehensive and Excellent Android application for modern farming, built with **Kotlin** and **XML Fragments**. SmartAgri is designed to empower farmers with real-time market data, tailored crop recommendations, and intelligent farming insights right at their fingertips.
+A comprehensive and Excellent Android application for modern farming, built with **Kotlin** and **XML Fragments**. Leaflens is designed to empower farmers with real-time market data, tailored crop recommendations, and intelligent farming insights right at their fingertips.
 
 ## 🚀 Features
 
@@ -28,7 +28,7 @@ A comprehensive and Excellent Android application for modern farming, built with
 
 ## 📸 Screenshots
 
-*(Add screenshots of your newly modernized Material 3 app here once uploaded)*
+*(To be added)*
 
 ## 💻 Getting Started
 
@@ -40,9 +40,7 @@ A comprehensive and Excellent Android application for modern farming, built with
 3. Sync the project with Gradle files.
 4. Run the app on an emulator or physical Android device.
 
-## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
 
 ## 📝 License
 
