@@ -35,6 +35,9 @@ class ScanLowConfidenceFragment : Fragment(R.layout.fragment_scan_low_confidence
         if (result != null) {
             binding?.tvPossibleDisease?.text = result.diseaseName
             binding?.tvConfidenceValue?.text = "${result.confidence}%"
+            if (result.aiExplanation.isNotBlank()) {
+                binding?.tvSubtitle?.text = result.aiExplanation
+            }
         }
 
         binding?.btnBack?.setOnClickListener {

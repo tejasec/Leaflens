@@ -213,6 +213,62 @@
             app:strokeColor="#2E3B31"
             app:strokeWidth="1dp" />
 
+        <!-- Feature Buttons Block: Voice Doctor, Advisory & PDF Dossier -->
+        <LinearLayout
+            android:id="@+id/rowExtraFeatures"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnViewCareGuide">
+
+            <Button
+                android:id="@+id/btnVoiceDoctor"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="🔊 Audio Doctor"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                app:cornerRadius="12dp"
+                app:strokeColor="#10B981" />
+
+            <Button
+                android:id="@+id/btnOpenAdvisory"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="📋 Advisory &amp; Wiki"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                app:cornerRadius="12dp"
+                app:strokeColor="#3B82F6" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnExportPdf"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="📄 Export PDF Diagnostic Dossier"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rowExtraFeatures"
+            app:strokeColor="#F59E0B" />
+
         <LinearLayout
             android:id="@+id/rowBottomActions"
             android:layout_width="0dp"
@@ -221,7 +277,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnViewCareGuide">
+            app:layout_constraintTop_toBottomOf="@id/btnExportPdf">
 
             <Button
                 android:id="@+id/btnSaveHistory"

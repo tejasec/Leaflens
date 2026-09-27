@@ -8,14 +8,15 @@ import com.example.smartagriculture.model.ScanHistoryItem
 import com.example.smartagriculture.model.User
 
 @Database(
-    entities = [User::class, ScanHistoryItem::class],
-    version = 3,
+    entities = [User::class, ScanHistoryItem::class, PrototypeEntity::class],
+    version = 4,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
     abstract fun scanHistoryDao(): ScanHistoryDao
+    abstract fun prototypeDao(): PrototypeDao
 
     companion object {
         @Volatile

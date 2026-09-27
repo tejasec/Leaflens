@@ -19,6 +19,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(view)
 
         val items = listOf(
+            DashboardItem("Benchmark", android.R.drawable.ic_menu_slideshow, R.id.action_homeFragment_to_benchmarkGalleryFragment),
             DashboardItem("Schemes", android.R.drawable.ic_menu_info_details, R.id.action_homeFragment_to_schemesFragment),
             DashboardItem("Soil Info", android.R.drawable.ic_menu_gallery, R.id.action_homeFragment_to_soilFragment),
             DashboardItem("Calendar", android.R.drawable.ic_menu_my_calendar, R.id.action_homeFragment_to_calendarFragment),

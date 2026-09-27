@@ -1,0 +1,48 @@
+{
+  "diseases": [
+    {
+      "id": "early_blight",
+      "disease_name": "Tomato Early Blight (Alternaria solani)",
+      "organic_solution": {
+        "title": "Organic / Bio-control Advisory",
+        "treatment": "Neem Oil Extract (3%) or Trichoderma harzianum bio-fungicide",
+        "instructions": "Spray Neem oil solution at 5ml/L of water every 7 days during high humidity. Apply Trichoderma to root zone to suppress fungal spores.",
+        "benefits": "Eco-friendly, safe for pollinators, zero chemical residue."
+      },
+      "chemical_solution": {
+        "title": "Chemical Solution Advisory",
+        "active_ingredient": "Mancozeb 75% WP / Difenoconazole 25% EC",
+        "dosage_per_liter": "2.5 grams per liter of water",
+        "instructions": "Apply at first sign of circular concentric spots on lower leaves. Ensure full canopy coverage during early morning.",
+        "phi_days": 7,
+        "rei_hours": 24
+      },
+      "external_resources": {
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Alternaria_solani",
+        "extension_portal_url": "https://extension.psu.edu/tomato-early-blight"
+      }
+    },
+    {
+      "id": "late_blight",
+      "disease_name": "Potato / Tomato Late Blight (Phytophthora infestans)",
+      "organic_solution": {
+        "title": "Organic / Bio-control Advisory",
+        "treatment": "Copper Hydroxide Bio-Spray & Bacillus subtilis",
+        "instructions": "Apply copper octanoate or Bacillus subtilis spray every 5-7 days. Prune affected stems immediately and burn infected foliage.",
+        "benefits": "Approved for organic farming, prevents spore germination."
+      },
+      "chemical_solution": {
+        "title": "Chemical Solution Advisory",
+        "active_ingredient": "Metalaxyl 8% + Mancozeb 64% WP",
+        "dosage_per_liter": "2.0 grams per liter of water",
+        "instructions": "Apply systemically when wet, cool conditions persist (>90% RH, 15-22°C). Repeat at 10-day intervals if symptoms persist.",
+        "phi_days": 14,
+        "rei_hours": 48
+      },
+      "external_resources": {
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Phytophthora_infestans",
+        "extension_portal_url": "https://cals.cornell.edu/veg-md-online/late-blight"
+      }
+    }
+  ]
+}

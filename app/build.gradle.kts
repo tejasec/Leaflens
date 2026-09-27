@@ -1,12 +1,13 @@
 import java.util.Properties
 
 plugins {
-    alias(libs.plugins.androidApplication)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
     alias(libs.plugins.kotlinCompose)
+    id("org.jetbrains.kotlin.plugin.parcelize")
     alias(libs.plugins.ksp)
     alias(libs.plugins.google.services)
     alias(libs.plugins.navigationSafeArgs)
-    alias(libs.plugins.kotlin.parcelize)
 }
 
 java {
@@ -21,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.smartagriculture"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
@@ -36,6 +37,10 @@ android {
         }
         val geminiApiKey = properties.getProperty("gemini.api.key") ?: ""
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
+
+        ndk {
+            abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86_64"))
+        }
     }
 
     buildTypes {
@@ -51,17 +56,15 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    kotlin {
-        jvmToolchain {
-            languageVersion.set(JavaLanguageVersion.of(21))
-            vendor.set(JvmVendorSpec.ADOPTIUM)
-        }
-    }
-
     buildFeatures {
         viewBinding = true
         compose = true
         buildConfig = true
+        mlModelBinding = true
+    }
+
+    androidResources {
+        noCompress += "tflite"
     }
 }
 
@@ -104,10 +107,22 @@ dependencies {
     // Gemini AI API
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
 
+    // TensorFlow Lite Support & GPU Delegate for Edge AI
+    val tfliteVersion = "2.16.1"
+    val tfliteSupportVersion = "0.4.4"
+    implementation("org.tensorflow:tensorflow-lite:$tfliteVersion")
+    implementation("org.tensorflow:tensorflow-lite-support:$tfliteSupportVersion")
+    implementation("org.tensorflow:tensorflow-lite-gpu:$tfliteVersion")
+    implementation("org.tensorflow:tensorflow-lite-gpu-api:$tfliteVersion")
+
     // CameraX
     val cameraVersion = "1.4.1"
     implementation("androidx.camera:camera-core:$cameraVersion")
     implementation("androidx.camera:camera-camera2:$cameraVersion")
     implementation("androidx.camera:camera-lifecycle:$cameraVersion")
     implementation("androidx.camera:camera-view:$cameraVersion")
+    implementation("androidx.camera:camera-video:$cameraVersion")
+
+    // Flutter Module
+    implementation(project(":flutter"))
 }

@@ -89,6 +89,9 @@
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_benchmarkGalleryFragment"
+            app:destination="@id/benchmarkGalleryFragment" />
     </fragment>
 
     <fragment
@@ -427,5 +430,11 @@
         android:name="com.example.smartagriculture.fragments.ReplaceHistoryFragment"
         android:label="ReplaceHistoryFragment"
         tools:layout="@layout/fragment_replace_history" />
+
+    <fragment
+        android:id="@+id/benchmarkGalleryFragment"
+        android:name="com.example.smartagriculture.fragments.BenchmarkGalleryFragment"
+        android:label="BenchmarkGalleryFragment"
+        tools:layout="@layout/fragment_benchmark_gallery" />
 
 </navigation>

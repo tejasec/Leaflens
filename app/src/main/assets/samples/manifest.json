@@ -1,0 +1,74 @@
+{
+  "samples": [
+    {
+      "id": "sample_01",
+      "disease_name": "Tomato Early Blight",
+      "crop_type": "Tomato",
+      "image_path": "samples/sample_early_blight.jpg",
+      "expected_label": "Tomato___Early_blight"
+    },
+    {
+      "id": "sample_02",
+      "disease_name": "Potato Late Blight",
+      "crop_type": "Potato",
+      "image_path": "samples/sample_late_blight.jpg",
+      "expected_label": "Potato___Late_blight"
+    },
+    {
+      "id": "sample_03",
+      "disease_name": "Apple Scab",
+      "crop_type": "Apple",
+      "image_path": "samples/sample_apple_scab.jpg",
+      "expected_label": "Apple___Apple_scab"
+    },
+    {
+      "id": "sample_04",
+      "disease_name": "Apple Cedar Rust",
+      "crop_type": "Apple",
+      "image_path": "samples/sample_cedar_rust.jpg",
+      "expected_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "id": "sample_05",
+      "disease_name": "Corn Common Rust",
+      "crop_type": "Corn",
+      "image_path": "samples/sample_common_rust.jpg",
+      "expected_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "id": "sample_06",
+      "disease_name": "Corn Northern Leaf Blight",
+      "crop_type": "Corn",
+      "image_path": "samples/sample_leaf_blight.jpg",
+      "expected_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "id": "sample_07",
+      "disease_name": "Rice Bacterial Blight",
+      "crop_type": "Rice",
+      "image_path": "samples/sample_rice_bacterial.jpg",
+      "expected_label": "Rice___Bacterial_blight"
+    },
+    {
+      "id": "sample_08",
+      "disease_name": "Rice Brown Spot",
+      "crop_type": "Rice",
+      "image_path": "samples/sample_rice_brown_spot.jpg",
+      "expected_label": "Rice___Brown_spot"
+    },
+    {
+      "id": "sample_09",
+      "disease_name": "Tomato Mosaic Virus",
+      "crop_type": "Tomato",
+      "image_path": "samples/sample_mosaic_virus.jpg",
+      "expected_label": "Tomato___Tomato_mosaic_virus"
+    },
+    {
+      "id": "sample_10",
+      "disease_name": "Healthy Tomato Leaf",
+      "crop_type": "Tomato",
+      "image_path": "samples/sample_healthy_tomato.jpg",
+      "expected_label": "Tomato___healthy"
+    }
+  ]
+}

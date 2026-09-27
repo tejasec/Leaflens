@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tvAdvisoryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crop Disease Advisory"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#111827"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Dual-Track Advisory Tabs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/tabOrganic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Organic / Bio-control"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#10B981"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/tabChemical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chemical Solution"
+            android:textAllCaps="false"
+            android:textColor="#374151"
+            android:backgroundTint="#E5E7EB" />
+    </LinearLayout>
+
+    <!-- Safety Badges (PHI & REI) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHI: 7 Days"
+            app:chipIcon="@android:drawable/ic_menu_today"
+            app:chipBackgroundColor="#FEF3C7"
+            android:textColor="#D97706"
+            android:visibility="gone"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REI: 24 Hours"
+            app:chipIcon="@android:drawable/ic_dialog_info"
+            app:chipBackgroundColor="#FEE2E2"
+            android:textColor="#DC2626"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Treatment Instructions -->
+    <TextView
+        android:id="@+id/tvAdvisoryContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select a treatment tab above to view advisory instructions."
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        android:textColor="#374151"
+        android:layout_marginBottom="20dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E7EB"
+        android:layout_marginBottom="16dp" />
+
+    <!-- External Resources Row -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="External Encyclopedia &amp; Extension Portals"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#6B7280"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnWikipedia"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Wikipedia"
+            android:textColor="#2563EB"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnExtensionPortal"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Extension Portal"
+            android:textColor="#059669" />
+    </LinearLayout>
+
+</LinearLayout>
