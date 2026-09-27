@@ -34,7 +34,7 @@ A comprehensive and Excellent Android application for modern farming, built with
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/nilesh0002/SmartAgri-Android.git
+   https://github.com/tejasec/Leaflens.git
    ```
 2. Open the project in **Android Studio**.
 3. Sync the project with Gradle files.
