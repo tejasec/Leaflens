@@ -5,9 +5,11 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp"
-    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardBackgroundColor="#1C241E"
     app:cardCornerRadius="16dp"
-    app:cardElevation="4dp">
+    app:cardElevation="3dp"
+    app:strokeColor="#2E3B31"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,34 +22,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pest Name"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="?attr/colorOnSurface" />
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/tvAffectedCrops"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:text="Affected Crops: Rice, Wheat"
             android:textStyle="italic"
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            android:textColor="#10B981" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Solution:"
+            android:layout_marginTop="10dp"
+            android:text="Solution / Integrated Control:"
             android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:textColor="#E5E7EB" />
 
         <TextView
             android:id="@+id/tvSolution"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:text="Apply neem oil spray every 2 weeks."
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            android:textColor="#9CA3AF" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

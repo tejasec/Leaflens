@@ -3,6 +3,7 @@ package com.example.smartagriculture.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartagriculture.R
@@ -25,6 +26,11 @@ class PestFragment : Fragment(R.layout.fragment_pest) {
             Pest("Locusts", "All crops", "Organize community-level trenching. Apply fast-acting chemical sprays recommended by local authorities.")
         )
 
-        rvPest.adapter = PestAdapter(pestList)
+        rvPest.adapter = PestAdapter(pestList) { pest ->
+            val bundle = Bundle().apply {
+                putSerializable("pest", pest)
+            }
+            findNavController().navigate(R.id.action_pestFragment_to_pestDetailFragment, bundle)
+        }
     }
 }

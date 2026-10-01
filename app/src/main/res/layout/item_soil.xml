@@ -5,9 +5,11 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp"
-    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardBackgroundColor="#1C241E"
     app:cardCornerRadius="16dp"
-    app:cardElevation="4dp">
+    app:cardElevation="3dp"
+    app:strokeColor="#2E3B31"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,42 +22,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Soil Type"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="?attr/colorOnSurface" />
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:text="Properties:"
             android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:textColor="#10B981" />
 
         <TextView
             android:id="@+id/tvProperties"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:text="Good water retention, rich in nutrients."
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            android:textColor="#9CA3AF" />
             
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:text="Suitable Crops:"
             android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:textColor="#10B981" />
 
         <TextView
             android:id="@+id/tvSuitableCrops"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:text="Rice, Wheat, Sugarcane"
             android:textStyle="italic"
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            android:textColor="#9CA3AF" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

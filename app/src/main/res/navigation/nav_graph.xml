@@ -132,7 +132,11 @@
         android:id="@+id/pestFragment"
         android:name="com.example.smartagriculture.fragments.PestFragment"
         android:label="PestFragment"
-        tools:layout="@layout/fragment_info_list" />
+        tools:layout="@layout/fragment_info_list">
+        <action
+            android:id="@+id/action_pestFragment_to_pestDetailFragment"
+            app:destination="@id/pestDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/helplineFragment"
@@ -436,5 +440,11 @@
         android:name="com.example.smartagriculture.fragments.BenchmarkGalleryFragment"
         android:label="BenchmarkGalleryFragment"
         tools:layout="@layout/fragment_benchmark_gallery" />
+
+    <fragment
+        android:id="@+id/pestDetailFragment"
+        android:name="com.example.smartagriculture.fragments.PestDetailFragment"
+        android:label="PestDetailFragment"
+        tools:layout="@layout/fragment_pest_detail" />
 
 </navigation>

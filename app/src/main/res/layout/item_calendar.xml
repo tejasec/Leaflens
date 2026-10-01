@@ -5,9 +5,11 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp"
-    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardBackgroundColor="#1C241E"
     app:cardCornerRadius="16dp"
-    app:cardElevation="4dp">
+    app:cardElevation="3dp"
+    app:strokeColor="#2E3B31"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,30 +21,30 @@
             android:id="@+id/tvCropName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crop Name"
-            android:textSize="20sp"
+            android:text="Crop Activity"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="?attr/colorOnSurface" />
+            android:textColor="#FFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sowing: "
                 android:textStyle="bold"
-                android:textColor="?attr/colorPrimary"/>
+                android:textColor="#10B981"/>
 
             <TextView
                 android:id="@+id/tvSowing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="June - July"
-                android:textColor="?attr/colorOnSurfaceVariant"/>
+                android:textColor="#9CA3AF"/>
         </LinearLayout>
 
         <LinearLayout
@@ -56,23 +58,23 @@
                 android:layout_height="wrap_content"
                 android:text="Harvest: "
                 android:textStyle="bold"
-                android:textColor="?attr/colorPrimary"/>
+                android:textColor="#10B981"/>
 
             <TextView
                 android:id="@+id/tvHarvest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="October - November"
-                android:textColor="?attr/colorOnSurfaceVariant"/>
+                android:textColor="#9CA3AF"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:text="Description goes here."
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            android:textColor="#9CA3AF" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

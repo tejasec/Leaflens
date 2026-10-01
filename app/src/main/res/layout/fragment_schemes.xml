@@ -3,38 +3,74 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface">
+    android:background="#121814"
+    android:padding="16dp">
 
+    <!-- Header Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardBackgroundColor="#1C241E"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
+        app:strokeColor="#10B981"
+        app:strokeWidth="1dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tvSchemesTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="Government Schemes"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="22sp"
+            android:padding="16dp"
+            android:text="Government Welfare Schemes"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:gravity="center"/>
     </com.google.android.material.card.MaterialCardView>
+
+    <!-- Search Input Row -->
+    <LinearLayout
+        android:id="@+id/searchRow"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#1C241E"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintTop_toBottomOf="@id/cvHeader">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔍"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etSearchSchemes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:hint="Search schemes (e.g., PM-Kisan, Insurance)..."
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#6B7280"
+            android:textSize="13sp" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSchemes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingTop="8dp"
+        android:layout_marginTop="12dp"
         android:paddingBottom="16dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/cvHeader"
+        app:layout_constraintTop_toBottomOf="@id/searchRow"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

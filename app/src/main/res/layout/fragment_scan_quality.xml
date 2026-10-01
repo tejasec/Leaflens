@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text="Review Image"
+            android:text="Pre-Analysis Validation"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="We'll check if the image is good for analysis"
+            android:text="Checking image quality and leaf suitability before analysis"
             android:textColor="#9CA3AF"
             android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,8 +49,8 @@
         <FrameLayout
             android:id="@+id/imageCard"
             android:layout_width="0dp"
-            android:layout_height="260dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#1C241E"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,12 +75,12 @@
                 android:backgroundTint="#CC121814"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="6dp"
-                android:text="✏️ Edit"
+                android:text="✏️ Change Image"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
         </FrameLayout>
 
-        <!-- Status Header Card -->
+        <!-- Overall Status Header Card -->
         <LinearLayout
             android:id="@+id/cardHeaderStatus"
             android:layout_width="0dp"
@@ -98,9 +98,9 @@
                 android:id="@+id/tvStatusHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="✓ Image Looks Good!"
+                android:text="✓ Ready for Leaf Analysis"
                 android:textColor="#10B981"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -108,12 +108,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Your image meets our quality standards."
+                android:text="Image meets required quality standards &amp; foliage coverage."
                 android:textColor="#9CA3AF"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Quality Check items card -->
+        <!-- Section A: Image Quality Check Card -->
         <LinearLayout
             android:id="@+id/cardQualityChecks"
             android:layout_width="0dp"
@@ -127,13 +127,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardHeaderStatus">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A) Image Quality Check"
+                android:textColor="#10B981"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
             <!-- Check 1: Resolution -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="8dp">
+                android:paddingVertical="6dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -141,7 +150,7 @@
                     android:layout_weight="1"
                     android:text="Resolution"
                     android:textColor="#E5E7EB"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/tvResolutionStatus"
@@ -149,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:text="Good ✓"
                     android:textColor="#10B981"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -164,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="8dp">
+                android:paddingVertical="6dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -172,7 +181,7 @@
                     android:layout_weight="1"
                     android:text="Lighting"
                     android:textColor="#E5E7EB"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/tvLightingStatus"
@@ -180,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:text="Good ✓"
                     android:textColor="#10B981"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -195,7 +204,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="8dp">
+                android:paddingVertical="6dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -203,7 +212,7 @@
                     android:layout_weight="1"
                     android:text="Sharpness"
                     android:textColor="#E5E7EB"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/tvSharpnessStatus"
@@ -211,7 +220,7 @@
                     android:layout_height="wrap_content"
                     android:text="Good ✓"
                     android:textColor="#10B981"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -226,15 +235,15 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="8dp">
+                android:paddingVertical="6dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Leaf visibility"
+                    android:text="Leaf Visibility"
                     android:textColor="#E5E7EB"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/tvLeafVisibilityStatus"
@@ -242,26 +251,131 @@
                     android:layout_height="wrap_content"
                     android:text="Good ✓"
                     android:textColor="#10B981"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Action Button -->
-        <Button
-            android:id="@+id/btnAnalyzeLeaf"
+        <!-- Section B: Scanner Suitability Check Card -->
+        <LinearLayout
+            android:id="@+id/cardScannerCheck"
             android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#10B981"
-            android:text="Analyze Leaf ➔"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:cornerRadius="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#1C241E"
+            android:orientation="vertical"
+            android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardQualityChecks" />
+            app:layout_constraintTop_toBottomOf="@id/cardQualityChecks">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B) Scanner Suitability Check"
+                android:textColor="#10B981"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Item 1: Leaf Detected -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Leaf / Crop Subject Detected"
+                    android:textColor="#E5E7EB"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvLeafDetectedStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes ✓"
+                    android:textColor="#10B981"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2E3B31" />
+
+            <!-- Item 2: Foliage Coverage vs Minimum -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Foliage Coverage (Min Req: 20%)"
+                    android:textColor="#E5E7EB"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvFoliageCoverageStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="48%"
+                    android:textColor="#10B981"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Action Buttons Layout -->
+        <LinearLayout
+            android:id="@+id/rowActionButtons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardScannerCheck">
+
+            <!-- Valid Case Action Button: Analyze Leaf -->
+            <Button
+                android:id="@+id/btnAnalyzeLeaf"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:backgroundTint="#10B981"
+                android:text="ANALYZE LEAF ➔"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+            <!-- Invalid Case Action Button: Retake Photo (No Continue Anyway) -->
+            <Button
+                android:id="@+id/btnRetakePhoto"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="📷 RETAKE PHOTO"
+                android:textColor="#EF4444"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:cornerRadius="12dp"
+                app:strokeColor="#EF4444"
+                app:strokeWidth="1.5dp" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

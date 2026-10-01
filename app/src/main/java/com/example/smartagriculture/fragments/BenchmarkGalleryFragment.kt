@@ -8,8 +8,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartagriculture.R
@@ -38,6 +40,11 @@ class BenchmarkGalleryFragment : Fragment(R.layout.fragment_benchmark_gallery) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val btnBack = view.findViewById<ImageView>(R.id.btnBack)
+        btnBack?.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
         val tvQualityLatency = view.findViewById<TextView>(R.id.tvQualityLatency)
         val tvInferenceLatency = view.findViewById<TextView>(R.id.tvInferenceLatency)

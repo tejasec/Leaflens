@@ -4,23 +4,45 @@ import android.graphics.Bitmap
 import kotlin.math.abs
 
 /**
- * Pre-inference image validator for crop health analysis (MOD-01, Feature 9).
- * Runs sequential quality gating before running deep learning inference.
+ * Standard simple quality result model.
  */
 data class QualityResult(
     val isValid: Boolean,
     val feedbackMessage: String,
 )
 
+/**
+ * Detailed pre-analysis validation model providing itemized Quality & Scanner Suitability metrics.
+ */
+data class DetailedQualityResult(
+    val isValid: Boolean,
+    val resolutionStatus: String,
+    val lightingStatus: String,
+    val sharpnessStatus: String,
+    val leafVisibilityStatus: String,
+    val leafDetected: Boolean,
+    val foliageCoveragePct: Int,
+    val minRequiredPct: Int = 20,
+    val overallStatus: String,
+    val feedbackMessage: String,
+)
+
 object QualityGate {
 
-    /**
-     * Validates an input bitmap image frame sequentially:
-     * 1. Motion Blur Check (Variance of Laplacian >= 100.0)
-     * 2. Luminance Gating (Mean luminance >= 40 and overexposure <= 15%)
-     * 3. Foliage Presence (Green spectrum pixels >= 20%)
-     */
     fun validateImage(bitmap: Bitmap): QualityResult {
+        val detailed = evaluateDetailedQuality(bitmap)
+        return QualityResult(
+            isValid = detailed.isValid,
+            feedbackMessage = detailed.feedbackMessage,
+        )
+    }
+
+    /**
+     * Evaluates full itemized Quality AND Leaf/Scanner Suitability before deep learning inference:
+     * A) Image Quality: Resolution, Lighting, Sharpness, Leaf Visibility
+     * B) Scanner Check: Leaf Detected, Foliage Coverage (20% minimum threshold)
+     */
+    fun evaluateDetailedQuality(bitmap: Bitmap): DetailedQualityResult {
         val safeBitmap = if (bitmap.config == Bitmap.Config.HARDWARE) {
             bitmap.copy(Bitmap.Config.ARGB_8888, false)
         } else {
@@ -32,14 +54,22 @@ object QualityGate {
         val totalPixels = width * height
 
         if (totalPixels == 0) {
-            return QualityResult(isValid = false, feedbackMessage = "Invalid image frame: Image dimensions are zero.")
+            return DetailedQualityResult(
+                isValid = false,
+                resolutionStatus = "Invalid (0x0)",
+                lightingStatus = "Error",
+                sharpnessStatus = "Error",
+                leafVisibilityStatus = "None",
+                leafDetected = false,
+                foliageCoveragePct = 0,
+                overallStatus = "This image does not appear suitable for leaf analysis.",
+                feedbackMessage = "Invalid image frame: Image dimensions are zero.",
+            )
         }
 
-        // Extract ARGB pixels array for high-performance memory traversal
         val pixels = IntArray(totalPixels)
         safeBitmap.getPixels(pixels, 0, width, 0, 0, width, height)
 
-        // Pre-calculate grayscale luminance and color stats
         val gray = FloatArray(totalPixels)
         var luminanceSum = 0.0
         var overexposedCount = 0
@@ -53,83 +83,97 @@ object QualityGate {
             val g = (pixel shr 8) and 0xFF
             val b = pixel and 0xFF
 
-            // Grayscale (ITU-R BT.601 standard luminance)
             val y = (0.299f * r) + (0.587f * g) + (0.114f * b)
             gray[i] = y
             luminanceSum += y.toDouble()
 
-            // Luminance Overexposure Check
             if (y > 250f) {
                 overexposedCount++
             }
 
-            // 1. Foliage Check: Green spectrum dominant in RGB
             val isGreenFoliage = (g > r) && (g > b) && (g > 25)
             if (isGreenFoliage) {
                 greenPixelCount++
                 leafMatterPixelCount++
             }
 
-            // 2. Human Skin Tone Detection (Face, Hand, Skin)
             val maxC = maxOf(r, maxOf(g, b))
             val minC = minOf(r, minOf(g, b))
             val isSkinTone = (r > 95) && (g > 40) && (b > 20) && ((maxC - minC) > 15) && (abs(r - g) > 15) && (r > g) && (r > b)
             if (isSkinTone) {
                 skinPixelCount++
             } else if ((r > b) && (g > (b * 0.8f)) && (y in 30f..220f)) {
-                // Lesion / Diseased foliage tissue
                 leafMatterPixelCount++
             }
         }
 
-        // --- Non-Leaf Check A: Human Face / Skin / Hand Detection ---
-        val skinRatio = skinPixelCount.toDouble() / totalPixels
-        if (skinRatio > 0.25) {
-            return QualityResult(
-                isValid = false,
-                feedbackMessage = "Non-leaf object detected: Human face or hand detected. Please capture or select a clear image of a crop leaf."
-            )
-        }
+        // 1. Resolution Check
+        val resolutionOk = (width >= 400 && height >= 400)
+        val resolutionStatus = if (resolutionOk) "Good ✓ (${width}x${height})" else "Low Resolution ⚠"
 
-        // --- Non-Leaf Check B: Crop Foliage / Leaf Matter Ratio ---
-        val leafRatio = leafMatterPixelCount.toDouble() / totalPixels
-        if (leafRatio < 0.18) {
-            return QualityResult(
-                isValid = false,
-                feedbackMessage = "Non-leaf object detected: No crop foliage found in image. Please align a plant leaf within the camera frame."
-            )
-        }
-
-        // --- Check 1: Motion Blur Check (Variance of Laplacian) ---
+        // 2. Sharpness / Blur Check (Variance of Laplacian >= 100.0)
         val laplacianVar = computeLaplacianVariance(gray, width, height)
-        if (laplacianVar < 100.0) {
-            return QualityResult(isValid = false, feedbackMessage = "Hold steady: Image is blurry.")
-        }
+        val sharpnessOk = laplacianVar >= 100.0
+        val sharpnessStatus = if (sharpnessOk) "Good ✓" else "Blurry ⚠"
 
-        // --- Check 2: Luminance Gating ---
+        // 3. Lighting Gating Check
         val meanLuminance = luminanceSum / totalPixels
-        if (meanLuminance < 40.0) {
-            return QualityResult(isValid = false, feedbackMessage = "Image is underexposed. Please ensure sufficient lighting.")
-        }
-
         val overexposedRatio = overexposedCount.toDouble() / totalPixels
-        if (overexposedRatio > 0.15) {
-            return QualityResult(isValid = false, feedbackMessage = "Image is overexposed. Avoid direct glare or intense reflections.")
+        val lightingOk = (meanLuminance >= 40.0) && (overexposedRatio <= 0.15)
+        val lightingStatus = when {
+            meanLuminance < 40.0 -> "Underexposed ⚠"
+            overexposedRatio > 0.15 -> "Overexposed ⚠"
+            else -> "Good ✓"
         }
 
-        // --- Check 3: Foliage Presence ---
-        val greenRatio = greenPixelCount.toDouble() / totalPixels
-        if (greenRatio < 0.20) {
-            return QualityResult(isValid = false, feedbackMessage = "Foliage presence insufficient: Green crop pixels must constitute at least 20% of image frame.")
+        // 4. Leaf / Scanner Suitability Check
+        val skinRatio = skinPixelCount.toDouble() / totalPixels
+        val leafRatio = leafMatterPixelCount.toDouble() / totalPixels
+        val foliageCoveragePct = (leafRatio * 100).toInt().coerceIn(0, 100)
+
+        val leafDetected = (skinRatio <= 0.25) && (foliageCoveragePct >= 18)
+        val leafVisibilityStatus = if (leafDetected) "Good ✓" else "Low ⚠"
+
+        val foliageThresholdOk = foliageCoveragePct >= 20
+
+        val isValid = resolutionOk && sharpnessOk && lightingOk && leafDetected && foliageThresholdOk
+
+        val overallStatus: String
+        val feedbackMessage: String
+
+        if (isValid) {
+            overallStatus = "Ready for Leaf Analysis"
+            feedbackMessage = "Image quality & scanner suitability optimal."
+        } else if (!leafDetected || !foliageThresholdOk) {
+            overallStatus = "This image does not appear suitable for leaf analysis."
+            feedbackMessage = if (skinRatio > 0.25) {
+                "Non-leaf object detected: Human face or hand detected. Please capture a crop leaf."
+            } else {
+                "Insufficient foliage detected: Foliage coverage is ${foliageCoveragePct}% (Minimum required: 20%)."
+            }
+        } else {
+            overallStatus = "Image Needs Improvement"
+            feedbackMessage = if (!sharpnessOk) {
+                "Hold steady: Image is blurry."
+            } else {
+                "Lighting issue: Adjust position to avoid extreme darkness or glare."
+            }
         }
 
-        return QualityResult(isValid = true, feedbackMessage = "Image quality optimal for analysis.")
+        return DetailedQualityResult(
+            isValid = isValid,
+            resolutionStatus = resolutionStatus,
+            lightingStatus = lightingStatus,
+            sharpnessStatus = sharpnessStatus,
+            leafVisibilityStatus = leafVisibilityStatus,
+            leafDetected = leafDetected,
+            foliageCoveragePct = foliageCoveragePct,
+            minRequiredPct = 20,
+            overallStatus = overallStatus,
+            feedbackMessage = feedbackMessage,
+        )
     }
 
-    /**
-     * Computes the variance of the 3x3 Laplacian operator over the grayscale image.
-     * Kernel: [[0, 1, 0], [1, -4, 1], [0, 1, 0]]
-     */
     private fun computeLaplacianVariance(gray: FloatArray, width: Int, height: Int): Double {
         if (width < 3 || height < 3) return 0.0
 
@@ -137,7 +181,6 @@ object QualityGate {
         var sumSq = 0.0
         var count = 0
 
-        // Iterate over inner pixels ignoring 1-pixel border
         for (y in 1 until height - 1) {
             val rowOffset = y * width
             val topOffset = (y - 1) * width

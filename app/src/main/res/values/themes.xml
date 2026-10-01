@@ -12,9 +12,12 @@
         <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
         
-        <!-- Backgrounds -->
-        <item name="android:colorBackground">@color/colorBackground</item>
-        <item name="colorSurface">@color/colorSurface</item>
+        <!-- Backgrounds & Surfaces -->
+        <item name="android:colorBackground">#121814</item>
+        <item name="colorSurface">#1C241E</item>
+        <item name="colorSurfaceVariant">#242E27</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="colorOnSurfaceVariant">#9CA3AF</item>
         
         <!-- Typography -->
         <item name="fontFamily">sans-serif</item>
