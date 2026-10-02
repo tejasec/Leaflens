@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Smart Agriculture</string>
+    <string name="app_name">Leaflens AI</string>
     <string name="action_settings">Settings</string>
     <string-array name="language_array">
         <item>English</item>

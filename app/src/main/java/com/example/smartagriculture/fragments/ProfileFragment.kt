@@ -28,7 +28,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         
         // Load details from SharedPreferences or Firebase
         val savedName = prefs.getString("user_name", "Farmer User")
-        val savedEmail = currentUser?.email ?: prefs.getString("user_email", "farmer@leaflens.agri.gov.in")
+        val savedEmail = currentUser?.email ?: prefs.getString("user_email", "farmer@leaflens.ai")
         val savedLocation = prefs.getString("user_location", "Pune, Maharashtra")
         val savedCrop = prefs.getString("user_crop", "Tomato & Wheat")
         val savedPassword = prefs.getString("user_password", "••••••••")

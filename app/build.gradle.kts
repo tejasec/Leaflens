@@ -64,11 +64,13 @@ android {
     }
 
     androidResources {
+        // Ensure tflite model files are not compressed inside APK
         noCompress += "tflite"
     }
 }
 
 dependencies {
+    // AndroidX Core & UI Support
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
@@ -80,6 +82,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 
+    // Jetpack Compose Dependencies
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
@@ -89,12 +92,16 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
+    // Room Persistence Library
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+
+    // Firebase Authentication & Services
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
-    
+
+    // Retrofit & Gson Converter (Cloud Fallback REST Client)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.shimmer)
@@ -103,11 +110,11 @@ dependencies {
     implementation(libs.mpandroidchart)
     implementation(libs.workmanager)
     implementation(libs.play.services.maps)
-    
-    // Gemini AI API
+
+    // Generative AI
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
 
-    // TensorFlow Lite Support & GPU Delegate for Edge AI
+    // TensorFlow Lite & Support Libraries for Edge AI
     val tfliteVersion = "2.16.1"
     val tfliteSupportVersion = "0.4.4"
     implementation("org.tensorflow:tensorflow-lite:$tfliteVersion")
@@ -115,7 +122,7 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-gpu:$tfliteVersion")
     implementation("org.tensorflow:tensorflow-lite-gpu-api:$tfliteVersion")
 
-    // CameraX
+    // CameraX Suite for Frame Capture
     val cameraVersion = "1.4.1"
     implementation("androidx.camera:camera-core:$cameraVersion")
     implementation("androidx.camera:camera-camera2:$cameraVersion")

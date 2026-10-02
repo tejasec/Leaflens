@@ -9,6 +9,10 @@ import kotlin.math.abs
 data class QualityResult(
     val isValid: Boolean,
     val feedbackMessage: String,
+    val isBlurry: Boolean = false,
+    val isExtremeLighting: Boolean = false,
+    val laplacianVariance: Double = 0.0,
+    val averageLuminance: Double = 0.0
 )
 
 /**

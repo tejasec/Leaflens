@@ -22,7 +22,7 @@ class HelplineFragment : Fragment(R.layout.fragment_helpline) {
         }
 
         view.findViewById<View>(R.id.cardEmailSupport)?.setOnClickListener {
-            sendEmail("support@leaflens.agri.gov.in")
+            sendEmail("support@leaflens.ai")
         }
     }
 
@@ -39,7 +39,7 @@ class HelplineFragment : Fragment(R.layout.fragment_helpline) {
         try {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:$emailAddress")
-                putExtra(Intent.EXTRA_SUBJECT, "Agronomy Support Request - Leaflens")
+                putExtra(Intent.EXTRA_SUBJECT, "Agronomy Support Request - Leaflens AI")
             }
             startActivity(intent)
         } catch (e: Exception) {

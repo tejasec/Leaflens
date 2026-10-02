@@ -1,6 +1,6 @@
-# Leaflens-Android 🌾
+# Leaflens AI 🌾
 
-A comprehensive and Excellent Android application for modern farming, built with **Kotlin** and **XML Fragments**. Leaflens is designed to empower farmers with real-time market data, tailored crop recommendations, and intelligent farming insights right at their fingertips.
+A comprehensive Edge AI crop health assistant and smart farming platform built with **Kotlin**, **TensorFlow Lite**, and **Gemini AI**. Leaflens AI empowers farmers with real-time on-device disease diagnosis, Grad-CAM explainability heatmaps, dual-track treatment advisories, live Mandi commodity prices, and intelligent agricultural insights.
 
 ## 🚀 Features
 

@@ -169,7 +169,7 @@ object PdfReportGenerator {
         val shareIntent = Intent(Intent.ACTION_SEND).apply {
             type = "application/pdf"
             putExtra(Intent.EXTRA_STREAM, contentUri)
-            putExtra(Intent.EXTRA_SUBJECT, "Crop Health Diagnostic Report (BAI-03)")
+            putExtra(Intent.EXTRA_SUBJECT, "Crop Health Diagnostic Report (Leaflens AI)")
             putExtra(Intent.EXTRA_TEXT, "Attached is the AI-generated Crop Health Diagnostic Dossier for field review.")
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }

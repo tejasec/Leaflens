@@ -185,7 +185,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="support@leaflens.agri.gov.in"
+                        android:text="support@leaflens.ai"
                         android:textSize="13sp"
                         android:textColor="#60A5FA" />
                 </LinearLayout>

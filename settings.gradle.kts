@@ -36,7 +36,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Smart Agriculture"
+rootProject.name = "Leaflens AI"
 include(":app")
 
 val flutterProjectRoot = settingsDir.parentFile
