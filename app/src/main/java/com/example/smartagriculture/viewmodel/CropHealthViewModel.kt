@@ -59,7 +59,7 @@ class CropHealthViewModel(
      * @param context Application/Activity context used to load TFLite model and access DB.
      * @param bitmap Input captured leaf image.
      */
-    fun analyzeCropLeaf(context: Context, bitmap: Bitmap) {
+    fun analyzeCropLeaf(context: Context, bitmap: Bitmap, forceOverride: Boolean = false) {
         viewModelScope.launch {
             _uiState.value = CropHealthUiState.Loading
 
@@ -76,7 +76,8 @@ class CropHealthViewModel(
                     ImageQualityChecker.validateImage(bitmap)
                 }
 
-                if (!qualityResult.isValid) {
+                // If quality gate fails and no bypass flag is dispatched, emit error
+                if (!qualityResult.isValid && !forceOverride) {
                     _uiState.value = CropHealthUiState.QualityError(qualityResult)
                     return@launch
                 }

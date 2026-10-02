@@ -104,6 +104,7 @@ dependencies {
     // Retrofit & Gson Converter (Cloud Fallback REST Client)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
+    implementation(libs.okhttp.logging)
     implementation(libs.shimmer)
     implementation(libs.play.services.location)
     implementation(libs.glide)

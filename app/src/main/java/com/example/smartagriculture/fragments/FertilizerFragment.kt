@@ -6,7 +6,6 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.example.smartagriculture.R
 import com.example.smartagriculture.databinding.FragmentFertilizerBinding
-import com.example.smartagriculture.repository.FertilizerRepository
 import com.example.smartagriculture.network.GeminiService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -44,17 +43,22 @@ class FertilizerFragment : Fragment(R.layout.fragment_fertilizer) {
             }
 
             binding?.btnGetRecommendation?.isEnabled = false
-            binding?.btnGetRecommendation?.text = "Getting AI Recommendation..."
-            binding?.cardResult?.visibility = View.GONE
+            binding?.btnGetRecommendation?.text = "Calculating AI Recommendation..."
+            binding?.cardResult?.visibility = View.VISIBLE
+            binding?.shimmerLayout?.visibility = View.VISIBLE
+            binding?.shimmerLayout?.startShimmer()
 
             CoroutineScope(Dispatchers.IO).launch {
                 val recommendation = GeminiService.getFertilizerRecommendation(selectedCrop, soilType)
                 
                 withContext(Dispatchers.Main) {
+                    if (binding == null) return@withContext
+                    binding?.shimmerLayout?.stopShimmer()
+                    binding?.shimmerLayout?.visibility = View.GONE
                     binding?.tvResult?.text = recommendation
                     binding?.cardResult?.visibility = View.VISIBLE
                     binding?.btnGetRecommendation?.isEnabled = true
-                    binding?.btnGetRecommendation?.text = "Get Recommendation"
+                    binding?.btnGetRecommendation?.text = "Calculate NPK Recommendation"
                 }
             }
         }
@@ -62,6 +66,7 @@ class FertilizerFragment : Fragment(R.layout.fragment_fertilizer) {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding?.shimmerLayout?.stopShimmer()
         binding = null
     }
 }

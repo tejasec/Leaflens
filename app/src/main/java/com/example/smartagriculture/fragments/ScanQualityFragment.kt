@@ -18,9 +18,15 @@ import com.example.smartagriculture.R
 import com.example.smartagriculture.databinding.FragmentScanQualityBinding
 import com.example.smartagriculture.quality.QualityGate
 
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 /**
  * Pre-Analysis Validation Screen (Step 1 of New Workflow).
  * Evaluates BOTH Image Quality AND Leaf/Scanner Suitability before deep learning inference.
+ * Features asynchronous validation and quality gate bypass support.
  */
 class ScanQualityFragment : Fragment(R.layout.fragment_scan_quality) {
 
@@ -44,44 +50,67 @@ class ScanQualityFragment : Fragment(R.layout.fragment_scan_quality) {
             binding?.ivCapturedLeaf?.setImageResource(R.drawable.bg_1)
         }
 
-        // Decode bitmap and run local pre-analysis validation
-        val bitmap = loadBitmapFromUri(imageUriStr)
-        val qualityDetails = QualityGate.evaluateDetailedQuality(bitmap)
+        // Show loading state while evaluating image quality asynchronously
+        binding?.progressQualityCheck?.visibility = View.VISIBLE
+        binding?.tvStatusHeader?.text = "Evaluating Image Quality..."
+        binding?.tvStatusHeader?.setTextColor(Color.parseColor("#9CA3AF"))
+        binding?.tvStatusSub?.text = "Checking blur, lighting, exposure, and leaf presence..."
+        binding?.btnAnalyzeLeaf?.visibility = View.GONE
+        binding?.btnRetakePhoto?.visibility = View.GONE
+        binding?.btnContinueAnyway?.visibility = View.GONE
 
-        // Bind Section A: Image Quality Check
-        binding?.tvResolutionStatus?.text = qualityDetails.resolutionStatus
-        binding?.tvLightingStatus?.text = qualityDetails.lightingStatus
-        binding?.tvSharpnessStatus?.text = qualityDetails.sharpnessStatus
-        binding?.tvLeafVisibilityStatus?.text = qualityDetails.leafVisibilityStatus
+        // Run validation on background thread (Dispatchers.Default)
+        viewLifecycleOwner.lifecycleScope.launch {
+            val bitmap = withContext(Dispatchers.Default) {
+                loadBitmapFromUri(imageUriStr)
+            }
+            val qualityDetails = withContext(Dispatchers.Default) {
+                QualityGate.evaluateDetailedQuality(bitmap)
+            }
 
-        // Color code status text
-        binding?.tvResolutionStatus?.setTextColor(if (qualityDetails.resolutionStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#F59E0B"))
-        binding?.tvLightingStatus?.setTextColor(if (qualityDetails.lightingStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#F59E0B"))
-        binding?.tvSharpnessStatus?.setTextColor(if (qualityDetails.sharpnessStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
-        binding?.tvLeafVisibilityStatus?.setTextColor(if (qualityDetails.leafVisibilityStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
+            // Ensure fragment is still active before updating UI
+            if (binding == null) return@launch
 
-        // Bind Section B: Scanner Suitability Check
-        val leafDetectedText = if (qualityDetails.leafDetected) "Yes ✓" else "No ⚠"
-        binding?.tvLeafDetectedStatus?.text = leafDetectedText
-        binding?.tvLeafDetectedStatus?.setTextColor(if (qualityDetails.leafDetected) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
+            binding?.progressQualityCheck?.visibility = View.GONE
 
-        val coverageText = "${qualityDetails.foliageCoveragePct}%"
-        binding?.tvFoliageCoverageStatus?.text = coverageText
-        val isCoverageOk = qualityDetails.foliageCoveragePct >= qualityDetails.minRequiredPct
-        binding?.tvFoliageCoverageStatus?.setTextColor(if (isCoverageOk) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
+            // Bind Section A: Image Quality Check
+            binding?.tvResolutionStatus?.text = qualityDetails.resolutionStatus
+            binding?.tvLightingStatus?.text = qualityDetails.lightingStatus
+            binding?.tvSharpnessStatus?.text = qualityDetails.sharpnessStatus
+            binding?.tvLeafVisibilityStatus?.text = qualityDetails.leafVisibilityStatus
 
-        // Overall Header Status
-        binding?.tvStatusHeader?.text = qualityDetails.overallStatus
-        binding?.tvStatusSub?.text = qualityDetails.feedbackMessage
+            // Color code status text
+            binding?.tvResolutionStatus?.setTextColor(if (qualityDetails.resolutionStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#F59E0B"))
+            binding?.tvLightingStatus?.setTextColor(if (qualityDetails.lightingStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#F59E0B"))
+            binding?.tvSharpnessStatus?.setTextColor(if (qualityDetails.sharpnessStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
+            binding?.tvLeafVisibilityStatus?.setTextColor(if (qualityDetails.leafVisibilityStatus.contains("✓")) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
 
-        if (qualityDetails.isValid) {
-            binding?.tvStatusHeader?.setTextColor(Color.parseColor("#10B981"))
-            binding?.btnAnalyzeLeaf?.visibility = View.VISIBLE
-            binding?.btnRetakePhoto?.visibility = View.GONE
-        } else {
-            binding?.tvStatusHeader?.setTextColor(Color.parseColor("#EF4444"))
-            binding?.btnAnalyzeLeaf?.visibility = View.GONE
-            binding?.btnRetakePhoto?.visibility = View.VISIBLE
+            // Bind Section B: Scanner Suitability Check
+            val leafDetectedText = if (qualityDetails.leafDetected) "Yes ✓" else "No ⚠"
+            binding?.tvLeafDetectedStatus?.text = leafDetectedText
+            binding?.tvLeafDetectedStatus?.setTextColor(if (qualityDetails.leafDetected) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
+
+            val coverageText = "${qualityDetails.foliageCoveragePct}%"
+            binding?.tvFoliageCoverageStatus?.text = coverageText
+            val isCoverageOk = qualityDetails.foliageCoveragePct >= qualityDetails.minRequiredPct
+            binding?.tvFoliageCoverageStatus?.setTextColor(if (isCoverageOk) Color.parseColor("#10B981") else Color.parseColor("#EF4444"))
+
+            // Overall Header Status
+            binding?.tvStatusHeader?.text = qualityDetails.overallStatus
+            binding?.tvStatusSub?.text = qualityDetails.feedbackMessage
+
+            if (qualityDetails.isValid) {
+                binding?.tvStatusHeader?.setTextColor(Color.parseColor("#10B981"))
+                binding?.btnAnalyzeLeaf?.visibility = View.VISIBLE
+                binding?.btnRetakePhoto?.visibility = View.GONE
+                binding?.btnContinueAnyway?.visibility = View.GONE
+            } else {
+                binding?.tvStatusHeader?.setTextColor(Color.parseColor("#EF4444"))
+                binding?.btnAnalyzeLeaf?.visibility = View.GONE
+                binding?.btnRetakePhoto?.visibility = View.VISIBLE
+                // Allow user to bypass quality gate when necessary
+                binding?.btnContinueAnyway?.visibility = View.VISIBLE
+            }
         }
 
         binding?.btnBack?.setOnClickListener {
@@ -98,6 +127,15 @@ class ScanQualityFragment : Fragment(R.layout.fragment_scan_quality) {
 
         binding?.btnAnalyzeLeaf?.setOnClickListener {
             val bundle = bundleOf("imageUri" to imageUriStr)
+            findNavController().navigate(R.id.action_scanQualityFragment_to_scanAnalyzingFragment, bundle)
+        }
+
+        binding?.btnContinueAnyway?.setOnClickListener {
+            // Pass bypass flag along with image URI
+            val bundle = bundleOf(
+                "imageUri" to imageUriStr,
+                "bypassQualityGate" to true
+            )
             findNavController().navigate(R.id.action_scanQualityFragment_to_scanAnalyzingFragment, bundle)
         }
     }

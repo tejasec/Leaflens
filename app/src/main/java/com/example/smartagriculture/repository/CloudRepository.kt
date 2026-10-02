@@ -5,10 +5,10 @@ import com.example.smartagriculture.network.ApiService
 import com.example.smartagriculture.network.CloudPredictionResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
-import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
@@ -58,9 +58,9 @@ class CloudRepository(
             safeBitmap.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
             val byteArray = outputStream.toByteArray()
 
-            // Construct RequestBody & MultipartBody.Part compatible across all OkHttp versions
-            val mediaType = MediaType.parse("image/jpeg")
-            val requestBody = RequestBody.create(mediaType, byteArray)
+            // Construct RequestBody & MultipartBody.Part compatible across OkHttp versions
+            val mediaType = "image/jpeg".toMediaTypeOrNull()
+            val requestBody = byteArray.toRequestBody(mediaType)
             val imagePart = MultipartBody.Part.createFormData("file", "leaf_scan.jpg", requestBody)
 
             // Execute network call to FastAPI backend

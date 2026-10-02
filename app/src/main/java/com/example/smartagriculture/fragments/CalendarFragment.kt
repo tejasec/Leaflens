@@ -1,82 +1,149 @@
 package com.example.smartagriculture.fragments
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartagriculture.R
 import com.example.smartagriculture.adapter.CalendarAdapter
-import com.example.smartagriculture.model.CropCalendar
+import com.example.smartagriculture.viewmodel.CalendarViewModel
+import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 class CalendarFragment : Fragment(R.layout.fragment_calendar) {
+
+    private val viewModel: CalendarViewModel by viewModels()
+
+    private val requestNotificationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            Toast.makeText(requireContext(), "Reminder notifications enabled.", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        checkNotificationPermission()
+
         val rvCalendar = view.findViewById<RecyclerView>(R.id.rvCalendar)
         rvCalendar.layoutManager = LinearLayoutManager(requireContext())
 
-        val calendarList = mutableListOf(
-            CropCalendar("Rice (Kharif) - Sowing & Irrigation", "June - July", "November - December", "Needs well-distributed rainfall or irrigation. Sown at the onset of monsoon."),
-            CropCalendar("Wheat (Rabi) - Top Dressing", "October - November", "March - April", "Requires cool weather during growth and warm weather during ripening."),
-            CropCalendar("Maize - Fertilizer Application", "June - July", "September - October", "Versatile crop, requires moderate rainfall and well-drained soil."),
-            CropCalendar("Cotton - Pest Inspection", "April - May", "October - December", "Requires a long frost-free period and plenty of sunshine."),
-            CropCalendar("Sugarcane - Harvest Window", "Jan - March", "Dec - March", "Long duration crop requiring hot and humid climate.")
-        )
-
-        val adapter = CalendarAdapter(calendarList)
+        val adapter = CalendarAdapter(emptyList()) { activity ->
+            viewModel.deleteActivity(activity)
+            Toast.makeText(requireContext(), "Activity reminder removed.", Toast.LENGTH_SHORT).show()
+        }
         rvCalendar.adapter = adapter
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.activities.collect { activities ->
+                if (activities.isEmpty()) {
+                    seedDefaultActivities()
+                } else {
+                    adapter.updateList(activities)
+                }
+            }
+        }
 
         val btnAdd = view.findViewById<Button>(R.id.btnAddActivity)
         btnAdd?.setOnClickListener {
-            showAddActivityDialog(calendarList, adapter)
+            showAddActivityDialog()
         }
     }
 
-    private fun showAddActivityDialog(list: MutableList<CropCalendar>, adapter: CalendarAdapter) {
+    private fun checkNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                requestNotificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
+        }
+    }
+
+    private fun seedDefaultActivities() {
+        val now = System.currentTimeMillis()
+        viewModel.addActivity("Rice (Kharif)", "First Top Dressing (Urea)", "FERTILIZER", now + TimeUnit.DAYS.toMillis(1))
+        viewModel.addActivity("Wheat (Rabi)", "Crown Root Irrigation", "WATERING", now + TimeUnit.DAYS.toMillis(3))
+        viewModel.addActivity("Cotton", "Bollworm Pest Inspection & Neem Spray", "SPRAY", now + TimeUnit.DAYS.toMillis(5))
+        viewModel.addActivity("Maize", "Zinc Sulphate Foliar Application", "FERTILIZER", now + TimeUnit.DAYS.toMillis(7))
+        viewModel.addActivity("Sugarcane", "Harvest & Trash Mulching", "HARVEST", now + TimeUnit.DAYS.toMillis(14))
+    }
+
+    private fun showAddActivityDialog() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("➕ Add Farming Reminder")
+        builder.setTitle("➕ Add Crop Activity Reminder")
 
         val inputLayout = LinearLayout(requireContext()).apply {
             orientation = LinearLayout.VERTICAL
-            setPadding(40, 20, 40, 10)
+            setPadding(50, 20, 50, 10)
         }
 
+        val etCrop = EditText(requireContext()).apply {
+            hint = "Crop Name (e.g. Tomato, Cotton)"
+        }
         val etTitle = EditText(requireContext()).apply {
-            hint = "Crop & Activity Name (e.g. Tomato Spraying)"
-        }
-        val etSowing = EditText(requireContext()).apply {
-            hint = "Start Window (e.g. May - June)"
-        }
-        val etHarvest = EditText(requireContext()).apply {
-            hint = "End Window (e.g. Aug - Sept)"
-        }
-        val etDetails = EditText(requireContext()).apply {
-            hint = "Notes / Care Instructions"
+            hint = "Activity Description (e.g. Top Dressing)"
         }
 
+        val spinnerType = Spinner(requireContext())
+        val types = listOf("FERTILIZER", "WATERING", "SPRAY", "HARVEST", "GENERAL")
+        val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, types)
+        spinnerType.adapter = spinnerAdapter
+
+        val spinnerDelay = Spinner(requireContext())
+        val delayOptions = listOf(
+            "Schedule in 1 Minute (Test Alert)",
+            "Schedule in 1 Day",
+            "Schedule in 3 Days",
+            "Schedule in 7 Days",
+            "Schedule in 14 Days"
+        )
+        val delayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, delayOptions)
+        spinnerDelay.adapter = delayAdapter
+
+        inputLayout.addView(etCrop)
         inputLayout.addView(etTitle)
-        inputLayout.addView(etSowing)
-        inputLayout.addView(etHarvest)
-        inputLayout.addView(etDetails)
+        inputLayout.addView(spinnerType)
+        inputLayout.addView(spinnerDelay)
 
         builder.setView(inputLayout)
 
-        builder.setPositiveButton("Save") { dialog, _ ->
-            val title = etTitle.text.toString().ifBlank { "New Activity" }
-            val sowing = etSowing.text.toString().ifBlank { "Immediate" }
-            val harvest = etHarvest.text.toString().ifBlank { "Upcoming" }
-            val details = etDetails.text.toString().ifBlank { "Farming activity scheduled." }
+        builder.setPositiveButton("Schedule & Save") { dialog, _ ->
+            val crop = etCrop.text.toString().trim().ifBlank { "Crop" }
+            val title = etTitle.text.toString().trim().ifBlank { "Farm Activity" }
+            val type = types[spinnerType.selectedItemPosition]
 
-            list.add(0, CropCalendar(title, sowing, harvest, details))
-            adapter.notifyItemInserted(0)
-            Toast.makeText(requireContext(), "Reminder saved!", Toast.LENGTH_SHORT).show()
+            val delayMillis = when (spinnerDelay.selectedItemPosition) {
+                0 -> TimeUnit.MINUTES.toMillis(1)
+                1 -> TimeUnit.DAYS.toMillis(1)
+                2 -> TimeUnit.DAYS.toMillis(3)
+                3 -> TimeUnit.DAYS.toMillis(7)
+                4 -> TimeUnit.DAYS.toMillis(14)
+                else -> TimeUnit.DAYS.toMillis(1)
+            }
+            val scheduledDate = System.currentTimeMillis() + delayMillis
+
+            viewModel.addActivity(crop, title, type, scheduledDate)
+            Toast.makeText(requireContext(), "Reminder scheduled successfully!", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
 

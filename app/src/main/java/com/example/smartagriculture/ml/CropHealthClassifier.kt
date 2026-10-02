@@ -60,12 +60,28 @@ class CropHealthClassifier(private val context: Context) {
 
     private fun setupClassifier() {
         try {
-            val modelBuffer = loadModelFile(MODEL_PATH)
+            val modelBuffer = try {
+                FileUtil.loadMappedFile(context, MODEL_PATH)
+            } catch (_: Exception) {
+                try {
+                    FileUtil.loadMappedFile(context, "crop_disease_model.tflite")
+                } catch (_: Exception) {
+                    loadModelFile(MODEL_PATH)
+                }
+            }
             val options = Interpreter.Options().apply {
                 setNumThreads(4)
             }
             interpreter = Interpreter(modelBuffer, options)
-            labels = FileUtil.loadLabels(context, LABELS_PATH)
+            labels = try {
+                FileUtil.loadLabels(context, LABELS_PATH)
+            } catch (_: Exception) {
+                try {
+                    FileUtil.loadLabels(context, "labels.txt")
+                } catch (_: Exception) {
+                    emptyList()
+                }
+            }
         } catch (e: Exception) {
             e.printStackTrace()
         }

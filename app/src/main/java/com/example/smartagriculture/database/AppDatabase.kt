@@ -8,8 +8,14 @@ import com.example.smartagriculture.model.ScanHistoryItem
 import com.example.smartagriculture.model.User
 
 @Database(
-    entities = [User::class, ScanHistoryItem::class, PrototypeEntity::class],
-    version = 4,
+    entities = [
+        User::class,
+        ScanHistoryItem::class,
+        PrototypeEntity::class,
+        CropActivityEntity::class,
+        SchemeEntity::class
+    ],
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -17,6 +23,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun scanHistoryDao(): ScanHistoryDao
     abstract fun prototypeDao(): PrototypeDao
+    abstract fun cropActivityDao(): CropActivityDao
+    abstract fun schemeDao(): SchemeDao
 
     companion object {
         @Volatile

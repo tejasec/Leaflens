@@ -73,7 +73,8 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
 
             // Step 4: Hybrid Fallback & Results Assembly
             delay(400)
-            val result = if (classificationResult.predictions.isNotEmpty() && !classificationResult.isUncertain) {
+            val isBypassed = arguments?.getBoolean("bypassQualityGate", false) ?: arguments?.getBoolean("humanOverride", false) ?: false
+            val baseResult = if (classificationResult.predictions.isNotEmpty() && !classificationResult.isUncertain) {
                 val topDiagnosis = classificationResult.predictions[0]
                 DiseaseAnalysisResult(
                     diseaseName = topDiagnosis.label,
@@ -88,6 +89,14 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
                 GeminiService.analyzeCropDisease(bitmap)
             }
             tfliteClassifier.close()
+
+            val result = if (isBypassed) {
+                baseResult.copy(
+                    aiExplanation = "Quality checks bypassed by user. ${baseResult.aiExplanation}"
+                )
+            } else {
+                baseResult
+            }
 
             binding?.icStep4?.text = "✓"
             binding?.tvStep4?.setTextColor(Color.parseColor("#10B981"))

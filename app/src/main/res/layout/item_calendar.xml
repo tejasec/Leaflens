@@ -17,6 +17,40 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvActivityType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅 CROP CALENDAR"
+                android:background="#2E3B31"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:textColor="#10B981"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/btnDeleteActivity"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_delete"
+                app:tint="#EF4444"
+                android:contentDescription="Delete"
+                android:visibility="gone" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/tvCropName"
             android:layout_width="wrap_content"

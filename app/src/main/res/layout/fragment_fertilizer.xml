@@ -104,6 +104,59 @@
             style="@style/Widget.MaterialComponents.Button"
             app:layout_constraintTop_toBottomOf="@id/cardInput" />
 
+        <!-- Shimmer Skeleton Loading Container -->
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            app:shimmer_auto_start="false"
+            app:layout_constraintTop_toBottomOf="@id/btnGetRecommendation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#1C241E"
+                android:padding="20dp">
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressFertilizer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    app:indicatorColor="#10B981"
+                    app:trackColor="#2E3B31" />
+
+                <View
+                    android:layout_width="140dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#2E3B31" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#2E3B31" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#2E3B31" />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#2E3B31" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardResult"
             android:layout_width="match_parent"
@@ -116,7 +169,7 @@
             app:cardElevation="4dp"
             app:strokeColor="#10B981"
             app:strokeWidth="1dp"
-            app:layout_constraintTop_toBottomOf="@id/btnGetRecommendation">
+            app:layout_constraintTop_toBottomOf="@id/shimmerLayout">
 
             <TextView
                 android:id="@+id/tvResult"

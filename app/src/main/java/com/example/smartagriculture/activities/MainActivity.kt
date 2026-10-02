@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.smartagriculture.R
 import com.example.smartagriculture.databinding.ActivityMainBinding
+import com.example.smartagriculture.ml.MobileNetV2Verifier
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Verify MobileNetV2 Edge Model Implementation & Bounds
+        MobileNetV2Verifier.verifyImplementation(this)
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment

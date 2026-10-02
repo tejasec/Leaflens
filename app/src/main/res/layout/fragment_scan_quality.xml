@@ -111,6 +111,15 @@
                 android:text="Image meets required quality standards &amp; foliage coverage."
                 android:textColor="#9CA3AF"
                 android:textSize="12sp" />
+
+            <ProgressBar
+                android:id="@+id/progressQualityCheck"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="8dp"
+                android:indeterminate="true"
+                android:visibility="gone" />
         </LinearLayout>
 
         <!-- Section A: Image Quality Check Card -->
@@ -361,7 +370,7 @@
                 android:textStyle="bold"
                 app:cornerRadius="12dp" />
 
-            <!-- Invalid Case Action Button: Retake Photo (No Continue Anyway) -->
+            <!-- Invalid Case Action Button: Retake Photo -->
             <Button
                 android:id="@+id/btnRetakePhoto"
                 style="?attr/materialButtonOutlinedStyle"
@@ -375,6 +384,20 @@
                 app:cornerRadius="12dp"
                 app:strokeColor="#EF4444"
                 app:strokeWidth="1.5dp" />
+
+            <!-- Action Button: Continue Anyway -->
+            <Button
+                android:id="@+id/btnContinueAnyway"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#D97706"
+                android:text="⚠️ CONTINUE ANYWAY"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:cornerRadius="12dp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
