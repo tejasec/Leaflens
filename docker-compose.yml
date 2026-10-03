@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  fastapi-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: leaflens_fastapi_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - ENVIRONMENT=production
+      - CONFIDENCE_THRESHOLD=0.70
+    restart: unless-stopped

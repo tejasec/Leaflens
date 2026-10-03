@@ -14,3 +14,8 @@
 .cxx
 local.properties
 .venv/
+
+# Large datasets & documentation
+PlantVillage-Dataset/
+Capstone Black Book.md
+Additional Information about the project/
