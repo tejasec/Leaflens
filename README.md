@@ -12,7 +12,7 @@
 ---
 
 ## 📌 Project Overview
-**LeafLens AI (BAI-03)** is an edge-native, explainable crop pathology triage assistant engineered for offline agricultural resilience and few-shot disease adaptation. Developed natively in **Kotlin** with **Android Jetpack**, **TensorFlow Lite (TFLite)**, **OpenCV**, and an optional **FastAPI / Docker** cloud re-analysis fallback, LeafLens empowers smallholder farmers and agrarian extension workers with:
+**LeafLens AI** is an edge-native, explainable crop pathology triage assistant engineered for offline agricultural resilience and few-shot disease adaptation. Developed natively in **Kotlin** with **Android Jetpack**, **TensorFlow Lite (TFLite)**, **OpenCV**, and an optional **FastAPI / Docker** cloud re-analysis fallback, LeafLens empowers smallholder farmers and agrarian extension workers with:
 
 * **100% Offline Edge Inference (<180 ms):** Runs an INT8-quantized MobileNetV2 deep neural network on-device without requiring cellular bandwidth in rural dead zones.
 * **Pre-Flight OpenCV Quality Gate:** Automatically filters out motion blur (Laplacian variance $\sigma^2 < 100.0$), glare, and non-foliar captures before invoking inference.
