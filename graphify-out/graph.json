@@ -207,7 +207,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/PopularCropAdapter.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_adapter_popularcropadapter_kt",
-      "community": 20,
+      "community": 21,
       "norm_label": "popularcropadapter.kt"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/PopularCropAdapter.kt",
       "source_location": "L12",
       "id": "adapter_popularcropadapter_popularcropadapter",
-      "community": 20,
+      "community": 21,
       "norm_label": "popularcropadapter"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/PopularCropAdapter.kt",
       "source_location": "L17",
       "id": "adapter_popularcropadapter_viewholder",
-      "community": 20,
+      "community": 21,
       "norm_label": "viewholder"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/PopularCropAdapter.kt",
       "source_location": "L22",
       "id": "adapter_popularcropadapter_popularcropadapter_oncreateviewholder",
-      "community": 20,
+      "community": 21,
       "norm_label": ".oncreateviewholder()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/PopularCropAdapter.kt",
       "source_location": "L28",
       "id": "adapter_popularcropadapter_popularcropadapter_onbindviewholder",
-      "community": 20,
+      "community": 21,
       "norm_label": ".onbindviewholder()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/PopularCropAdapter.kt",
       "source_location": "L38",
       "id": "adapter_popularcropadapter_popularcropadapter_getitemcount",
-      "community": 20,
+      "community": 21,
       "norm_label": ".getitemcount()"
     },
     {
@@ -1062,7 +1062,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_database_userdao_kt",
-      "community": 23,
+      "community": 24,
       "norm_label": "userdao.kt"
     },
     {
@@ -1071,7 +1071,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L11",
       "id": "database_userdao_userdao",
-      "community": 23,
+      "community": 24,
       "norm_label": "userdao"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L14",
       "id": "database_userdao_userdao_insertuser",
-      "community": 23,
+      "community": 24,
       "norm_label": ".insertuser()"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L17",
       "id": "database_userdao_userdao_updateuser",
-      "community": 23,
+      "community": 24,
       "norm_label": ".updateuser()"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L20",
       "id": "database_userdao_userdao_deleteuser",
-      "community": 23,
+      "community": 24,
       "norm_label": ".deleteuser()"
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L23",
       "id": "database_userdao_userdao_login",
-      "community": 23,
+      "community": 24,
       "norm_label": ".login()"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L26",
       "id": "database_userdao_userdao_findbyemail",
-      "community": 23,
+      "community": 24,
       "norm_label": ".findbyemail()"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L29",
       "id": "database_userdao_userdao_getallusers",
-      "community": 23,
+      "community": 24,
       "norm_label": ".getallusers()"
     },
     {
@@ -1134,7 +1134,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/UserDao.kt",
       "source_location": "L32",
       "id": "database_userdao_userdao_deleteallusers",
-      "community": 23,
+      "community": 24,
       "norm_label": ".deleteallusers()"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CareGuideFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_careguidefragment_kt",
-      "community": 51,
+      "community": 52,
       "norm_label": "careguidefragment.kt"
     },
     {
@@ -1539,7 +1539,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CareGuideFragment.kt",
       "source_location": "L13",
       "id": "fragments_careguidefragment_careguidefragment",
-      "community": 51,
+      "community": 52,
       "norm_label": "careguidefragment"
     },
     {
@@ -1548,7 +1548,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CareGuideFragment.kt",
       "source_location": "L17",
       "id": "fragments_careguidefragment_careguidefragment_onviewcreated",
-      "community": 51,
+      "community": 52,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -1557,7 +1557,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CareGuideFragment.kt",
       "source_location": "L61",
       "id": "fragments_careguidefragment_careguidefragment_ondestroyview",
-      "community": 51,
+      "community": 52,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -1611,7 +1611,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropInsightsFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_cropinsightsfragment_kt",
-      "community": 52,
+      "community": 53,
       "norm_label": "cropinsightsfragment.kt"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropInsightsFragment.kt",
       "source_location": "L10",
       "id": "fragments_cropinsightsfragment_cropinsightsfragment",
-      "community": 52,
+      "community": 53,
       "norm_label": "cropinsightsfragment"
     },
     {
@@ -1629,7 +1629,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropInsightsFragment.kt",
       "source_location": "L14",
       "id": "fragments_cropinsightsfragment_cropinsightsfragment_onviewcreated",
-      "community": 52,
+      "community": 53,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -1638,7 +1638,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropInsightsFragment.kt",
       "source_location": "L23",
       "id": "fragments_cropinsightsfragment_cropinsightsfragment_ondestroyview",
-      "community": 52,
+      "community": 53,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -1647,7 +1647,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropProgressFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_cropprogressfragment_kt",
-      "community": 53,
+      "community": 54,
       "norm_label": "cropprogressfragment.kt"
     },
     {
@@ -1656,7 +1656,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropProgressFragment.kt",
       "source_location": "L12",
       "id": "fragments_cropprogressfragment_cropprogressfragment",
-      "community": 53,
+      "community": 54,
       "norm_label": "cropprogressfragment"
     },
     {
@@ -1665,7 +1665,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropProgressFragment.kt",
       "source_location": "L16",
       "id": "fragments_cropprogressfragment_cropprogressfragment_onviewcreated",
-      "community": 53,
+      "community": 54,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -1674,7 +1674,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropProgressFragment.kt",
       "source_location": "L43",
       "id": "fragments_cropprogressfragment_cropprogressfragment_ondestroyview",
-      "community": 53,
+      "community": 54,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -1683,7 +1683,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/DiseaseDetailsFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_diseasedetailsfragment_kt",
-      "community": 54,
+      "community": 55,
       "norm_label": "diseasedetailsfragment.kt"
     },
     {
@@ -1692,7 +1692,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/DiseaseDetailsFragment.kt",
       "source_location": "L13",
       "id": "fragments_diseasedetailsfragment_diseasedetailsfragment",
-      "community": 54,
+      "community": 55,
       "norm_label": "diseasedetailsfragment"
     },
     {
@@ -1701,7 +1701,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/DiseaseDetailsFragment.kt",
       "source_location": "L18",
       "id": "fragments_diseasedetailsfragment_diseasedetailsfragment_onviewcreated",
-      "community": 54,
+      "community": 55,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -1710,7 +1710,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/DiseaseDetailsFragment.kt",
       "source_location": "L49",
       "id": "fragments_diseasedetailsfragment_diseasedetailsfragment_ondestroyview",
-      "community": 54,
+      "community": 55,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -1827,7 +1827,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_recapturecamerafragment_kt",
-      "community": 21,
+      "community": 22,
       "norm_label": "recapturecamerafragment.kt"
     },
     {
@@ -1836,7 +1836,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L29",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment",
-      "community": 21,
+      "community": 22,
       "norm_label": "recapturecamerafragment"
     },
     {
@@ -1845,7 +1845,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L51",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_onviewcreated",
-      "community": 21,
+      "community": 22,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -1854,7 +1854,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L67",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_checkcamerapermission",
-      "community": 21,
+      "community": 22,
       "norm_label": ".checkcamerapermission()"
     },
     {
@@ -1863,7 +1863,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L75",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_startcamera",
-      "community": 21,
+      "community": 22,
       "norm_label": ".startcamera()"
     },
     {
@@ -1872,7 +1872,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L94",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_toggleflash",
-      "community": 21,
+      "community": 22,
       "norm_label": ".toggleflash()"
     },
     {
@@ -1881,7 +1881,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L103",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_flipcamera",
-      "community": 21,
+      "community": 22,
       "norm_label": ".flipcamera()"
     },
     {
@@ -1890,7 +1890,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L112",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_takephoto",
-      "community": 21,
+      "community": 22,
       "norm_label": ".takephoto()"
     },
     {
@@ -1899,7 +1899,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L145",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_navigatetoreplace",
-      "community": 21,
+      "community": 22,
       "norm_label": ".navigatetoreplace()"
     },
     {
@@ -1908,7 +1908,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/RecaptureCameraFragment.kt",
       "source_location": "L153",
       "id": "fragments_recapturecamerafragment_recapturecamerafragment_ondestroyview",
-      "community": 21,
+      "community": 22,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -1917,7 +1917,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ReplaceHistoryFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_replacehistoryfragment_kt",
-      "community": 55,
+      "community": 56,
       "norm_label": "replacehistoryfragment.kt"
     },
     {
@@ -1926,7 +1926,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ReplaceHistoryFragment.kt",
       "source_location": "L17",
       "id": "fragments_replacehistoryfragment_replacehistoryfragment",
-      "community": 55,
+      "community": 56,
       "norm_label": "replacehistoryfragment"
     },
     {
@@ -1935,7 +1935,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ReplaceHistoryFragment.kt",
       "source_location": "L23",
       "id": "fragments_replacehistoryfragment_replacehistoryfragment_onviewcreated",
-      "community": 55,
+      "community": 56,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -1944,7 +1944,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ReplaceHistoryFragment.kt",
       "source_location": "L71",
       "id": "fragments_replacehistoryfragment_replacehistoryfragment_ondestroyview",
-      "community": 55,
+      "community": 56,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2007,7 +2007,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanCareGuideFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_scancareguidefragment_kt",
-      "community": 56,
+      "community": 57,
       "norm_label": "scancareguidefragment.kt"
     },
     {
@@ -2016,7 +2016,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanCareGuideFragment.kt",
       "source_location": "L13",
       "id": "fragments_scancareguidefragment_scancareguidefragment",
-      "community": 56,
+      "community": 57,
       "norm_label": "scancareguidefragment"
     },
     {
@@ -2025,7 +2025,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanCareGuideFragment.kt",
       "source_location": "L17",
       "id": "fragments_scancareguidefragment_scancareguidefragment_onviewcreated",
-      "community": 56,
+      "community": 57,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2034,7 +2034,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanCareGuideFragment.kt",
       "source_location": "L56",
       "id": "fragments_scancareguidefragment_scancareguidefragment_ondestroyview",
-      "community": 56,
+      "community": 57,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_scanfragment_kt",
-      "community": 22,
+      "community": 23,
       "norm_label": "scanfragment.kt"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L28",
       "id": "fragments_scanfragment_scanfragment",
-      "community": 22,
+      "community": 23,
       "norm_label": "scanfragment"
     },
     {
@@ -2106,7 +2106,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L55",
       "id": "fragments_scanfragment_scanfragment_onviewcreated",
-      "community": 22,
+      "community": 23,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2115,7 +2115,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L87",
       "id": "fragments_scanfragment_scanfragment_checkcamerapermission",
-      "community": 22,
+      "community": 23,
       "norm_label": ".checkcamerapermission()"
     },
     {
@@ -2124,7 +2124,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L99",
       "id": "fragments_scanfragment_scanfragment_startcamera",
-      "community": 22,
+      "community": 23,
       "norm_label": ".startcamera()"
     },
     {
@@ -2133,7 +2133,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L126",
       "id": "fragments_scanfragment_scanfragment_toggleflash",
-      "community": 22,
+      "community": 23,
       "norm_label": ".toggleflash()"
     },
     {
@@ -2142,7 +2142,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L141",
       "id": "fragments_scanfragment_scanfragment_flipcamera",
-      "community": 22,
+      "community": 23,
       "norm_label": ".flipcamera()"
     },
     {
@@ -2151,7 +2151,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L150",
       "id": "fragments_scanfragment_scanfragment_takephoto",
-      "community": 22,
+      "community": 23,
       "norm_label": ".takephoto()"
     },
     {
@@ -2160,7 +2160,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L184",
       "id": "fragments_scanfragment_scanfragment_navigatetoqualitycheck",
-      "community": 22,
+      "community": 23,
       "norm_label": ".navigatetoqualitycheck()"
     },
     {
@@ -2169,7 +2169,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanFragment.kt",
       "source_location": "L189",
       "id": "fragments_scanfragment_scanfragment_ondestroyview",
-      "community": 22,
+      "community": 23,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2178,7 +2178,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanHeatmapFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_scanheatmapfragment_kt",
-      "community": 57,
+      "community": 58,
       "norm_label": "scanheatmapfragment.kt"
     },
     {
@@ -2187,7 +2187,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanHeatmapFragment.kt",
       "source_location": "L15",
       "id": "fragments_scanheatmapfragment_scanheatmapfragment",
-      "community": 57,
+      "community": 58,
       "norm_label": "scanheatmapfragment"
     },
     {
@@ -2196,7 +2196,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanHeatmapFragment.kt",
       "source_location": "L19",
       "id": "fragments_scanheatmapfragment_scanheatmapfragment_onviewcreated",
-      "community": 57,
+      "community": 58,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanHeatmapFragment.kt",
       "source_location": "L71",
       "id": "fragments_scanheatmapfragment_scanheatmapfragment_ondestroyview",
-      "community": 57,
+      "community": 58,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanLowConfidenceFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_scanlowconfidencefragment_kt",
-      "community": 58,
+      "community": 59,
       "norm_label": "scanlowconfidencefragment.kt"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanLowConfidenceFragment.kt",
       "source_location": "L14",
       "id": "fragments_scanlowconfidencefragment_scanlowconfidencefragment",
-      "community": 58,
+      "community": 59,
       "norm_label": "scanlowconfidencefragment"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanLowConfidenceFragment.kt",
       "source_location": "L18",
       "id": "fragments_scanlowconfidencefragment_scanlowconfidencefragment_onviewcreated",
-      "community": 58,
+      "community": 59,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2241,7 +2241,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanLowConfidenceFragment.kt",
       "source_location": "L60",
       "id": "fragments_scanlowconfidencefragment_scanlowconfidencefragment_ondestroyview",
-      "community": 58,
+      "community": 59,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropDetailFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_cropdetailfragment_kt",
-      "community": 59,
+      "community": 60,
       "norm_label": "cropdetailfragment.kt"
     },
     {
@@ -2439,7 +2439,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropDetailFragment.kt",
       "source_location": "L10",
       "id": "fragments_cropdetailfragment_cropdetailfragment",
-      "community": 59,
+      "community": 60,
       "norm_label": "cropdetailfragment"
     },
     {
@@ -2448,7 +2448,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropDetailFragment.kt",
       "source_location": "L14",
       "id": "fragments_cropdetailfragment_cropdetailfragment_onviewcreated",
-      "community": 59,
+      "community": 60,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2457,7 +2457,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropDetailFragment.kt",
       "source_location": "L30",
       "id": "fragments_cropdetailfragment_cropdetailfragment_ondestroyview",
-      "community": 59,
+      "community": 60,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2466,7 +2466,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropGuideFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_cropguidefragment_kt",
-      "community": 20,
+      "community": 21,
       "norm_label": "cropguidefragment.kt"
     },
     {
@@ -2475,7 +2475,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropGuideFragment.kt",
       "source_location": "L14",
       "id": "fragments_cropguidefragment_cropguidefragment",
-      "community": 20,
+      "community": 21,
       "norm_label": "cropguidefragment"
     },
     {
@@ -2484,7 +2484,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropGuideFragment.kt",
       "source_location": "L18",
       "id": "fragments_cropguidefragment_cropguidefragment_onviewcreated",
-      "community": 20,
+      "community": 21,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2493,7 +2493,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/CropGuideFragment.kt",
       "source_location": "L53",
       "id": "fragments_cropguidefragment_cropguidefragment_ondestroyview",
-      "community": 20,
+      "community": 21,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2502,7 +2502,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/FertilizerFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_fertilizerfragment_kt",
-      "community": 60,
+      "community": 61,
       "norm_label": "fertilizerfragment.kt"
     },
     {
@@ -2511,7 +2511,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/FertilizerFragment.kt",
       "source_location": "L15",
       "id": "fragments_fertilizerfragment_fertilizerfragment",
-      "community": 60,
+      "community": 61,
       "norm_label": "fertilizerfragment"
     },
     {
@@ -2520,7 +2520,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/FertilizerFragment.kt",
       "source_location": "L19",
       "id": "fragments_fertilizerfragment_fertilizerfragment_onviewcreated",
-      "community": 60,
+      "community": 61,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2529,7 +2529,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/FertilizerFragment.kt",
       "source_location": "L67",
       "id": "fragments_fertilizerfragment_fertilizerfragment_ondestroyview",
-      "community": 60,
+      "community": 61,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2538,7 +2538,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/HelpSupportFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_helpsupportfragment_kt",
-      "community": 69,
+      "community": 70,
       "norm_label": "helpsupportfragment.kt"
     },
     {
@@ -2547,7 +2547,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/HelpSupportFragment.kt",
       "source_location": "L11",
       "id": "fragments_helpsupportfragment_helpsupportfragment",
-      "community": 69,
+      "community": 70,
       "norm_label": "helpsupportfragment"
     },
     {
@@ -2556,7 +2556,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/HelpSupportFragment.kt",
       "source_location": "L13",
       "id": "fragments_helpsupportfragment_helpsupportfragment_onviewcreated",
-      "community": 69,
+      "community": 70,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2646,7 +2646,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/LanguageFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_languagefragment_kt",
-      "community": 61,
+      "community": 62,
       "norm_label": "languagefragment.kt"
     },
     {
@@ -2655,7 +2655,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/LanguageFragment.kt",
       "source_location": "L14",
       "id": "fragments_languagefragment_languagefragment",
-      "community": 61,
+      "community": 62,
       "norm_label": "languagefragment"
     },
     {
@@ -2664,7 +2664,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/LanguageFragment.kt",
       "source_location": "L18",
       "id": "fragments_languagefragment_languagefragment_onviewcreated",
-      "community": 61,
+      "community": 62,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2673,7 +2673,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/LanguageFragment.kt",
       "source_location": "L56",
       "id": "fragments_languagefragment_languagefragment_ondestroyview",
-      "community": 61,
+      "community": 62,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2808,7 +2808,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/MoreFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_morefragment_kt",
-      "community": 70,
+      "community": 71,
       "norm_label": "morefragment.kt"
     },
     {
@@ -2817,7 +2817,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/MoreFragment.kt",
       "source_location": "L12",
       "id": "fragments_morefragment_morefragment",
-      "community": 70,
+      "community": 71,
       "norm_label": "morefragment"
     },
     {
@@ -2826,7 +2826,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/MoreFragment.kt",
       "source_location": "L14",
       "id": "fragments_morefragment_morefragment_onviewcreated",
-      "community": 70,
+      "community": 71,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2862,7 +2862,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ProfileFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_profilefragment_kt",
-      "community": 71,
+      "community": 72,
       "norm_label": "profilefragment.kt"
     },
     {
@@ -2871,7 +2871,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ProfileFragment.kt",
       "source_location": "L12",
       "id": "fragments_profilefragment_profilefragment",
-      "community": 71,
+      "community": 72,
       "norm_label": "profilefragment"
     },
     {
@@ -2880,7 +2880,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ProfileFragment.kt",
       "source_location": "L14",
       "id": "fragments_profilefragment_profilefragment_onviewcreated",
-      "community": 71,
+      "community": 72,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2916,7 +2916,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_schemedetailfragment_kt",
-      "community": 72,
+      "community": 73,
       "norm_label": "schemedetailfragment.kt"
     },
     {
@@ -2925,7 +2925,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
       "source_location": "L12",
       "id": "fragments_schemedetailfragment_schemedetailfragment",
-      "community": 72,
+      "community": 73,
       "norm_label": "schemedetailfragment"
     },
     {
@@ -2934,7 +2934,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
       "source_location": "L14",
       "id": "fragments_schemedetailfragment_schemedetailfragment_onviewcreated",
-      "community": 72,
+      "community": 73,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2970,7 +2970,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SettingsFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_settingsfragment_kt",
-      "community": 73,
+      "community": 74,
       "norm_label": "settingsfragment.kt"
     },
     {
@@ -2979,7 +2979,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SettingsFragment.kt",
       "source_location": "L13",
       "id": "fragments_settingsfragment_settingsfragment",
-      "community": 73,
+      "community": 74,
       "norm_label": "settingsfragment"
     },
     {
@@ -2988,7 +2988,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SettingsFragment.kt",
       "source_location": "L15",
       "id": "fragments_settingsfragment_settingsfragment_onviewcreated",
-      "community": 73,
+      "community": 74,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3024,7 +3024,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SplashFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_splashfragment_kt",
-      "community": 74,
+      "community": 75,
       "norm_label": "splashfragment.kt"
     },
     {
@@ -3033,7 +3033,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SplashFragment.kt",
       "source_location": "L10",
       "id": "fragments_splashfragment_splashfragment",
-      "community": 74,
+      "community": 75,
       "norm_label": "splashfragment"
     },
     {
@@ -3042,7 +3042,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SplashFragment.kt",
       "source_location": "L12",
       "id": "fragments_splashfragment_splashfragment_onviewcreated",
-      "community": 74,
+      "community": 75,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3303,7 +3303,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/PestDetailFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_pestdetailfragment_kt",
-      "community": 75,
+      "community": 76,
       "norm_label": "pestdetailfragment.kt"
     },
     {
@@ -3312,7 +3312,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/PestDetailFragment.kt",
       "source_location": "L12",
       "id": "fragments_pestdetailfragment_pestdetailfragment",
-      "community": 75,
+      "community": 76,
       "norm_label": "pestdetailfragment"
     },
     {
@@ -3321,7 +3321,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/PestDetailFragment.kt",
       "source_location": "L14",
       "id": "fragments_pestdetailfragment_pestdetailfragment_onviewcreated",
-      "community": 75,
+      "community": 76,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3834,7 +3834,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/ApiService.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_network_apiservice_kt",
-      "community": 62,
+      "community": 63,
       "norm_label": "apiservice.kt"
     },
     {
@@ -3843,7 +3843,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/ApiService.kt",
       "source_location": "L19",
       "id": "network_apiservice_cloudpredictionresponse",
-      "community": 62,
+      "community": 63,
       "norm_label": "cloudpredictionresponse"
     },
     {
@@ -3852,7 +3852,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/ApiService.kt",
       "source_location": "L31",
       "id": "network_apiservice_apiservice",
-      "community": 62,
+      "community": 63,
       "norm_label": "apiservice"
     },
     {
@@ -3861,7 +3861,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/ApiService.kt",
       "source_location": "L40",
       "id": "network_apiservice_apiservice_predictcrophealth",
-      "community": 62,
+      "community": 63,
       "norm_label": ".predictcrophealth()"
     },
     {
@@ -3870,7 +3870,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/SchemesApiService.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_network_schemesapiservice_kt",
-      "community": 63,
+      "community": 64,
       "norm_label": "schemesapiservice.kt"
     },
     {
@@ -3879,7 +3879,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/SchemesApiService.kt",
       "source_location": "L7",
       "id": "network_schemesapiservice_govtschemeresponse",
-      "community": 63,
+      "community": 64,
       "norm_label": "govtschemeresponse"
     },
     {
@@ -3888,7 +3888,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/SchemesApiService.kt",
       "source_location": "L17",
       "id": "network_schemesapiservice_schemesapiservice",
-      "community": 63,
+      "community": 64,
       "norm_label": "schemesapiservice"
     },
     {
@@ -3897,7 +3897,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/network/SchemesApiService.kt",
       "source_location": "L18",
       "id": "network_schemesapiservice_schemesapiservice_fetchonlineschemes",
-      "community": 63,
+      "community": 64,
       "norm_label": ".fetchonlineschemes()"
     },
     {
@@ -3987,7 +3987,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FertilizerRepository.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_repository_fertilizerrepository_kt",
-      "community": 64,
+      "community": 65,
       "norm_label": "fertilizerrepository.kt"
     },
     {
@@ -3996,7 +3996,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FertilizerRepository.kt",
       "source_location": "L5",
       "id": "repository_fertilizerrepository_fertilizerrepository",
-      "community": 64,
+      "community": 65,
       "norm_label": "fertilizerrepository"
     },
     {
@@ -4005,7 +4005,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FertilizerRepository.kt",
       "source_location": "L16",
       "id": "repository_fertilizerrepository_fertilizerrepository_recommend",
-      "community": 64,
+      "community": 65,
       "norm_label": ".recommend()"
     },
     {
@@ -4014,7 +4014,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FertilizerRepository.kt",
       "source_location": "L27",
       "id": "repository_fertilizerrepository_fertilizerrepository_getallcropnames",
-      "community": 64,
+      "community": 65,
       "norm_label": ".getallcropnames()"
     },
     {
@@ -4167,7 +4167,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/CloudRepository.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_repository_cloudrepository_kt",
-      "community": 65,
+      "community": 66,
       "norm_label": "cloudrepository.kt"
     },
     {
@@ -4176,7 +4176,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/CloudRepository.kt",
       "source_location": "L22",
       "id": "repository_cloudrepository_cloudrepository",
-      "community": 65,
+      "community": 66,
       "norm_label": "cloudrepository"
     },
     {
@@ -4185,7 +4185,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/CloudRepository.kt",
       "source_location": "L49",
       "id": "repository_cloudrepository_cloudrepository_uploadimageforcloudanalysis",
-      "community": 65,
+      "community": 66,
       "norm_label": ".uploadimageforcloudanalysis()"
     },
     {
@@ -4194,7 +4194,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/CloudRepository.kt",
       "source_location": "L83",
       "id": "repository_cloudrepository_cloudrepository_updateserverurl",
-      "community": 65,
+      "community": 66,
       "norm_label": ".updateserverurl()"
     },
     {
@@ -4257,26 +4257,44 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_activities_mainactivity_kt",
-      "community": 76,
+      "community": 50,
       "norm_label": "mainactivity.kt"
     },
     {
       "label": "MainActivity",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L14",
+      "source_location": "L17",
       "id": "activities_mainactivity_mainactivity",
-      "community": 76,
+      "community": 50,
       "norm_label": "mainactivity"
     },
     {
       "label": ".onCreate()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L18",
+      "source_location": "L21",
       "id": "activities_mainactivity_mainactivity_oncreate",
-      "community": 76,
+      "community": 50,
       "norm_label": ".oncreate()"
+    },
+    {
+      "label": ".onWindowFocusChanged()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L63",
+      "id": "activities_mainactivity_mainactivity_onwindowfocuschanged",
+      "community": 50,
+      "norm_label": ".onwindowfocuschanged()"
+    },
+    {
+      "label": ".hideSystemStatusBar()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L70",
+      "id": "activities_mainactivity_mainactivity_hidesystemstatusbar",
+      "community": 50,
+      "norm_label": ".hidesystemstatusbar()"
     },
     {
       "label": "CropHealthActivity.kt",
@@ -4284,79 +4302,97 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_activities_crophealthactivity_kt",
-      "community": 24,
+      "community": 20,
       "norm_label": "crophealthactivity.kt"
     },
     {
       "label": "CropHealthActivity",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L34",
+      "source_location": "L37",
       "id": "activities_crophealthactivity_crophealthactivity",
-      "community": 24,
+      "community": 20,
       "norm_label": "crophealthactivity"
     },
     {
       "label": ".onCreate()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L52",
+      "source_location": "L55",
       "id": "activities_crophealthactivity_crophealthactivity_oncreate",
-      "community": 24,
+      "community": 20,
       "norm_label": ".oncreate()"
+    },
+    {
+      "label": ".onWindowFocusChanged()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
+      "source_location": "L68",
+      "id": "activities_crophealthactivity_crophealthactivity_onwindowfocuschanged",
+      "community": 20,
+      "norm_label": ".onwindowfocuschanged()"
+    },
+    {
+      "label": ".hideSystemStatusBar()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
+      "source_location": "L75",
+      "id": "activities_crophealthactivity_crophealthactivity_hidesystemstatusbar",
+      "community": 20,
+      "norm_label": ".hidesystemstatusbar()"
     },
     {
       "label": ".checkPermissionsAndStartCamera()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L63",
+      "source_location": "L82",
       "id": "activities_crophealthactivity_crophealthactivity_checkpermissionsandstartcamera",
-      "community": 24,
+      "community": 20,
       "norm_label": ".checkpermissionsandstartcamera()"
     },
     {
       "label": ".startCamera()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L71",
+      "source_location": "L90",
       "id": "activities_crophealthactivity_crophealthactivity_startcamera",
-      "community": 24,
+      "community": 20,
       "norm_label": ".startcamera()"
     },
     {
       "label": ".captureAndAnalyzeLeaf()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L93",
+      "source_location": "L112",
       "id": "activities_crophealthactivity_crophealthactivity_captureandanalyzeleaf",
-      "community": 24,
+      "community": 20,
       "norm_label": ".captureandanalyzeleaf()"
     },
     {
       "label": ".observeViewModelState()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L121",
+      "source_location": "L140",
       "id": "activities_crophealthactivity_crophealthactivity_observeviewmodelstate",
-      "community": 24,
+      "community": 20,
       "norm_label": ".observeviewmodelstate()"
     },
     {
       "label": ".imageProxyToBitmap()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L172",
+      "source_location": "L191",
       "id": "activities_crophealthactivity_crophealthactivity_imageproxytobitmap",
-      "community": 24,
+      "community": 20,
       "norm_label": ".imageproxytobitmap()"
     },
     {
       "label": ".onDestroy()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
-      "source_location": "L179",
+      "source_location": "L198",
       "id": "activities_crophealthactivity_crophealthactivity_ondestroy",
-      "community": 24,
+      "community": 20,
       "norm_label": ".ondestroy()"
     },
     {
@@ -4770,7 +4806,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/MobileNetV2Verifier.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_ml_mobilenetv2verifier_kt",
-      "community": 66,
+      "community": 67,
       "norm_label": "mobilenetv2verifier.kt"
     },
     {
@@ -4779,7 +4815,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/MobileNetV2Verifier.kt",
       "source_location": "L8",
       "id": "ml_mobilenetv2verifier_modelverificationresult",
-      "community": 66,
+      "community": 67,
       "norm_label": "modelverificationresult"
     },
     {
@@ -4788,7 +4824,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/MobileNetV2Verifier.kt",
       "source_location": "L27",
       "id": "ml_mobilenetv2verifier_mobilenetv2verifier",
-      "community": 66,
+      "community": 67,
       "norm_label": "mobilenetv2verifier"
     },
     {
@@ -4797,7 +4833,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/MobileNetV2Verifier.kt",
       "source_location": "L36",
       "id": "ml_mobilenetv2verifier_mobilenetv2verifier_verifyimplementation",
-      "community": 66,
+      "community": 67,
       "norm_label": ".verifyimplementation()"
     },
     {
@@ -4806,7 +4842,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/analysis/SeverityAnalyzer.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_analysis_severityanalyzer_kt",
-      "community": 50,
+      "community": 51,
       "norm_label": "severityanalyzer.kt"
     },
     {
@@ -4815,7 +4851,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/analysis/SeverityAnalyzer.kt",
       "source_location": "L10",
       "id": "analysis_severityanalyzer_infectiongrade",
-      "community": 50,
+      "community": 51,
       "norm_label": "infectiongrade"
     },
     {
@@ -4824,7 +4860,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/analysis/SeverityAnalyzer.kt",
       "source_location": "L20",
       "id": "analysis_severityanalyzer_severityresult",
-      "community": 50,
+      "community": 51,
       "norm_label": "severityresult"
     },
     {
@@ -4833,7 +4869,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/analysis/SeverityAnalyzer.kt",
       "source_location": "L33",
       "id": "analysis_severityanalyzer_severityanalyzer",
-      "community": 50,
+      "community": 51,
       "norm_label": "severityanalyzer"
     },
     {
@@ -4842,7 +4878,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/analysis/SeverityAnalyzer.kt",
       "source_location": "L43",
       "id": "analysis_severityanalyzer_severityanalyzer_analyzeseverity",
-      "community": 50,
+      "community": 51,
       "norm_label": ".analyzeseverity()"
     },
     {
@@ -5193,7 +5229,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/calendar/NotificationHelper.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_calendar_notificationhelper_kt",
-      "community": 67,
+      "community": 68,
       "norm_label": "notificationhelper.kt"
     },
     {
@@ -5202,7 +5238,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/calendar/NotificationHelper.kt",
       "source_location": "L14",
       "id": "calendar_notificationhelper_notificationhelper",
-      "community": 67,
+      "community": 68,
       "norm_label": "notificationhelper"
     },
     {
@@ -5211,7 +5247,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/calendar/NotificationHelper.kt",
       "source_location": "L20",
       "id": "calendar_notificationhelper_notificationhelper_createnotificationchannel",
-      "community": 67,
+      "community": 68,
       "norm_label": ".createnotificationchannel()"
     },
     {
@@ -5220,7 +5256,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/calendar/NotificationHelper.kt",
       "source_location": "L32",
       "id": "calendar_notificationhelper_notificationhelper_showactivitynotification",
-      "community": 67,
+      "community": 68,
       "norm_label": ".showactivitynotification()"
     },
     {
@@ -5715,7 +5751,7 @@
       "source_file": "PlantVillage-Dataset/scripts/upload_to_hf.py",
       "source_location": "L1",
       "id": "plantvillage_dataset_scripts_upload_to_hf_py",
-      "community": 68,
+      "community": 69,
       "norm_label": "upload_to_hf.py"
     },
     {
@@ -5724,7 +5760,7 @@
       "source_file": "PlantVillage-Dataset/scripts/upload_to_hf.py",
       "source_location": "L16",
       "id": "scripts_upload_to_hf_create_data_zip",
-      "community": 68,
+      "community": 69,
       "norm_label": "create_data_zip()"
     },
     {
@@ -5733,7 +5769,7 @@
       "source_file": "PlantVillage-Dataset/scripts/upload_to_hf.py",
       "source_location": "L53",
       "id": "scripts_upload_to_hf_upload_files",
-      "community": 68,
+      "community": 69,
       "norm_label": "upload_files()"
     },
     {
@@ -5742,7 +5778,7 @@
       "source_file": "PlantVillage-Dataset/scripts/upload_to_hf.py",
       "source_location": "L117",
       "id": "scripts_upload_to_hf_main",
-      "community": 68,
+      "community": 69,
       "norm_label": "main()"
     },
     {
@@ -5955,7 +5991,7 @@
     {
       "label": "BaseModel",
       "file_type": "code",
-      "source_file": "",
+      "source_file": "backend/app/main.py",
       "source_location": "",
       "id": "basemodel",
       "community": 7,
@@ -11384,6 +11420,48 @@
       "target": "activities_mainactivity_mainactivity_oncreate"
     },
     {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity",
+      "target": "activities_mainactivity_mainactivity_onwindowfocuschanged"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity",
+      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity_oncreate",
+      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity_onwindowfocuschanged",
+      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
@@ -11402,6 +11480,26 @@
       "confidence_score": 1.0,
       "source": "activities_crophealthactivity_crophealthactivity",
       "target": "activities_crophealthactivity_crophealthactivity_oncreate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_crophealthactivity_crophealthactivity",
+      "target": "activities_crophealthactivity_crophealthactivity_onwindowfocuschanged"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_crophealthactivity_crophealthactivity",
+      "target": "activities_crophealthactivity_crophealthactivity_hidesystemstatusbar"
     },
     {
       "relation": "method",
@@ -11468,6 +11566,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_crophealthactivity_crophealthactivity_oncreate",
+      "target": "activities_crophealthactivity_crophealthactivity_hidesystemstatusbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
       "source_location": "L59",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11484,6 +11593,17 @@
       "confidence_score": 1.0,
       "source": "activities_crophealthactivity_crophealthactivity_oncreate",
       "target": "activities_crophealthactivity_crophealthactivity_observeviewmodelstate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_crophealthactivity_crophealthactivity_onwindowfocuschanged",
+      "target": "activities_crophealthactivity_crophealthactivity_hidesystemstatusbar"
     },
     {
       "relation": "calls",
@@ -13053,9 +13173,9 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repository_fewshotrepositorytest_fewshotrepositorytest",
-      "target": "repository_fewshotrepositorytest_fewshotrepositorytest_testcosinedistance_identicalvectors_returnszero",
-      "confidence_score": 1.0
+      "target": "repository_fewshotrepositorytest_fewshotrepositorytest_testcosinedistance_identicalvectors_returnszero"
     },
     {
       "relation": "method",
@@ -13063,9 +13183,9 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repository_fewshotrepositorytest_fewshotrepositorytest",
-      "target": "repository_fewshotrepositorytest_fewshotrepositorytest_testcosinedistance_orthogonalvectors_returnsone",
-      "confidence_score": 1.0
+      "target": "repository_fewshotrepositorytest_fewshotrepositorytest_testcosinedistance_orthogonalvectors_returnsone"
     },
     {
       "relation": "method",
@@ -13408,9 +13528,9 @@
       "source_file": "backend/mlflow_tracking.py",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_mlflow_tracking_py",
-      "target": "backend_mlflow_tracking_log_experiment_run",
-      "confidence_score": 1.0
+      "target": "backend_mlflow_tracking_log_experiment_run"
     },
     {
       "relation": "rationale_for",
@@ -13418,9 +13538,9 @@
       "source_file": "backend/mlflow_tracking.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_mlflow_tracking_rationale_1",
-      "target": "backend_mlflow_tracking_py",
-      "confidence_score": 1.0
+      "target": "backend_mlflow_tracking_py"
     },
     {
       "relation": "rationale_for",
@@ -13428,9 +13548,9 @@
       "source_file": "backend/app/__init__.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_init_rationale_1",
-      "target": "backend_app_init_py",
-      "confidence_score": 1.0
+      "target": "backend_app_init_py"
     },
     {
       "relation": "contains",
@@ -13438,9 +13558,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_cloudpredictionresponse",
-      "confidence_score": 1.0
+      "target": "app_main_cloudpredictionresponse"
     },
     {
       "relation": "contains",
@@ -13448,9 +13568,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_chatbotrequest",
-      "confidence_score": 1.0
+      "target": "app_main_chatbotrequest"
     },
     {
       "relation": "contains",
@@ -13458,9 +13578,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_chatbotresponse",
-      "confidence_score": 1.0
+      "target": "app_main_chatbotresponse"
     },
     {
       "relation": "contains",
@@ -13468,9 +13588,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_govtscheme",
-      "confidence_score": 1.0
+      "target": "app_main_govtscheme"
     },
     {
       "relation": "contains",
@@ -13478,9 +13598,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_generate_gradcam_overlay",
-      "confidence_score": 1.0
+      "target": "app_main_generate_gradcam_overlay"
     },
     {
       "relation": "contains",
@@ -13488,9 +13608,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L148",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_health_check",
-      "confidence_score": 1.0
+      "target": "app_main_health_check"
     },
     {
       "relation": "contains",
@@ -13498,9 +13618,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L161",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_predict_crop_health",
-      "confidence_score": 1.0
+      "target": "app_main_predict_crop_health"
     },
     {
       "relation": "contains",
@@ -13508,9 +13628,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L238",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_chatbot_chat",
-      "confidence_score": 1.0
+      "target": "app_main_chatbot_chat"
     },
     {
       "relation": "contains",
@@ -13518,9 +13638,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L301",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_app_main_py",
-      "target": "app_main_get_online_schemes",
-      "confidence_score": 1.0
+      "target": "app_main_get_online_schemes"
     },
     {
       "relation": "rationale_for",
@@ -13528,9 +13648,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_1",
-      "target": "backend_app_main_py",
-      "confidence_score": 1.0
+      "target": "backend_app_main_py"
     },
     {
       "relation": "inherits",
@@ -13538,9 +13658,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_cloudpredictionresponse",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "calls",
@@ -13549,9 +13669,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_predict_crop_health",
-      "target": "app_main_cloudpredictionresponse",
-      "confidence_score": 1.0
+      "target": "app_main_cloudpredictionresponse"
     },
     {
       "relation": "inherits",
@@ -13559,9 +13679,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_chatbotrequest",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -13569,9 +13689,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_chatbotresponse",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -13579,9 +13699,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_govtscheme",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "calls",
@@ -13590,9 +13710,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L250",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_chatbot_chat",
-      "target": "app_main_chatbotresponse",
-      "confidence_score": 1.0
+      "target": "app_main_chatbotresponse"
     },
     {
       "relation": "calls",
@@ -13601,9 +13721,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L304",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_get_online_schemes",
-      "target": "app_main_govtscheme",
-      "confidence_score": 1.0
+      "target": "app_main_govtscheme"
     },
     {
       "relation": "calls",
@@ -13612,9 +13732,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L220",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_predict_crop_health",
-      "target": "app_main_generate_gradcam_overlay",
-      "confidence_score": 1.0
+      "target": "app_main_generate_gradcam_overlay"
     },
     {
       "relation": "rationale_for",
@@ -13622,9 +13742,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_112",
-      "target": "app_main_generate_gradcam_overlay",
-      "confidence_score": 1.0
+      "target": "app_main_generate_gradcam_overlay"
     },
     {
       "relation": "rationale_for",
@@ -13632,9 +13752,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L149",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_149",
-      "target": "app_main_health_check",
-      "confidence_score": 1.0
+      "target": "app_main_health_check"
     },
     {
       "relation": "rationale_for",
@@ -13642,9 +13762,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L167",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_167",
-      "target": "app_main_predict_crop_health",
-      "confidence_score": 1.0
+      "target": "app_main_predict_crop_health"
     },
     {
       "relation": "rationale_for",
@@ -13652,9 +13772,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L239",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_239",
-      "target": "app_main_chatbot_chat",
-      "confidence_score": 1.0
+      "target": "app_main_chatbot_chat"
     },
     {
       "relation": "rationale_for",
@@ -13662,9 +13782,9 @@
       "source_file": "backend/app/main.py",
       "source_location": "L302",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_main_rationale_302",
-      "target": "app_main_get_online_schemes",
-      "confidence_score": 1.0
+      "target": "app_main_get_online_schemes"
     },
     {
       "relation": "rationale_for",
@@ -13672,9 +13792,9 @@
       "source_file": "backend/tests/__init__.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_init_rationale_1",
-      "target": "backend_tests_init_py",
-      "confidence_score": 1.0
+      "target": "backend_tests_init_py"
     },
     {
       "relation": "contains",
@@ -13682,9 +13802,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_create_sharp_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_sharp_leaf_image_bytes"
     },
     {
       "relation": "contains",
@@ -13692,9 +13812,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_create_blurry_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_blurry_leaf_image_bytes"
     },
     {
       "relation": "contains",
@@ -13702,9 +13822,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_health_check_returns_ok",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_health_check_returns_ok"
     },
     {
       "relation": "contains",
@@ -13712,9 +13832,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_predict_valid_sharp_leaf_returns_diagnosis_and_gradcam",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_valid_sharp_leaf_returns_diagnosis_and_gradcam"
     },
     {
       "relation": "contains",
@@ -13722,9 +13842,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_predict_supports_image_field_name",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_supports_image_field_name"
     },
     {
       "relation": "contains",
@@ -13732,9 +13852,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_predict_blurry_image_returns_quality_gate_warning",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_blurry_image_returns_quality_gate_warning"
     },
     {
       "relation": "contains",
@@ -13742,9 +13862,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_predict_blurry_image_strict_mode_raises_400",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_blurry_image_strict_mode_raises_400"
     },
     {
       "relation": "contains",
@@ -13752,9 +13872,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_predict_corrupted_payload_returns_400",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_corrupted_payload_returns_400"
     },
     {
       "relation": "contains",
@@ -13762,9 +13882,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_chatbot_chat_deterministic_fallback",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_chatbot_chat_deterministic_fallback"
     },
     {
       "relation": "contains",
@@ -13772,9 +13892,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_tests_test_api_py",
-      "target": "tests_test_api_test_get_online_schemes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_get_online_schemes"
     },
     {
       "relation": "rationale_for",
@@ -13782,9 +13902,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_rationale_1",
-      "target": "backend_tests_test_api_py",
-      "confidence_score": 1.0
+      "target": "backend_tests_test_api_py"
     },
     {
       "relation": "calls",
@@ -13793,9 +13913,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_test_predict_valid_sharp_leaf_returns_diagnosis_and_gradcam",
-      "target": "tests_test_api_create_sharp_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_sharp_leaf_image_bytes"
     },
     {
       "relation": "calls",
@@ -13804,9 +13924,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_test_predict_supports_image_field_name",
-      "target": "tests_test_api_create_sharp_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_sharp_leaf_image_bytes"
     },
     {
       "relation": "rationale_for",
@@ -13814,9 +13934,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_rationale_23",
-      "target": "tests_test_api_create_sharp_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_sharp_leaf_image_bytes"
     },
     {
       "relation": "calls",
@@ -13825,9 +13945,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_test_predict_blurry_image_returns_quality_gate_warning",
-      "target": "tests_test_api_create_blurry_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_blurry_leaf_image_bytes"
     },
     {
       "relation": "calls",
@@ -13836,9 +13956,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_test_predict_blurry_image_strict_mode_raises_400",
-      "target": "tests_test_api_create_blurry_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_blurry_leaf_image_bytes"
     },
     {
       "relation": "rationale_for",
@@ -13846,9 +13966,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_rationale_37",
-      "target": "tests_test_api_create_blurry_leaf_image_bytes",
-      "confidence_score": 1.0
+      "target": "tests_test_api_create_blurry_leaf_image_bytes"
     },
     {
       "relation": "rationale_for",
@@ -13856,9 +13976,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_rationale_86",
-      "target": "tests_test_api_test_predict_supports_image_field_name",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_supports_image_field_name"
     },
     {
       "relation": "rationale_for",
@@ -13866,9 +13986,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_rationale_98",
-      "target": "tests_test_api_test_predict_blurry_image_returns_quality_gate_warning",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_blurry_image_returns_quality_gate_warning"
     },
     {
       "relation": "rationale_for",
@@ -13876,9 +13996,9 @@
       "source_file": "backend/tests/test_api.py",
       "source_location": "L113",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_api_rationale_113",
-      "target": "tests_test_api_test_predict_blurry_image_strict_mode_raises_400",
-      "confidence_score": 1.0
+      "target": "tests_test_api_test_predict_blurry_image_strict_mode_raises_400"
     },
     {
       "relation": "contains",
@@ -13886,9 +14006,9 @@
       "source_file": "evaluation/baseline_comparison.py",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "evaluation_baseline_comparison_py",
-      "target": "evaluation_baseline_comparison_compute_ece",
-      "confidence_score": 1.0
+      "target": "evaluation_baseline_comparison_compute_ece"
     },
     {
       "relation": "contains",
@@ -13896,9 +14016,9 @@
       "source_file": "evaluation/baseline_comparison.py",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "evaluation_baseline_comparison_py",
-      "target": "evaluation_baseline_comparison_apply_temperature_scaling",
-      "confidence_score": 1.0
+      "target": "evaluation_baseline_comparison_apply_temperature_scaling"
     },
     {
       "relation": "contains",
@@ -13906,9 +14026,9 @@
       "source_file": "evaluation/baseline_comparison.py",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "evaluation_baseline_comparison_py",
-      "target": "evaluation_baseline_comparison_run_baseline_comparison",
-      "confidence_score": 1.0
+      "target": "evaluation_baseline_comparison_run_baseline_comparison"
     },
     {
       "relation": "contains",
@@ -13916,9 +14036,9 @@
       "source_file": "evaluation/baseline_comparison.py",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "evaluation_baseline_comparison_py",
-      "target": "evaluation_baseline_comparison_run_robustness_experiment",
-      "confidence_score": 1.0
+      "target": "evaluation_baseline_comparison_run_robustness_experiment"
     },
     {
       "relation": "rationale_for",
@@ -13926,9 +14046,9 @@
       "source_file": "evaluation/baseline_comparison.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "evaluation_baseline_comparison_rationale_1",
-      "target": "evaluation_baseline_comparison_py",
-      "confidence_score": 1.0
+      "target": "evaluation_baseline_comparison_py"
     },
     {
       "relation": "rationale_for",
@@ -13936,9 +14056,9 @@
       "source_file": "evaluation/baseline_comparison.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "evaluation_baseline_comparison_rationale_34",
-      "target": "evaluation_baseline_comparison_compute_ece",
-      "confidence_score": 1.0
+      "target": "evaluation_baseline_comparison_compute_ece"
     },
     {
       "relation": "rationale_for",
@@ -13946,11 +14066,11 @@
       "source_file": "evaluation/baseline_comparison.py",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "evaluation_baseline_comparison_rationale_55",
-      "target": "evaluation_baseline_comparison_apply_temperature_scaling",
-      "confidence_score": 1.0
+      "target": "evaluation_baseline_comparison_apply_temperature_scaling"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3a669a6d4fb81aa930e1d05993533db52855cbaf"
+  "built_at_commit": "22e0fe7d1251f7e7a3c1f5900121e0455679fd55"
 }

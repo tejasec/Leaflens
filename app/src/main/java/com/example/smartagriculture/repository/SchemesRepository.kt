@@ -98,11 +98,11 @@ class SchemesRepository(private val context: Context) {
 
     private fun SchemeEntity.toDomainScheme(): Scheme {
         return Scheme(
-            title = this.title,
-            description = this.description,
-            eligibility = this.eligibility,
-            fullDetails = this.details,
-            link = this.applicationUrl
+            title = this.title ?: "Government Scheme",
+            description = this.description ?: "Agricultural welfare scheme details.",
+            eligibility = this.eligibility ?: "All Eligible Farmers",
+            fullDetails = if (!this.details.isNullOrBlank()) this.details else (this.description ?: "Agricultural welfare scheme details."),
+            link = this.applicationUrl ?: ""
         )
     }
 

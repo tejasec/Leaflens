@@ -18,7 +18,10 @@
         <item name="colorSurfaceVariant">#242E27</item>
         <item name="colorOnSurface">#FFFFFF</item>
         <item name="colorOnSurfaceVariant">#9CA3AF</item>
-        
+
+        <!-- Disable/Hide System Status Bar -->
+        <item name="android:windowFullscreen">true</item>
+
         <!-- Typography -->
         <item name="fontFamily">sans-serif</item>
     </style>

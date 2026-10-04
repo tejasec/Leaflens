@@ -19,26 +19,32 @@ import kotlinx.coroutines.launch
 
 class SchemesFragment : Fragment(R.layout.fragment_schemes) {
 
-    private lateinit var schemesRepository: SchemesRepository
+    private var schemesRepository: SchemesRepository? = null
     private var allSchemes: List<Scheme> = emptyList()
     private var adapter: SchemesAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        schemesRepository = SchemesRepository(requireContext())
+        val safeContext = context ?: return
+        val repository = SchemesRepository(safeContext)
+        schemesRepository = repository
 
         val rvSchemes = view.findViewById<RecyclerView>(R.id.rvSchemes)
         val pbLoading = view.findViewById<ProgressBar>(R.id.pbLoadingSchemes)
         val etSearch = view.findViewById<EditText>(R.id.etSearchSchemes)
 
-        rvSchemes?.layoutManager = LinearLayoutManager(requireContext())
+        rvSchemes?.layoutManager = LinearLayoutManager(safeContext)
 
         val onSchemeClick: (Scheme) -> Unit = { scheme ->
-            val bundle = Bundle().apply {
-                putSerializable("scheme", scheme)
+            try {
+                val bundle = Bundle().apply {
+                    putSerializable("scheme", scheme)
+                }
+                findNavController().navigate(R.id.action_schemesFragment_to_schemeDetailFragment, bundle)
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            findNavController().navigate(R.id.action_schemesFragment_to_schemeDetailFragment, bundle)
         }
 
         // Show progress and fetch schemes via Repository (Online -> Room DB -> Offline Fallback)
@@ -46,7 +52,7 @@ class SchemesFragment : Fragment(R.layout.fragment_schemes) {
 
         viewLifecycleOwner.lifecycleScope.launch {
             allSchemes = try {
-                schemesRepository.getSchemes()
+                repository.getSchemes()
             } catch (e: Exception) {
                 e.printStackTrace()
                 emptyList()
@@ -64,10 +70,11 @@ class SchemesFragment : Fragment(R.layout.fragment_schemes) {
                 val filtered = if (query.isEmpty()) {
                     allSchemes
                 } else {
-                    allSchemes.filter {
-                        (it.title.lowercase().contains(query)) ||
-                                (it.description.lowercase().contains(query)) ||
-                                (it.eligibility.lowercase().contains(query))
+                    allSchemes.filter { scheme ->
+                        val titleMatch = scheme.title?.lowercase()?.contains(query) == true
+                        val descMatch = scheme.description?.lowercase()?.contains(query) == true
+                        val eligMatch = scheme.eligibility?.lowercase()?.contains(query) == true
+                        titleMatch || descMatch || eligMatch
                     }
                 }
                 adapter = SchemesAdapter(filtered, onSchemeClick)

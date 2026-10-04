@@ -36,7 +36,7 @@ sealed class CropHealthUiState {
 }
 
 /**
- * Hybrid Orchestration ViewModel for Offline-First Mobile Crop Health Assistant (Project BAI-03).
+ * Hybrid Orchestration ViewModel for Offline-First Mobile Crop Health Assistant (LeafLens AI).
  *
  * Implements the complete hybrid decision pipeline:
  * Step A: Pre-inference OpenCV Image Quality Check (Blur & Extreme Lighting).

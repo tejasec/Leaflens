@@ -73,7 +73,7 @@ object PdfReportGenerator {
         var y = 40f
 
         // 1. Header Banner
-        canvas.drawText("BAI-03 Edge AI Crop Health Diagnostic Dossier", 40f, y, titlePaint)
+        canvas.drawText("LeafLens AI Edge Diagnostic Dossier", 40f, y, titlePaint)
         y += 20f
 
         val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US)
@@ -143,7 +143,7 @@ object PdfReportGenerator {
 
         canvas.drawText("MANDATORY NON-DIAGNOSTIC LEGAL DISCLAIMER:", 40f, y, disclaimerPaint)
         y += 12f
-        canvas.drawText("BAI-03 is an AI-assisted diagnostic tool designed for preliminary field guidance only.", 40f, y, disclaimerPaint)
+        canvas.drawText("LeafLens AI is an AI-assisted diagnostic tool designed for preliminary field guidance only.", 40f, y, disclaimerPaint)
         y += 10f
         canvas.drawText("Results must be verified by a certified agronomist before applying large-scale chemical treatments.", 40f, y, disclaimerPaint)
 

@@ -1,16 +1,16 @@
 # Graph Report - Leaflens  (2026-10-04)
 
 ## Corpus Check
-- 141 files · ~100,647,961 words
+- 141 files · ~100,698,119 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 703 nodes · 744 edges · 93 communities detected
+- 707 nodes · 752 edges · 93 communities detected
 - Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3a669a6d`
+- Built from commit: `22e0fe7d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -110,15 +110,15 @@
 - [[_COMMUNITY_Community 96|Community 96]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `CropHealthClassifier` - 10 edges
-2. `VoiceAssistantService` - 10 edges
-3. `FewShotRepositoryTest` - 10 edges
-4. `RecaptureCameraFragment` - 9 edges
-5. `ScanFragment` - 9 edges
-6. `TFLiteClassifier` - 9 edges
-7. `UserDao` - 8 edges
-8. `CropRepository` - 8 edges
-9. `CropHealthActivity` - 8 edges
+1. `CropHealthActivity` - 10 edges
+2. `CropHealthClassifier` - 10 edges
+3. `VoiceAssistantService` - 10 edges
+4. `FewShotRepositoryTest` - 10 edges
+5. `RecaptureCameraFragment` - 9 edges
+6. `ScanFragment` - 9 edges
+7. `TFLiteClassifier` - 9 edges
+8. `UserDao` - 8 edges
+9. `CropRepository` - 8 edges
 10. `CropActivityDao` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -215,7 +215,7 @@ Nodes (3): CropDiseaseAdapter, ViewHolder, CropDetailsFragment
 Cohesion: 0.2
 Nodes (4): SoilAdapter, SoilViewHolder, SoilFragment, Soil
 
-### Community 20 - "Community 20"
+### Community 21 - "Community 21"
 Cohesion: 0.22
 Nodes (3): PopularCropAdapter, ViewHolder, CropGuideFragment
 
@@ -239,11 +239,11 @@ Nodes (3): MandiApiService, MandiRecord, MandiResponse
 Cohesion: 0.4
 Nodes (3): CurrentWeather, WeatherApiService, WeatherResponse
 
-### Community 50 - "Community 50"
+### Community 51 - "Community 51"
 Cohesion: 0.5
 Nodes (3): InfectionGrade, SeverityAnalyzer, SeverityResult
 
-### Community 68 - "Community 68"
+### Community 69 - "Community 69"
 Cohesion: 0.83
 Nodes (3): create_data_zip(), main(), upload_files()
 

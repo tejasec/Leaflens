@@ -26,9 +26,9 @@ class SchemesAdapter(
 
     override fun onBindViewHolder(holder: SchemeViewHolder, position: Int) {
         val scheme = schemes[position]
-        holder.tvTitle.text = scheme.title
-        holder.tvDesc.text = scheme.description
-        holder.tvEligibility.text = "Eligibility: ${scheme.eligibility}"
+        holder.tvTitle?.text = scheme.title ?: "Government Scheme"
+        holder.tvDesc?.text = scheme.description ?: ""
+        holder.tvEligibility?.text = "Eligibility: ${scheme.eligibility ?: "All Farmers"}"
         holder.itemView.setOnClickListener { onItemClick(scheme) }
     }
 

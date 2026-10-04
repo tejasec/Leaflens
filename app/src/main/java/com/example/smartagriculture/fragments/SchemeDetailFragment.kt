@@ -22,10 +22,10 @@ class SchemeDetailFragment : Fragment(R.layout.fragment_scheme_detail) {
         }
 
         scheme?.let {
-            view.findViewById<TextView>(R.id.tvDetailTitle).text = it.title
-            view.findViewById<TextView>(R.id.tvDetailEligibility).text = "Eligibility: ${it.eligibility}"
-            view.findViewById<TextView>(R.id.tvDetailFullDesc).text = it.fullDetails
-            view.findViewById<TextView>(R.id.tvDetailLink).text = "Official Portal: ${it.link}"
+            view.findViewById<TextView>(R.id.tvDetailTitle)?.text = it.title
+            view.findViewById<TextView>(R.id.tvDetailEligibility)?.text = "Eligibility: ${it.eligibility}"
+            view.findViewById<TextView>(R.id.tvDetailFullDesc)?.text = if (!it.fullDetails.isNullOrBlank()) it.fullDetails else it.description
+            view.findViewById<TextView>(R.id.tvDetailLink)?.text = "Official Portal: ${it.link}"
         }
     }
 }
