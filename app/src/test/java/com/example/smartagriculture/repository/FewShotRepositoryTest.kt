@@ -56,6 +56,28 @@ class FewShotRepositoryTest {
     }
 
     @Test
+    fun testCosineDistance_identicalVectors_returnsZero() {
+        val vec1 = listOf(0.5, 0.5, 0.5, 0.5)
+        val vec2 = listOf(0.5, 0.5, 0.5, 0.5)
+
+        val similarity = repository.computeCosineSimilarity(vec1, vec2)
+        val distance = 1.0 - similarity
+
+        assertEquals(0.0, distance, 0.0001)
+    }
+
+    @Test
+    fun testCosineDistance_orthogonalVectors_returnsOne() {
+        val vec1 = listOf(1.0, 0.0, 0.0)
+        val vec2 = listOf(0.0, 1.0, 0.0)
+
+        val similarity = repository.computeCosineSimilarity(vec1, vec2)
+        val distance = 1.0 - similarity
+
+        assertEquals(1.0, distance, 0.0001)
+    }
+
+    @Test
     fun testClassifyFewShot_matchingPrototypeAboveThreshold_returnsBestMatch() = runTest {
         val prototypes = listOf(
             PrototypeEntity(

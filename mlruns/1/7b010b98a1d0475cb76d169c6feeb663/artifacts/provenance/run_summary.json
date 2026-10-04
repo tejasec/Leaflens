@@ -1,0 +1,30 @@
+{
+  "params": {
+    "model_architecture": "MobileNetV2-InvertedResiduals",
+    "precision": "INT8-PostTrainingQuantization",
+    "runtime_engine": "TensorFlow-Lite-2.16",
+    "input_resolution": "224x224x3",
+    "target_disease_classes": 25,
+    "temperature_parameter_T": 1.35,
+    "confidence_threshold_tau": 0.7,
+    "quality_gate_blur_min_var": 100.0,
+    "few_shot_metric_space": "CosineDistance-kNN-1024d",
+    "academic_code": "BAI-03",
+    "institution": "KES Shroff College / University of Mumbai"
+  },
+  "metrics": {
+    "macro_f1": 0.964,
+    "overall_accuracy": 0.968,
+    "uncalibrated_ece": 0.148,
+    "calibrated_ece": 0.053,
+    "ece_relative_reduction_pct": 64.2,
+    "mean_edge_latency_ms": 162.0,
+    "snapdragon695_gpu_latency_ms": 142.0,
+    "exynos850_cpu_latency_ms": 185.0,
+    "pointing_game_saliency_hit_rate": 0.884,
+    "model_storage_size_mb": 2.5,
+    "cellular_bandwidth_savings_pct": 98.2,
+    "system_usability_scale_sus": 86.4
+  },
+  "run_id": "7b010b98a1d0475cb76d169c6feeb663"
+}

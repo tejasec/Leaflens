@@ -32,7 +32,7 @@ class SchemesFragment : Fragment(R.layout.fragment_schemes) {
         val pbLoading = view.findViewById<ProgressBar>(R.id.pbLoadingSchemes)
         val etSearch = view.findViewById<EditText>(R.id.etSearchSchemes)
 
-        rvSchemes.layoutManager = LinearLayoutManager(requireContext())
+        rvSchemes?.layoutManager = LinearLayoutManager(requireContext())
 
         val onSchemeClick: (Scheme) -> Unit = { scheme ->
             val bundle = Bundle().apply {
@@ -45,11 +45,16 @@ class SchemesFragment : Fragment(R.layout.fragment_schemes) {
         pbLoading?.visibility = View.VISIBLE
 
         viewLifecycleOwner.lifecycleScope.launch {
-            allSchemes = schemesRepository.getSchemes()
+            allSchemes = try {
+                schemesRepository.getSchemes()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                emptyList()
+            }
             pbLoading?.visibility = View.GONE
 
             adapter = SchemesAdapter(allSchemes, onSchemeClick)
-            rvSchemes.adapter = adapter
+            rvSchemes?.adapter = adapter
         }
 
         etSearch?.addTextChangedListener(object : TextWatcher {
@@ -60,13 +65,13 @@ class SchemesFragment : Fragment(R.layout.fragment_schemes) {
                     allSchemes
                 } else {
                     allSchemes.filter {
-                        it.title.lowercase().contains(query) ||
-                                it.description.lowercase().contains(query) ||
-                                it.eligibility.lowercase().contains(query)
+                        (it.title.lowercase().contains(query)) ||
+                                (it.description.lowercase().contains(query)) ||
+                                (it.eligibility.lowercase().contains(query))
                     }
                 }
                 adapter = SchemesAdapter(filtered, onSchemeClick)
-                rvSchemes.adapter = adapter
+                rvSchemes?.adapter = adapter
             }
             override fun afterTextChanged(s: Editable?) {}
         })

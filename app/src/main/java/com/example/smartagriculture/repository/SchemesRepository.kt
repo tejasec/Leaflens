@@ -70,10 +70,10 @@ class SchemesRepository(private val context: Context) {
                 val entities = networkSchemes.mapIndexed { index, resp ->
                     SchemeEntity(
                         id = resp.id ?: "scheme_$index",
-                        title = resp.title,
-                        description = resp.description,
+                        title = resp.title ?: "Government Scheme",
+                        description = resp.description ?: "Agricultural welfare scheme details.",
                         eligibility = resp.eligibility ?: "All Eligible Farmers",
-                        details = resp.details ?: resp.description,
+                        details = resp.details ?: (resp.description ?: "Agricultural welfare scheme details."),
                         applicationUrl = resp.applicationUrl ?: "",
                         subsidyAmount = resp.subsidyAmount ?: ""
                     )
@@ -82,8 +82,8 @@ class SchemesRepository(private val context: Context) {
                 schemeDao.insertAll(entities)
                 return@withContext entities.map { it.toDomainScheme() }
             }
-        } catch (_: Exception) {
-            // Network request failed, fallback to local Room cache
+        } catch (_: Throwable) {
+            // Network request failed or parse error occurred, fallback to local Room cache
         }
 
         // 1. Fallback to cached schemes in Room SQLite database

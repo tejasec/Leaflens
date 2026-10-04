@@ -1,0 +1,57 @@
+{
+  "benchmark_provenance": "K.E.S. Shroff College Capstone Portfolio AY 2026-27 (BAI-03)",
+  "metrics": {
+    "macro_f1": 0.964,
+    "overall_accuracy": 0.968,
+    "latency_ms": 162.0,
+    "calibrated_ece": 0.053,
+    "uncalibrated_ece": 0.148,
+    "temperature": 1.35,
+    "pointing_game_hit_rate": 0.884,
+    "blur_threshold": 100.0
+  },
+  "robustness_experiment": [
+    {
+      "kernel_size": 1,
+      "laplacian_variance": 578.99,
+      "quality_gate_passed": true,
+      "vanilla_behavior": "Processes Normally",
+      "leaflens_behavior": "High-Confidence Scan"
+    },
+    {
+      "kernel_size": 5,
+      "laplacian_variance": 40.57,
+      "quality_gate_passed": false,
+      "vanilla_behavior": "Processes (High Risk)",
+      "leaflens_behavior": "Intercepted (Prompt Retake)"
+    },
+    {
+      "kernel_size": 11,
+      "laplacian_variance": 5.28,
+      "quality_gate_passed": false,
+      "vanilla_behavior": "Processes (High Risk)",
+      "leaflens_behavior": "Intercepted (Prompt Retake)"
+    },
+    {
+      "kernel_size": 21,
+      "laplacian_variance": 1.42,
+      "quality_gate_passed": false,
+      "vanilla_behavior": "Processes (High Risk)",
+      "leaflens_behavior": "Intercepted (Prompt Retake)"
+    },
+    {
+      "kernel_size": 31,
+      "laplacian_variance": 0.88,
+      "quality_gate_passed": false,
+      "vanilla_behavior": "Processes (High Risk)",
+      "leaflens_behavior": "Intercepted (Prompt Retake)"
+    },
+    {
+      "kernel_size": 41,
+      "laplacian_variance": 1.16,
+      "quality_gate_passed": false,
+      "vanilla_behavior": "Processes (High Risk)",
+      "leaflens_behavior": "Intercepted (Prompt Retake)"
+    }
+  ]
+}

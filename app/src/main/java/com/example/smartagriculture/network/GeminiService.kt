@@ -120,4 +120,47 @@ object GeminiService {
             )
         }
     }
+
+    suspend fun askCropDoctor(
+        diseaseName: String,
+        scientificName: String,
+        confidence: Int,
+        userQuestion: String,
+        organicCare: String = "",
+        chemicalCare: String = ""
+    ): String {
+        if (generativeModel == null) {
+            delay(1200)
+            val q = userQuestion.lowercase()
+            return when {
+                q.contains("spray") || q.contains("interval") ->
+                    "For $diseaseName ($scientificName), spray copper-based fungicide or Chlorothalonil every 7 to 10 days during humid weather. Avoid spraying during peak sunlight to prevent leaf burn."
+                q.contains("fertilizer") || q.contains("organic") ->
+                    "For $diseaseName, use well-rotted compost, neem cake powder (250g per plant), and spray neem oil (5ml/L) or vermicompost tea to strengthen natural leaf immunity."
+                q.contains("prevent") || q.contains("future") || q.contains("next season") ->
+                    "To prevent $diseaseName in future seasons: rotate crops every 3 years, maintain proper plant spacing for air circulation, avoid overhead watering, and destroy infected crop residue."
+                else ->
+                    "For $diseaseName ($scientificName - ${confidence}% confidence), ensure good soil drainage, apply balanced NPK nutrients, remove infected leaves promptly, and spray appropriate fungicides at 7-10 day intervals."
+            }
+        }
+
+        val prompt = """
+            You are an expert plant pathologist and agricultural consultant ("Crop Doctor").
+            The farmer's crop was diagnosed with $diseaseName ($scientificName) with $confidence% confidence.
+            Contextual organic care: $organicCare
+            Contextual chemical care: $chemicalCare
+            
+            Farmer's question: "$userQuestion"
+            
+            Provide a helpful, concise, practical response addressing spray intervals, organic remedies, dosages, or preventative measures. 
+            Do not use markdown formatting like asterisks. Keep it clear, friendly, and easy to read for a farmer.
+        """.trimIndent()
+
+        return try {
+            val response = generativeModel.generateContent(prompt)
+            response.text ?: "I am sorry, I could not process your question at this moment."
+        } catch (e: Exception) {
+            "For $diseaseName, apply recommended fungicides at 7-10 day intervals, use neem oil spray for organic control, and ensure proper field sanitation."
+        }
+    }
 }

@@ -6,8 +6,8 @@ import retrofit2.http.GET
 
 data class GovtSchemeResponse(
     @SerializedName("id") val id: String? = null,
-    @SerializedName("title") val title: String,
-    @SerializedName("description") val description: String,
+    @SerializedName("title") val title: String? = null,
+    @SerializedName("description") val description: String? = null,
     @SerializedName("eligibility") val eligibility: String? = null,
     @SerializedName("details") val details: String? = null,
     @SerializedName("subsidyAmount") val subsidyAmount: String? = null,

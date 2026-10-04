@@ -130,6 +130,18 @@ class ScanResultFragment : Fragment(R.layout.fragment_scan_result) {
         binding?.btnScanAgain?.setOnClickListener {
             findNavController().popBackStack(R.id.scanFragment, false)
         }
+
+        // Ask Crop Doctor AI Chatbot (BottomSheet)
+        binding?.btnAskCropDoctor?.setOnClickListener {
+            val bottomSheet = AskCropDoctorBottomSheet.newInstance(
+                diseaseName = result.diseaseName,
+                scientificName = result.scientificName,
+                confidence = result.confidence,
+                organicCare = result.organicCare,
+                chemicalCare = result.chemicalCare
+            )
+            bottomSheet.show(childFragmentManager, "AskCropDoctorBottomSheet")
+        }
     }
 
     private fun saveToHistory(result: DiseaseAnalysisResult) {
