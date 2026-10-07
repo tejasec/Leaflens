@@ -16,7 +16,7 @@
             android:id="@+id/btnBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_more"
+            android:src="@drawable/ic_arrow_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="#FFFFFF" />
@@ -185,7 +185,7 @@
             android:layout_height="54dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="#10B981"
-            android:text="➔ Back to Result"
+            android:text="← Back to Result"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:textStyle="bold"

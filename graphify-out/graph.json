@@ -616,60 +616,6 @@
       "norm_label": ".updatedata()"
     },
     {
-      "label": "SchemesAdapter.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L1",
-      "id": "app_src_main_java_com_example_smartagriculture_adapter_schemesadapter_kt",
-      "community": 4,
-      "norm_label": "schemesadapter.kt"
-    },
-    {
-      "label": "SchemesAdapter",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L11",
-      "id": "adapter_schemesadapter_schemesadapter",
-      "community": 4,
-      "norm_label": "schemesadapter"
-    },
-    {
-      "label": "SchemeViewHolder",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L16",
-      "id": "adapter_schemesadapter_schemeviewholder",
-      "community": 4,
-      "norm_label": "schemeviewholder"
-    },
-    {
-      "label": ".onCreateViewHolder()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L22",
-      "id": "adapter_schemesadapter_schemesadapter_oncreateviewholder",
-      "community": 4,
-      "norm_label": ".oncreateviewholder()"
-    },
-    {
-      "label": ".onBindViewHolder()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L27",
-      "id": "adapter_schemesadapter_schemesadapter_onbindviewholder",
-      "community": 4,
-      "norm_label": ".onbindviewholder()"
-    },
-    {
-      "label": ".getItemCount()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L35",
-      "id": "adapter_schemesadapter_schemesadapter_getitemcount",
-      "community": 4,
-      "norm_label": ".getitemcount()"
-    },
-    {
       "label": "SoilAdapter.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SoilAdapter.kt",
@@ -785,6 +731,60 @@
       "id": "adapter_chatmessageadapter_chatmessageadapter_addmessage",
       "community": 6,
       "norm_label": ".addmessage()"
+    },
+    {
+      "label": "SchemesAdapter.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L1",
+      "id": "app_src_main_java_com_example_smartagriculture_adapter_schemesadapter_kt",
+      "community": 4,
+      "norm_label": "schemesadapter.kt"
+    },
+    {
+      "label": "SchemesAdapter",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L11",
+      "id": "adapter_schemesadapter_schemesadapter",
+      "community": 4,
+      "norm_label": "schemesadapter"
+    },
+    {
+      "label": "SchemeViewHolder",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L16",
+      "id": "adapter_schemesadapter_schemeviewholder",
+      "community": 4,
+      "norm_label": "schemeviewholder"
+    },
+    {
+      "label": ".onCreateViewHolder()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L22",
+      "id": "adapter_schemesadapter_schemesadapter_oncreateviewholder",
+      "community": 4,
+      "norm_label": ".oncreateviewholder()"
+    },
+    {
+      "label": ".onBindViewHolder()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L27",
+      "id": "adapter_schemesadapter_schemesadapter_onbindviewholder",
+      "community": 4,
+      "norm_label": ".onbindviewholder()"
+    },
+    {
+      "label": ".getItemCount()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L35",
+      "id": "adapter_schemesadapter_schemesadapter_getitemcount",
+      "community": 4,
+      "norm_label": ".getitemcount()"
     },
     {
       "label": "LoginScreen.kt",
@@ -1143,7 +1143,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/PrototypeEntity.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_database_prototypeentity_kt",
-      "community": 3,
+      "community": 2,
       "norm_label": "prototypeentity.kt"
     },
     {
@@ -1152,7 +1152,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/PrototypeEntity.kt",
       "source_location": "L8",
       "id": "database_prototypeentity_vectortypeconverter",
-      "community": 3,
+      "community": 2,
       "norm_label": "vectortypeconverter"
     },
     {
@@ -1161,7 +1161,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/PrototypeEntity.kt",
       "source_location": "L9",
       "id": "database_prototypeentity_vectortypeconverter_fromdoublelist",
-      "community": 3,
+      "community": 2,
       "norm_label": ".fromdoublelist()"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/PrototypeEntity.kt",
       "source_location": "L14",
       "id": "database_prototypeentity_vectortypeconverter_todoublelist",
-      "community": 3,
+      "community": 2,
       "norm_label": ".todoublelist()"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/PrototypeEntity.kt",
       "source_location": "L26",
       "id": "database_prototypeentity_prototypeentity",
-      "community": 3,
+      "community": 2,
       "norm_label": "prototypeentity"
     },
     {
@@ -1251,7 +1251,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityEntity.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_database_cropactivityentity_kt",
-      "community": 27,
+      "community": 30,
       "norm_label": "cropactivityentity.kt"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityEntity.kt",
       "source_location": "L6",
       "id": "database_cropactivityentity_cropactivityentity",
-      "community": 27,
+      "community": 30,
       "norm_label": "cropactivityentity"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_database_cropactivitydao_kt",
-      "community": 28,
+      "community": 27,
       "norm_label": "cropactivitydao.kt"
     },
     {
@@ -1278,7 +1278,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L11",
       "id": "database_cropactivitydao_cropactivitydao",
-      "community": 28,
+      "community": 27,
       "norm_label": "cropactivitydao"
     },
     {
@@ -1287,7 +1287,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L14",
       "id": "database_cropactivitydao_cropactivitydao_getallactivities",
-      "community": 28,
+      "community": 27,
       "norm_label": ".getallactivities()"
     },
     {
@@ -1296,7 +1296,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L17",
       "id": "database_cropactivitydao_cropactivitydao_getupcomingactivities",
-      "community": 28,
+      "community": 27,
       "norm_label": ".getupcomingactivities()"
     },
     {
@@ -1305,7 +1305,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L20",
       "id": "database_cropactivitydao_cropactivitydao_insertactivity",
-      "community": 28,
+      "community": 27,
       "norm_label": ".insertactivity()"
     },
     {
@@ -1314,7 +1314,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L23",
       "id": "database_cropactivitydao_cropactivitydao_updateactivity",
-      "community": 28,
+      "community": 27,
       "norm_label": ".updateactivity()"
     },
     {
@@ -1323,7 +1323,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L26",
       "id": "database_cropactivitydao_cropactivitydao_deleteactivity",
-      "community": 28,
+      "community": 27,
       "norm_label": ".deleteactivity()"
     },
     {
@@ -1332,7 +1332,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/database/CropActivityDao.kt",
       "source_location": "L29",
       "id": "database_cropactivitydao_cropactivitydao_deletebyid",
-      "community": 28,
+      "community": 27,
       "norm_label": ".deletebyid()"
     },
     {
@@ -2304,7 +2304,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanResultFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_scanresultfragment_kt",
-      "community": 0,
+      "community": 1,
       "norm_label": "scanresultfragment.kt"
     },
     {
@@ -2313,7 +2313,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanResultFragment.kt",
       "source_location": "L27",
       "id": "fragments_scanresultfragment_scanresultfragment",
-      "community": 0,
+      "community": 1,
       "norm_label": "scanresultfragment"
     },
     {
@@ -2322,7 +2322,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanResultFragment.kt",
       "source_location": "L33",
       "id": "fragments_scanresultfragment_scanresultfragment_onviewcreated",
-      "community": 0,
+      "community": 1,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -2331,7 +2331,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanResultFragment.kt",
       "source_location": "L147",
       "id": "fragments_scanresultfragment_scanresultfragment_savetohistory",
-      "community": 0,
+      "community": 1,
       "norm_label": ".savetohistory()"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanResultFragment.kt",
       "source_location": "L166",
       "id": "fragments_scanresultfragment_scanresultfragment_loadbitmapforpdf",
-      "community": 0,
+      "community": 1,
       "norm_label": ".loadbitmapforpdf()"
     },
     {
@@ -2349,7 +2349,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/ScanResultFragment.kt",
       "source_location": "L185",
       "id": "fragments_scanresultfragment_scanresultfragment_ondestroyview",
-      "community": 0,
+      "community": 1,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -2911,66 +2911,12 @@
       "norm_label": ".oncreateview()"
     },
     {
-      "label": "SchemeDetailFragment.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
-      "source_location": "L1",
-      "id": "app_src_main_java_com_example_smartagriculture_fragments_schemedetailfragment_kt",
-      "community": 73,
-      "norm_label": "schemedetailfragment.kt"
-    },
-    {
-      "label": "SchemeDetailFragment",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
-      "source_location": "L12",
-      "id": "fragments_schemedetailfragment_schemedetailfragment",
-      "community": 73,
-      "norm_label": "schemedetailfragment"
-    },
-    {
-      "label": ".onViewCreated()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
-      "source_location": "L14",
-      "id": "fragments_schemedetailfragment_schemedetailfragment_onviewcreated",
-      "community": 73,
-      "norm_label": ".onviewcreated()"
-    },
-    {
-      "label": "SchemesFragment.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
-      "source_location": "L1",
-      "id": "app_src_main_java_com_example_smartagriculture_fragments_schemesfragment_kt",
-      "community": 4,
-      "norm_label": "schemesfragment.kt"
-    },
-    {
-      "label": "SchemesFragment",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
-      "source_location": "L20",
-      "id": "fragments_schemesfragment_schemesfragment",
-      "community": 4,
-      "norm_label": "schemesfragment"
-    },
-    {
-      "label": ".onViewCreated()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
-      "source_location": "L26",
-      "id": "fragments_schemesfragment_schemesfragment_onviewcreated",
-      "community": 4,
-      "norm_label": ".onviewcreated()"
-    },
-    {
       "label": "SettingsFragment.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SettingsFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_settingsfragment_kt",
-      "community": 74,
+      "community": 73,
       "norm_label": "settingsfragment.kt"
     },
     {
@@ -2979,7 +2925,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SettingsFragment.kt",
       "source_location": "L13",
       "id": "fragments_settingsfragment_settingsfragment",
-      "community": 74,
+      "community": 73,
       "norm_label": "settingsfragment"
     },
     {
@@ -2988,7 +2934,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SettingsFragment.kt",
       "source_location": "L15",
       "id": "fragments_settingsfragment_settingsfragment_onviewcreated",
-      "community": 74,
+      "community": 73,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3024,7 +2970,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SplashFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_splashfragment_kt",
-      "community": 75,
+      "community": 74,
       "norm_label": "splashfragment.kt"
     },
     {
@@ -3033,7 +2979,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SplashFragment.kt",
       "source_location": "L10",
       "id": "fragments_splashfragment_splashfragment",
-      "community": 75,
+      "community": 74,
       "norm_label": "splashfragment"
     },
     {
@@ -3042,7 +2988,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SplashFragment.kt",
       "source_location": "L12",
       "id": "fragments_splashfragment_splashfragment_onviewcreated",
-      "community": 75,
+      "community": 74,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3114,7 +3060,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_advisorysheetdialogfragment_kt",
-      "community": 29,
+      "community": 28,
       "norm_label": "advisorysheetdialogfragment.kt"
     },
     {
@@ -3123,7 +3069,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L23",
       "id": "fragments_advisorysheetdialogfragment_advisorysheetdialogfragment",
-      "community": 29,
+      "community": 28,
       "norm_label": "advisorysheetdialogfragment"
     },
     {
@@ -3132,7 +3078,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L28",
       "id": "fragments_advisorysheetdialogfragment_newinstance",
-      "community": 29,
+      "community": 28,
       "norm_label": "newinstance()"
     },
     {
@@ -3141,7 +3087,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L38",
       "id": "fragments_advisorysheetdialogfragment_advisorysheetdialogfragment_oncreate",
-      "community": 29,
+      "community": 28,
       "norm_label": ".oncreate()"
     },
     {
@@ -3150,7 +3096,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L43",
       "id": "fragments_advisorysheetdialogfragment_advisorysheetdialogfragment_oncreateview",
-      "community": 29,
+      "community": 28,
       "norm_label": ".oncreateview()"
     },
     {
@@ -3159,7 +3105,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L51",
       "id": "fragments_advisorysheetdialogfragment_advisorysheetdialogfragment_onviewcreated",
-      "community": 29,
+      "community": 28,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3168,7 +3114,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L126",
       "id": "fragments_advisorysheetdialogfragment_advisorysheetdialogfragment_loadremediesjson",
-      "community": 29,
+      "community": 28,
       "norm_label": ".loadremediesjson()"
     },
     {
@@ -3177,7 +3123,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/AdvisorySheetDialogFragment.kt",
       "source_location": "L146",
       "id": "fragments_advisorysheetdialogfragment_advisorysheetdialogfragment_openwebpage",
-      "community": 29,
+      "community": 28,
       "norm_label": ".openwebpage()"
     },
     {
@@ -3186,7 +3132,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_benchmarkgalleryfragment_kt",
-      "community": 2,
+      "community": 3,
       "norm_label": "benchmarkgalleryfragment.kt"
     },
     {
@@ -3195,7 +3141,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L24",
       "id": "fragments_benchmarkgalleryfragment_sampleitem",
-      "community": 2,
+      "community": 3,
       "norm_label": "sampleitem"
     },
     {
@@ -3204,7 +3150,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L37",
       "id": "fragments_benchmarkgalleryfragment_benchmarkgalleryfragment",
-      "community": 2,
+      "community": 3,
       "norm_label": "benchmarkgalleryfragment"
     },
     {
@@ -3213,7 +3159,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L41",
       "id": "fragments_benchmarkgalleryfragment_benchmarkgalleryfragment_onviewcreated",
-      "community": 2,
+      "community": 3,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3222,7 +3168,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L71",
       "id": "fragments_benchmarkgalleryfragment_benchmarkgalleryfragment_runbenchmarkpipeline",
-      "community": 2,
+      "community": 3,
       "norm_label": ".runbenchmarkpipeline()"
     },
     {
@@ -3231,7 +3177,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L123",
       "id": "fragments_benchmarkgalleryfragment_benchmarkgalleryfragment_createsyntheticsampleleafbitmap",
-      "community": 2,
+      "community": 3,
       "norm_label": ".createsyntheticsampleleafbitmap()"
     },
     {
@@ -3240,7 +3186,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L138",
       "id": "fragments_benchmarkgalleryfragment_benchmarkgalleryfragment_loadmanifestsamples",
-      "community": 2,
+      "community": 3,
       "norm_label": ".loadmanifestsamples()"
     },
     {
@@ -3249,7 +3195,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L164",
       "id": "fragments_benchmarkgalleryfragment_benchmarkgalleryfragment_ondestroyview",
-      "community": 2,
+      "community": 3,
       "norm_label": ".ondestroyview()"
     },
     {
@@ -3258,7 +3204,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L170",
       "id": "fragments_benchmarkgalleryfragment_benchmarkadapter",
-      "community": 2,
+      "community": 3,
       "norm_label": "benchmarkadapter"
     },
     {
@@ -3267,7 +3213,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L175",
       "id": "fragments_benchmarkgalleryfragment_viewholder",
-      "community": 2,
+      "community": 3,
       "norm_label": "viewholder"
     },
     {
@@ -3276,7 +3222,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L181",
       "id": "fragments_benchmarkgalleryfragment_benchmarkadapter_oncreateviewholder",
-      "community": 2,
+      "community": 3,
       "norm_label": ".oncreateviewholder()"
     },
     {
@@ -3285,7 +3231,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L187",
       "id": "fragments_benchmarkgalleryfragment_benchmarkadapter_onbindviewholder",
-      "community": 2,
+      "community": 3,
       "norm_label": ".onbindviewholder()"
     },
     {
@@ -3294,7 +3240,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/BenchmarkGalleryFragment.kt",
       "source_location": "L195",
       "id": "fragments_benchmarkgalleryfragment_benchmarkadapter_getitemcount",
-      "community": 2,
+      "community": 3,
       "norm_label": ".getitemcount()"
     },
     {
@@ -3303,7 +3249,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/PestDetailFragment.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_fragments_pestdetailfragment_kt",
-      "community": 76,
+      "community": 75,
       "norm_label": "pestdetailfragment.kt"
     },
     {
@@ -3312,7 +3258,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/PestDetailFragment.kt",
       "source_location": "L12",
       "id": "fragments_pestdetailfragment_pestdetailfragment",
-      "community": 76,
+      "community": 75,
       "norm_label": "pestdetailfragment"
     },
     {
@@ -3321,7 +3267,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/PestDetailFragment.kt",
       "source_location": "L14",
       "id": "fragments_pestdetailfragment_pestdetailfragment_onviewcreated",
-      "community": 76,
+      "community": 75,
       "norm_label": ".onviewcreated()"
     },
     {
@@ -3397,6 +3343,60 @@
       "norm_label": "newinstance()"
     },
     {
+      "label": "SchemeDetailFragment.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
+      "source_location": "L1",
+      "id": "app_src_main_java_com_example_smartagriculture_fragments_schemedetailfragment_kt",
+      "community": 76,
+      "norm_label": "schemedetailfragment.kt"
+    },
+    {
+      "label": "SchemeDetailFragment",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
+      "source_location": "L12",
+      "id": "fragments_schemedetailfragment_schemedetailfragment",
+      "community": 76,
+      "norm_label": "schemedetailfragment"
+    },
+    {
+      "label": ".onViewCreated()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
+      "source_location": "L14",
+      "id": "fragments_schemedetailfragment_schemedetailfragment_onviewcreated",
+      "community": 76,
+      "norm_label": ".onviewcreated()"
+    },
+    {
+      "label": "SchemesFragment.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
+      "source_location": "L1",
+      "id": "app_src_main_java_com_example_smartagriculture_fragments_schemesfragment_kt",
+      "community": 4,
+      "norm_label": "schemesfragment.kt"
+    },
+    {
+      "label": "SchemesFragment",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
+      "source_location": "L20",
+      "id": "fragments_schemesfragment_schemesfragment",
+      "community": 4,
+      "norm_label": "schemesfragment"
+    },
+    {
+      "label": ".onViewCreated()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
+      "source_location": "L26",
+      "id": "fragments_schemesfragment_schemesfragment_onviewcreated",
+      "community": 4,
+      "norm_label": ".onviewcreated()"
+    },
+    {
       "label": "CropData.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/model/CropData.kt",
@@ -3465,7 +3465,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/model/ScanHistoryItem.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_model_scanhistoryitem_kt",
-      "community": 1,
+      "community": 0,
       "norm_label": "scanhistoryitem.kt"
     },
     {
@@ -3474,7 +3474,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/model/ScanHistoryItem.kt",
       "source_location": "L7",
       "id": "model_scanhistoryitem_scanhistoryitem",
-      "community": 1,
+      "community": 0,
       "norm_label": "scanhistoryitem"
     },
     {
@@ -4023,7 +4023,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_repository_userrepository_kt",
-      "community": 30,
+      "community": 29,
       "norm_label": "userrepository.kt"
     },
     {
@@ -4032,7 +4032,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L7",
       "id": "repository_userrepository_userrepository",
-      "community": 30,
+      "community": 29,
       "norm_label": "userrepository"
     },
     {
@@ -4041,7 +4041,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L11",
       "id": "repository_userrepository_userrepository_registeruser",
-      "community": 30,
+      "community": 29,
       "norm_label": ".registeruser()"
     },
     {
@@ -4050,7 +4050,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L15",
       "id": "repository_userrepository_userrepository_login",
-      "community": 30,
+      "community": 29,
       "norm_label": ".login()"
     },
     {
@@ -4059,7 +4059,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L19",
       "id": "repository_userrepository_userrepository_findbyemail",
-      "community": 30,
+      "community": 29,
       "norm_label": ".findbyemail()"
     },
     {
@@ -4068,7 +4068,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L23",
       "id": "repository_userrepository_userrepository_getallusers",
-      "community": 30,
+      "community": 29,
       "norm_label": ".getallusers()"
     },
     {
@@ -4077,7 +4077,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L27",
       "id": "repository_userrepository_userrepository_updateuser",
-      "community": 30,
+      "community": 29,
       "norm_label": ".updateuser()"
     },
     {
@@ -4086,7 +4086,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/UserRepository.kt",
       "source_location": "L31",
       "id": "repository_userrepository_userrepository_deleteuser",
-      "community": 30,
+      "community": 29,
       "norm_label": ".deleteuser()"
     },
     {
@@ -4095,7 +4095,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_repository_fewshotrepository_kt",
-      "community": 3,
+      "community": 2,
       "norm_label": "fewshotrepository.kt"
     },
     {
@@ -4104,7 +4104,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L10",
       "id": "repository_fewshotrepository_prototypematch",
-      "community": 3,
+      "community": 2,
       "norm_label": "prototypematch"
     },
     {
@@ -4113,7 +4113,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L19",
       "id": "repository_fewshotrepository_fewshotrepository",
-      "community": 3,
+      "community": 2,
       "norm_label": "fewshotrepository"
     },
     {
@@ -4122,7 +4122,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L24",
       "id": "repository_fewshotrepository_fewshotrepository_saveprototype",
-      "community": 3,
+      "community": 2,
       "norm_label": ".saveprototype()"
     },
     {
@@ -4131,7 +4131,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L37",
       "id": "repository_fewshotrepository_fewshotrepository_classifyfewshot",
-      "community": 3,
+      "community": 2,
       "norm_label": ".classifyfewshot()"
     },
     {
@@ -4140,7 +4140,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L72",
       "id": "repository_fewshotrepository_fewshotrepository_computecosinesimilarity",
-      "community": 3,
+      "community": 2,
       "norm_label": ".computecosinesimilarity()"
     },
     {
@@ -4149,7 +4149,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L94",
       "id": "repository_fewshotrepository_fewshotrepository_getallprototypes",
-      "community": 3,
+      "community": 2,
       "norm_label": ".getallprototypes()"
     },
     {
@@ -4158,7 +4158,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/repository/FewShotRepository.kt",
       "source_location": "L98",
       "id": "repository_fewshotrepository_fewshotrepository_deleteprototypesbyclass",
-      "community": 3,
+      "community": 2,
       "norm_label": ".deleteprototypesbyclass()"
     },
     {
@@ -4250,51 +4250,6 @@
       "id": "repository_schemesrepository_schemesrepository_isnetworkavailable",
       "community": 4,
       "norm_label": ".isnetworkavailable()"
-    },
-    {
-      "label": "MainActivity.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L1",
-      "id": "app_src_main_java_com_example_smartagriculture_activities_mainactivity_kt",
-      "community": 50,
-      "norm_label": "mainactivity.kt"
-    },
-    {
-      "label": "MainActivity",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L17",
-      "id": "activities_mainactivity_mainactivity",
-      "community": 50,
-      "norm_label": "mainactivity"
-    },
-    {
-      "label": ".onCreate()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L21",
-      "id": "activities_mainactivity_mainactivity_oncreate",
-      "community": 50,
-      "norm_label": ".oncreate()"
-    },
-    {
-      "label": ".onWindowFocusChanged()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L63",
-      "id": "activities_mainactivity_mainactivity_onwindowfocuschanged",
-      "community": 50,
-      "norm_label": ".onwindowfocuschanged()"
-    },
-    {
-      "label": ".hideSystemStatusBar()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L70",
-      "id": "activities_mainactivity_mainactivity_hidesystemstatusbar",
-      "community": 50,
-      "norm_label": ".hidesystemstatusbar()"
     },
     {
       "label": "CropHealthActivity.kt",
@@ -4394,6 +4349,51 @@
       "id": "activities_crophealthactivity_crophealthactivity_ondestroy",
       "community": 20,
       "norm_label": ".ondestroy()"
+    },
+    {
+      "label": "MainActivity.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L1",
+      "id": "app_src_main_java_com_example_smartagriculture_activities_mainactivity_kt",
+      "community": 50,
+      "norm_label": "mainactivity.kt"
+    },
+    {
+      "label": "MainActivity",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L17",
+      "id": "activities_mainactivity_mainactivity",
+      "community": 50,
+      "norm_label": "mainactivity"
+    },
+    {
+      "label": ".onCreate()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L21",
+      "id": "activities_mainactivity_mainactivity_oncreate",
+      "community": 50,
+      "norm_label": ".oncreate()"
+    },
+    {
+      "label": ".onWindowFocusChanged()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L63",
+      "id": "activities_mainactivity_mainactivity_onwindowfocuschanged",
+      "community": 50,
+      "norm_label": ".onwindowfocuschanged()"
+    },
+    {
+      "label": ".hideSystemStatusBar()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L70",
+      "id": "activities_mainactivity_mainactivity_hidesystemstatusbar",
+      "community": 50,
+      "norm_label": ".hidesystemstatusbar()"
     },
     {
       "label": "PermissionUtils.kt",
@@ -4536,7 +4536,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_ml_crophealthclassifier_kt",
-      "community": 2,
+      "community": 3,
       "norm_label": "crophealthclassifier.kt"
     },
     {
@@ -4545,7 +4545,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L18",
       "id": "ml_crophealthclassifier_diagnosis",
-      "community": 2,
+      "community": 3,
       "norm_label": "diagnosis"
     },
     {
@@ -4554,7 +4554,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L27",
       "id": "ml_crophealthclassifier_classificationresult",
-      "community": 2,
+      "community": 3,
       "norm_label": "classificationresult"
     },
     {
@@ -4563,7 +4563,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L39",
       "id": "ml_crophealthclassifier_crophealthclassifier",
-      "community": 2,
+      "community": 3,
       "norm_label": "crophealthclassifier"
     },
     {
@@ -4572,7 +4572,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L61",
       "id": "ml_crophealthclassifier_crophealthclassifier_setupclassifier",
-      "community": 2,
+      "community": 3,
       "norm_label": ".setupclassifier()"
     },
     {
@@ -4581,7 +4581,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L93",
       "id": "ml_crophealthclassifier_crophealthclassifier_loadmodelfile",
-      "community": 2,
+      "community": 3,
       "norm_label": ".loadmodelfile()"
     },
     {
@@ -4590,7 +4590,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L105",
       "id": "ml_crophealthclassifier_crophealthclassifier_classifyimage",
-      "community": 2,
+      "community": 3,
       "norm_label": ".classifyimage()"
     },
     {
@@ -4599,7 +4599,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L184",
       "id": "ml_crophealthclassifier_crophealthclassifier_convertbitmaptobytebuffer",
-      "community": 2,
+      "community": 3,
       "norm_label": ".convertbitmaptobytebuffer()"
     },
     {
@@ -4608,7 +4608,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L218",
       "id": "ml_crophealthclassifier_crophealthclassifier_applytemperaturesoftmax",
-      "community": 2,
+      "community": 3,
       "norm_label": ".applytemperaturesoftmax()"
     },
     {
@@ -4617,7 +4617,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L245",
       "id": "ml_crophealthclassifier_crophealthclassifier_cleanlabelname",
-      "community": 2,
+      "community": 3,
       "norm_label": ".cleanlabelname()"
     },
     {
@@ -4626,7 +4626,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/CropHealthClassifier.kt",
       "source_location": "L249",
       "id": "ml_crophealthclassifier_crophealthclassifier_close",
-      "community": 2,
+      "community": 3,
       "norm_label": ".close()"
     },
     {
@@ -4698,7 +4698,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_ml_tfliteclassifier_kt",
-      "community": 1,
+      "community": 0,
       "norm_label": "tfliteclassifier.kt"
     },
     {
@@ -4707,7 +4707,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L21",
       "id": "ml_tfliteclassifier_classresult",
-      "community": 1,
+      "community": 0,
       "norm_label": "classresult"
     },
     {
@@ -4716,7 +4716,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L27",
       "id": "ml_tfliteclassifier_classresult_equals",
-      "community": 1,
+      "community": 0,
       "norm_label": ".equals()"
     },
     {
@@ -4725,7 +4725,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L38",
       "id": "ml_tfliteclassifier_classresult_hashcode",
-      "community": 1,
+      "community": 0,
       "norm_label": ".hashcode()"
     },
     {
@@ -4734,7 +4734,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L54",
       "id": "ml_tfliteclassifier_tfliteclassifier",
-      "community": 1,
+      "community": 0,
       "norm_label": "tfliteclassifier"
     },
     {
@@ -4743,7 +4743,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L77",
       "id": "ml_tfliteclassifier_tfliteclassifier_setupclassifier",
-      "community": 1,
+      "community": 0,
       "norm_label": ".setupclassifier()"
     },
     {
@@ -4752,7 +4752,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L99",
       "id": "ml_tfliteclassifier_tfliteclassifier_loadmodelbuffer",
-      "community": 1,
+      "community": 0,
       "norm_label": ".loadmodelbuffer()"
     },
     {
@@ -4761,7 +4761,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L123",
       "id": "ml_tfliteclassifier_tfliteclassifier_classifyimage",
-      "community": 1,
+      "community": 0,
       "norm_label": ".classifyimage()"
     },
     {
@@ -4770,7 +4770,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L172",
       "id": "ml_tfliteclassifier_tfliteclassifier_preprocessbitmaptofloatbuffer",
-      "community": 1,
+      "community": 0,
       "norm_label": ".preprocessbitmaptofloatbuffer()"
     },
     {
@@ -4779,7 +4779,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L206",
       "id": "ml_tfliteclassifier_tfliteclassifier_applysoftmax",
-      "community": 1,
+      "community": 0,
       "norm_label": ".applysoftmax()"
     },
     {
@@ -4788,7 +4788,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L231",
       "id": "ml_tfliteclassifier_tfliteclassifier_cleanlabelname",
-      "community": 1,
+      "community": 0,
       "norm_label": ".cleanlabelname()"
     },
     {
@@ -4797,7 +4797,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/ml/TFLiteClassifier.kt",
       "source_location": "L241",
       "id": "ml_tfliteclassifier_tfliteclassifier_close",
-      "community": 1,
+      "community": 0,
       "norm_label": ".close()"
     },
     {
@@ -4882,57 +4882,12 @@
       "norm_label": ".analyzeseverity()"
     },
     {
-      "label": "PdfReportGenerator.kt",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L1",
-      "id": "app_src_main_java_com_example_smartagriculture_utils_pdfreportgenerator_kt",
-      "community": 0,
-      "norm_label": "pdfreportgenerator.kt"
-    },
-    {
-      "label": "DiagnosticDossier",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L22",
-      "id": "utils_pdfreportgenerator_diagnosticdossier",
-      "community": 0,
-      "norm_label": "diagnosticdossier"
-    },
-    {
-      "label": "PdfReportGenerator",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L38",
-      "id": "utils_pdfreportgenerator_pdfreportgenerator",
-      "community": 0,
-      "norm_label": "pdfreportgenerator"
-    },
-    {
-      "label": ".generatePdfReport()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L46",
-      "id": "utils_pdfreportgenerator_pdfreportgenerator_generatepdfreport",
-      "community": 0,
-      "norm_label": ".generatepdfreport()"
-    },
-    {
-      "label": ".sharePdfReport()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L165",
-      "id": "utils_pdfreportgenerator_pdfreportgenerator_sharepdfreport",
-      "community": 0,
-      "norm_label": ".sharepdfreport()"
-    },
-    {
       "label": "VoiceAssistantService.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_utils_voiceassistantservice_kt",
-      "community": 0,
+      "community": 1,
       "norm_label": "voiceassistantservice.kt"
     },
     {
@@ -4941,7 +4896,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L8",
       "id": "utils_voiceassistantservice_ttsstate",
-      "community": 0,
+      "community": 1,
       "norm_label": "ttsstate"
     },
     {
@@ -4950,7 +4905,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L14",
       "id": "utils_voiceassistantservice_voicediagnosisresult",
-      "community": 0,
+      "community": 1,
       "norm_label": "voicediagnosisresult"
     },
     {
@@ -4959,7 +4914,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L26",
       "id": "utils_voiceassistantservice_voiceassistantservice",
-      "community": 0,
+      "community": 1,
       "norm_label": "voiceassistantservice"
     },
     {
@@ -4968,7 +4923,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L38",
       "id": "utils_voiceassistantservice_onstart",
-      "community": 0,
+      "community": 1,
       "norm_label": "onstart()"
     },
     {
@@ -4977,7 +4932,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L42",
       "id": "utils_voiceassistantservice_ondone",
-      "community": 0,
+      "community": 1,
       "norm_label": "ondone()"
     },
     {
@@ -4986,7 +4941,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L46",
       "id": "utils_voiceassistantservice_onerror",
-      "community": 0,
+      "community": 1,
       "norm_label": "onerror()"
     },
     {
@@ -4995,7 +4950,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L53",
       "id": "utils_voiceassistantservice_voiceassistantservice_oninit",
-      "community": 0,
+      "community": 1,
       "norm_label": ".oninit()"
     },
     {
@@ -5004,7 +4959,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L66",
       "id": "utils_voiceassistantservice_voiceassistantservice_setlanguage",
-      "community": 0,
+      "community": 1,
       "norm_label": ".setlanguage()"
     },
     {
@@ -5013,7 +4968,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L83",
       "id": "utils_voiceassistantservice_voiceassistantservice_speakdiagnosis",
-      "community": 0,
+      "community": 1,
       "norm_label": ".speakdiagnosis()"
     },
     {
@@ -5022,7 +4977,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L109",
       "id": "utils_voiceassistantservice_voiceassistantservice_pause",
-      "community": 0,
+      "community": 1,
       "norm_label": ".pause()"
     },
     {
@@ -5031,7 +4986,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L119",
       "id": "utils_voiceassistantservice_voiceassistantservice_stop",
-      "community": 0,
+      "community": 1,
       "norm_label": ".stop()"
     },
     {
@@ -5040,7 +4995,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L124",
       "id": "utils_voiceassistantservice_voiceassistantservice_shutdown",
-      "community": 0,
+      "community": 1,
       "norm_label": ".shutdown()"
     },
     {
@@ -5049,7 +5004,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L131",
       "id": "utils_voiceassistantservice_voiceassistantservice_updatestate",
-      "community": 0,
+      "community": 1,
       "norm_label": ".updatestate()"
     },
     {
@@ -5058,116 +5013,53 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L136",
       "id": "utils_voiceassistantservice_voiceassistantservice_getcurrentstate",
-      "community": 0,
+      "community": 1,
       "norm_label": ".getcurrentstate()"
     },
     {
-      "label": "CropHealthViewModel.kt",
+      "label": "PdfReportGenerator.kt",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
       "source_location": "L1",
-      "id": "app_src_main_java_com_example_smartagriculture_viewmodel_crophealthviewmodel_kt",
+      "id": "app_src_main_java_com_example_smartagriculture_utils_pdfreportgenerator_kt",
       "community": 1,
-      "norm_label": "crophealthviewmodel.kt"
+      "norm_label": "pdfreportgenerator.kt"
     },
     {
-      "label": "CropHealthUiState",
+      "label": "DiagnosticDossier",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L29",
-      "id": "viewmodel_crophealthviewmodel_crophealthuistate",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L22",
+      "id": "utils_pdfreportgenerator_diagnosticdossier",
       "community": 1,
-      "norm_label": "crophealthuistate"
+      "norm_label": "diagnosticdossier"
     },
     {
-      "label": "Idle",
+      "label": "PdfReportGenerator",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L30",
-      "id": "viewmodel_crophealthviewmodel_idle",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L38",
+      "id": "utils_pdfreportgenerator_pdfreportgenerator",
       "community": 1,
-      "norm_label": "idle"
+      "norm_label": "pdfreportgenerator"
     },
     {
-      "label": "Loading",
+      "label": ".generatePdfReport()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L31",
-      "id": "viewmodel_crophealthviewmodel_loading",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L46",
+      "id": "utils_pdfreportgenerator_pdfreportgenerator_generatepdfreport",
       "community": 1,
-      "norm_label": "loading"
+      "norm_label": ".generatepdfreport()"
     },
     {
-      "label": "QualityError",
+      "label": ".sharePdfReport()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L32",
-      "id": "viewmodel_crophealthviewmodel_qualityerror",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L165",
+      "id": "utils_pdfreportgenerator_pdfreportgenerator_sharepdfreport",
       "community": 1,
-      "norm_label": "qualityerror"
-    },
-    {
-      "label": "LocalSuccess",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L33",
-      "id": "viewmodel_crophealthviewmodel_localsuccess",
-      "community": 1,
-      "norm_label": "localsuccess"
-    },
-    {
-      "label": "CloudSuccess",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L34",
-      "id": "viewmodel_crophealthviewmodel_cloudsuccess",
-      "community": 1,
-      "norm_label": "cloudsuccess"
-    },
-    {
-      "label": "Error",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L35",
-      "id": "viewmodel_crophealthviewmodel_error",
-      "community": 1,
-      "norm_label": "error"
-    },
-    {
-      "label": "CropHealthViewModel",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L48",
-      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel",
-      "community": 1,
-      "norm_label": "crophealthviewmodel"
-    },
-    {
-      "label": ".analyzeCropLeaf()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L62",
-      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel_analyzecropleaf",
-      "community": 1,
-      "norm_label": ".analyzecropleaf()"
-    },
-    {
-      "label": ".saveBitmapToInternalStorage()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L185",
-      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel_savebitmaptointernalstorage",
-      "community": 1,
-      "norm_label": ".savebitmaptointernalstorage()"
-    },
-    {
-      "label": ".extractCropName()",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
-      "source_location": "L210",
-      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel_extractcropname",
-      "community": 1,
-      "norm_label": ".extractcropname()"
+      "norm_label": ".sharepdfreport()"
     },
     {
       "label": "CalendarViewModel.kt",
@@ -5175,7 +5067,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
       "source_location": "L1",
       "id": "app_src_main_java_com_example_smartagriculture_viewmodel_calendarviewmodel_kt",
-      "community": 27,
+      "community": 30,
       "norm_label": "calendarviewmodel.kt"
     },
     {
@@ -5184,7 +5076,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
       "source_location": "L15",
       "id": "viewmodel_calendarviewmodel_calendarviewmodel",
-      "community": 27,
+      "community": 30,
       "norm_label": "calendarviewmodel"
     },
     {
@@ -5193,7 +5085,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
       "source_location": "L27",
       "id": "viewmodel_calendarviewmodel_calendarviewmodel_loadactivities",
-      "community": 27,
+      "community": 30,
       "norm_label": ".loadactivities()"
     },
     {
@@ -5202,7 +5094,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
       "source_location": "L35",
       "id": "viewmodel_calendarviewmodel_calendarviewmodel_addactivity",
-      "community": 27,
+      "community": 30,
       "norm_label": ".addactivity()"
     },
     {
@@ -5211,7 +5103,7 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
       "source_location": "L62",
       "id": "viewmodel_calendarviewmodel_calendarviewmodel_togglecomplete",
-      "community": 27,
+      "community": 30,
       "norm_label": ".togglecomplete()"
     },
     {
@@ -5220,8 +5112,116 @@
       "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
       "source_location": "L72",
       "id": "viewmodel_calendarviewmodel_calendarviewmodel_deleteactivity",
-      "community": 27,
+      "community": 30,
       "norm_label": ".deleteactivity()"
+    },
+    {
+      "label": "CropHealthViewModel.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L1",
+      "id": "app_src_main_java_com_example_smartagriculture_viewmodel_crophealthviewmodel_kt",
+      "community": 0,
+      "norm_label": "crophealthviewmodel.kt"
+    },
+    {
+      "label": "CropHealthUiState",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L29",
+      "id": "viewmodel_crophealthviewmodel_crophealthuistate",
+      "community": 0,
+      "norm_label": "crophealthuistate"
+    },
+    {
+      "label": "Idle",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L30",
+      "id": "viewmodel_crophealthviewmodel_idle",
+      "community": 0,
+      "norm_label": "idle"
+    },
+    {
+      "label": "Loading",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L31",
+      "id": "viewmodel_crophealthviewmodel_loading",
+      "community": 0,
+      "norm_label": "loading"
+    },
+    {
+      "label": "QualityError",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L32",
+      "id": "viewmodel_crophealthviewmodel_qualityerror",
+      "community": 0,
+      "norm_label": "qualityerror"
+    },
+    {
+      "label": "LocalSuccess",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L33",
+      "id": "viewmodel_crophealthviewmodel_localsuccess",
+      "community": 0,
+      "norm_label": "localsuccess"
+    },
+    {
+      "label": "CloudSuccess",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L34",
+      "id": "viewmodel_crophealthviewmodel_cloudsuccess",
+      "community": 0,
+      "norm_label": "cloudsuccess"
+    },
+    {
+      "label": "Error",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L35",
+      "id": "viewmodel_crophealthviewmodel_error",
+      "community": 0,
+      "norm_label": "error"
+    },
+    {
+      "label": "CropHealthViewModel",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L48",
+      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel",
+      "community": 0,
+      "norm_label": "crophealthviewmodel"
+    },
+    {
+      "label": ".analyzeCropLeaf()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L62",
+      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel_analyzecropleaf",
+      "community": 0,
+      "norm_label": ".analyzecropleaf()"
+    },
+    {
+      "label": ".saveBitmapToInternalStorage()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L185",
+      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel_savebitmaptointernalstorage",
+      "community": 0,
+      "norm_label": ".savebitmaptointernalstorage()"
+    },
+    {
+      "label": ".extractCropName()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
+      "source_location": "L210",
+      "id": "viewmodel_crophealthviewmodel_crophealthviewmodel_extractcropname",
+      "community": 0,
+      "norm_label": ".extractcropname()"
     },
     {
       "label": "NotificationHelper.kt",
@@ -5526,7 +5526,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L1",
       "id": "app_src_test_java_com_example_smartagriculture_repository_fewshotrepositorytest_kt",
-      "community": 3,
+      "community": 2,
       "norm_label": "fewshotrepositorytest.kt"
     },
     {
@@ -5535,7 +5535,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L16",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest",
-      "community": 3,
+      "community": 2,
       "norm_label": "fewshotrepositorytest"
     },
     {
@@ -5544,7 +5544,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L21",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_setup",
-      "community": 3,
+      "community": 2,
       "norm_label": ".setup()"
     },
     {
@@ -5553,7 +5553,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L27",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testcomputecosinesimilarity_identicalvectors_returnsone",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testcomputecosinesimilarity_identicalvectors_returnsone()"
     },
     {
@@ -5562,7 +5562,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L37",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testcomputecosinesimilarity_orthogonalvectors_returnszero",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testcomputecosinesimilarity_orthogonalvectors_returnszero()"
     },
     {
@@ -5571,7 +5571,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L47",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testcomputecosinesimilarity_vectornormalizationandscaling_returnsone",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testcomputecosinesimilarity_vectornormalizationandscaling_returnsone()"
     },
     {
@@ -5580,7 +5580,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L58",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testcosinedistance_identicalvectors_returnszero",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testcosinedistance_identicalvectors_returnszero()"
     },
     {
@@ -5589,7 +5589,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L69",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testcosinedistance_orthogonalvectors_returnsone",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testcosinedistance_orthogonalvectors_returnsone()"
     },
     {
@@ -5598,7 +5598,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L80",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testclassifyfewshot_matchingprototypeabovethreshold_returnsbestmatch",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testclassifyfewshot_matchingprototypeabovethreshold_returnsbestmatch()"
     },
     {
@@ -5607,7 +5607,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L106",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testclassifyfewshot_belowthreshold_returnsnull",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testclassifyfewshot_belowthreshold_returnsnull()"
     },
     {
@@ -5616,7 +5616,7 @@
       "source_file": "app/src/test/java/com/example/smartagriculture/repository/FewShotRepositoryTest.kt",
       "source_location": "L124",
       "id": "repository_fewshotrepositorytest_fewshotrepositorytest_testsaveprototype_insertsintodao",
-      "community": 3,
+      "community": 2,
       "norm_label": ".testsaveprototype_insertsintodao()"
     },
     {
@@ -7088,78 +7088,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_adapter_schemesadapter_kt",
-      "target": "adapter_schemesadapter_schemesadapter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_adapter_schemesadapter_kt",
-      "target": "adapter_schemesadapter_schemeviewholder"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "adapter_schemesadapter_schemesadapter",
-      "target": "adapter_schemesadapter_schemesadapter_oncreateviewholder"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "adapter_schemesadapter_schemesadapter",
-      "target": "adapter_schemesadapter_schemesadapter_onbindviewholder"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "adapter_schemesadapter_schemesadapter",
-      "target": "adapter_schemesadapter_schemesadapter_getitemcount"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
-      "source_location": "L51",
-      "weight": 1.0,
-      "source": "fragments_schemesfragment_schemesfragment_onviewcreated",
-      "target": "adapter_schemesadapter_schemesadapter"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "adapter_schemesadapter_schemesadapter_oncreateviewholder",
-      "target": "adapter_schemesadapter_schemeviewholder"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SoilAdapter.kt",
       "source_location": "L11",
       "weight": 1.0,
@@ -7310,6 +7238,78 @@
       "confidence_score": 1.0,
       "source": "adapter_chatmessageadapter_chatmessageadapter_oncreateviewholder",
       "target": "adapter_chatmessageadapter_chatviewholder"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_adapter_schemesadapter_kt",
+      "target": "adapter_schemesadapter_schemesadapter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_adapter_schemesadapter_kt",
+      "target": "adapter_schemesadapter_schemeviewholder"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "adapter_schemesadapter_schemesadapter",
+      "target": "adapter_schemesadapter_schemesadapter_oncreateviewholder"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "adapter_schemesadapter_schemesadapter",
+      "target": "adapter_schemesadapter_schemesadapter_onbindviewholder"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "adapter_schemesadapter_schemesadapter",
+      "target": "adapter_schemesadapter_schemesadapter_getitemcount"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "fragments_schemesfragment_schemesfragment_onviewcreated",
+      "target": "adapter_schemesadapter_schemesadapter"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/adapter/SchemesAdapter.kt",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "adapter_schemesadapter_schemesadapter_oncreateviewholder",
+      "target": "adapter_schemesadapter_schemeviewholder"
     },
     {
       "relation": "contains",
@@ -9920,57 +9920,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_fragments_schemedetailfragment_kt",
-      "target": "fragments_schemedetailfragment_schemedetailfragment"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "fragments_schemedetailfragment_schemedetailfragment",
-      "target": "fragments_schemedetailfragment_schemedetailfragment_onviewcreated"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_fragments_schemesfragment_kt",
-      "target": "fragments_schemesfragment_schemesfragment"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "fragments_schemesfragment_schemesfragment",
-      "target": "fragments_schemesfragment_schemesfragment_onviewcreated"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "fragments_schemesfragment_schemesfragment_onviewcreated",
-      "target": "repository_schemesrepository_schemesrepository"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SettingsFragment.kt",
       "source_location": "L13",
       "weight": 1.0,
@@ -10576,6 +10525,57 @@
       "weight": 1.0,
       "source": "fragments_askcropdoctorbottomsheet_askcropdoctorbottomsheet_sendquestion",
       "target": "model_chatmessage_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_fragments_schemedetailfragment_kt",
+      "target": "fragments_schemedetailfragment_schemedetailfragment"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemeDetailFragment.kt",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "fragments_schemedetailfragment_schemedetailfragment",
+      "target": "fragments_schemedetailfragment_schemedetailfragment_onviewcreated"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_fragments_schemesfragment_kt",
+      "target": "fragments_schemesfragment_schemesfragment"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "fragments_schemesfragment_schemesfragment",
+      "target": "fragments_schemesfragment_schemesfragment_onviewcreated"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/src/main/java/com/example/smartagriculture/fragments/SchemesFragment.kt",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "fragments_schemesfragment_schemesfragment_onviewcreated",
+      "target": "repository_schemesrepository_schemesrepository"
     },
     {
       "relation": "contains",
@@ -11402,68 +11402,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_activities_mainactivity_kt",
-      "target": "activities_mainactivity_mainactivity"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "activities_mainactivity_mainactivity",
-      "target": "activities_mainactivity_mainactivity_oncreate"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "activities_mainactivity_mainactivity",
-      "target": "activities_mainactivity_mainactivity_onwindowfocuschanged"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L70",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "activities_mainactivity_mainactivity",
-      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "activities_mainactivity_mainactivity_oncreate",
-      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
-      "source_location": "L66",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "activities_mainactivity_mainactivity_onwindowfocuschanged",
-      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/smartagriculture/activities/CropHealthActivity.kt",
       "source_location": "L34",
       "weight": 1.0,
@@ -11615,6 +11553,68 @@
       "confidence_score": 1.0,
       "source": "activities_crophealthactivity_crophealthactivity_checkpermissionsandstartcamera",
       "target": "activities_crophealthactivity_crophealthactivity_startcamera"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_activities_mainactivity_kt",
+      "target": "activities_mainactivity_mainactivity"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity",
+      "target": "activities_mainactivity_mainactivity_oncreate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity",
+      "target": "activities_mainactivity_mainactivity_onwindowfocuschanged"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity",
+      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity_oncreate",
+      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/activities/MainActivity.kt",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "activities_mainactivity_mainactivity_onwindowfocuschanged",
+      "target": "activities_mainactivity_mainactivity_hidesystemstatusbar"
     },
     {
       "relation": "contains",
@@ -12321,46 +12321,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_utils_pdfreportgenerator_kt",
-      "target": "utils_pdfreportgenerator_diagnosticdossier"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_utils_pdfreportgenerator_kt",
-      "target": "utils_pdfreportgenerator_pdfreportgenerator"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_pdfreportgenerator_pdfreportgenerator",
-      "target": "utils_pdfreportgenerator_pdfreportgenerator_generatepdfreport"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
-      "source_location": "L165",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_pdfreportgenerator_pdfreportgenerator",
-      "target": "utils_pdfreportgenerator_pdfreportgenerator_sharepdfreport"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/smartagriculture/utils/VoiceAssistantService.kt",
       "source_location": "L8",
       "weight": 1.0,
@@ -12622,6 +12582,96 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_utils_pdfreportgenerator_kt",
+      "target": "utils_pdfreportgenerator_diagnosticdossier"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_utils_pdfreportgenerator_kt",
+      "target": "utils_pdfreportgenerator_pdfreportgenerator"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_pdfreportgenerator_pdfreportgenerator",
+      "target": "utils_pdfreportgenerator_pdfreportgenerator_generatepdfreport"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/utils/PdfReportGenerator.kt",
+      "source_location": "L165",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_pdfreportgenerator_pdfreportgenerator",
+      "target": "utils_pdfreportgenerator_pdfreportgenerator_sharepdfreport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_src_main_java_com_example_smartagriculture_viewmodel_calendarviewmodel_kt",
+      "target": "viewmodel_calendarviewmodel_calendarviewmodel"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
+      "target": "viewmodel_calendarviewmodel_calendarviewmodel_loadactivities"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
+      "target": "viewmodel_calendarviewmodel_calendarviewmodel_addactivity"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
+      "target": "viewmodel_calendarviewmodel_calendarviewmodel_togglecomplete"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
+      "target": "viewmodel_calendarviewmodel_calendarviewmodel_deleteactivity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CropHealthViewModel.kt",
       "source_location": "L29",
       "weight": 1.0,
@@ -12794,56 +12844,6 @@
       "confidence_score": 1.0,
       "source": "viewmodel_crophealthviewmodel_crophealthviewmodel_analyzecropleaf",
       "target": "viewmodel_crophealthviewmodel_crophealthviewmodel_extractcropname"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_src_main_java_com_example_smartagriculture_viewmodel_calendarviewmodel_kt",
-      "target": "viewmodel_calendarviewmodel_calendarviewmodel"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
-      "target": "viewmodel_calendarviewmodel_calendarviewmodel_loadactivities"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
-      "target": "viewmodel_calendarviewmodel_calendarviewmodel_addactivity"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
-      "target": "viewmodel_calendarviewmodel_calendarviewmodel_togglecomplete"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/smartagriculture/viewmodel/CalendarViewModel.kt",
-      "source_location": "L72",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "viewmodel_calendarviewmodel_calendarviewmodel",
-      "target": "viewmodel_calendarviewmodel_calendarviewmodel_deleteactivity"
     },
     {
       "relation": "contains",
@@ -14072,5 +14072,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "22e0fe7d1251f7e7a3c1f5900121e0455679fd55"
+  "built_at_commit": "4db7afd879a303a1f579ac99bee08cb2dbc33d23"
 }

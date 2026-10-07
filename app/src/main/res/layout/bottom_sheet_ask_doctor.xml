@@ -170,7 +170,7 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="#10B981"
             android:contentDescription="Send"
-            android:src="@drawable/ic_scan"
+            android:src="@drawable/ic_send"
             app:tint="#FFFFFF" />
     </LinearLayout>
 

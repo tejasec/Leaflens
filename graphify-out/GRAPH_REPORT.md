@@ -1,7 +1,7 @@
-# Graph Report - Leaflens  (2026-10-04)
+# Graph Report - Leaflens  (2026-10-07)
 
 ## Corpus Check
-- 141 files · ~100,698,119 words
+- 141 files · ~100,723,836 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `22e0fe7d`
+- Built from commit: `4db7afd8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -136,20 +136,20 @@
 ## Communities (104 total, 65 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.12
-Nodes (9): ScanResultFragment, DiagnosticDossier, PdfReportGenerator, onDone(), onError(), onStart(), TtsState, VoiceAssistantService (+1 more)
-
-### Community 1 - "Community 1"
 Cohesion: 0.11
 Nodes (11): ClassResult, TFLiteClassifier, ScanHistoryItem, CloudSuccess, CropHealthUiState, CropHealthViewModel, Error, Idle (+3 more)
 
-### Community 2 - "Community 2"
-Cohesion: 0.13
-Nodes (7): BenchmarkAdapter, BenchmarkGalleryFragment, SampleItem, ViewHolder, ClassificationResult, CropHealthClassifier, Diagnosis
+### Community 1 - "Community 1"
+Cohesion: 0.12
+Nodes (9): ScanResultFragment, DiagnosticDossier, PdfReportGenerator, onDone(), onError(), onStart(), TtsState, VoiceAssistantService (+1 more)
 
-### Community 3 - "Community 3"
+### Community 2 - "Community 2"
 Cohesion: 0.1
 Nodes (5): PrototypeEntity, VectorTypeConverter, FewShotRepository, PrototypeMatch, FewShotRepositoryTest
+
+### Community 3 - "Community 3"
+Cohesion: 0.13
+Nodes (7): BenchmarkAdapter, BenchmarkGalleryFragment, SampleItem, ViewHolder, ClassificationResult, CropHealthClassifier, Diagnosis
 
 ### Community 4 - "Community 4"
 Cohesion: 0.13
@@ -255,17 +255,17 @@ Nodes (3): create_data_zip(), main(), upload_files()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `DiseaseAnalysisResult` connect `Community 5` to `Community 0`?**
+- **Why does `DiseaseAnalysisResult` connect `Community 5` to `Community 1`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `CropHealthClassifier` connect `Community 2` to `Community 5`?**
+- **Why does `CropHealthClassifier` connect `Community 3` to `Community 5`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **Why does `ScanHistoryItem` connect `Community 1` to `Community 0`?**
+- **Why does `ScanHistoryItem` connect `Community 0` to `Community 1`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `CropHealthClassifier` (e.g. with `.onViewCreated()` and `.onViewCreated()`) actually correct?**
   _`CropHealthClassifier` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `AppConfig`, `AboutFragment`, `CropDetailItem` to the rest of the system?**
   _48 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
-- **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.11 - nodes in this community are weakly interconnected._
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
