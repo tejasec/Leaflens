@@ -1,7 +1,40 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.SmartAgriculture" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <!-- Base application theme in Night mode. -->
+    <style name="Base.Theme.SmartAgriculture" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        
+        <!-- Backgrounds & Surfaces -->
+        <item name="android:colorBackground">#121814</item>
+        <item name="colorSurface">#1C241E</item>
+        <item name="colorSurfaceVariant">#242E27</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="colorOnSurfaceVariant">#9CA3AF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#9CA3AF</item>
+        <item name="android:editTextColor">#FFFFFF</item>
+        <item name="android:textColorHint">#6B7280</item>
+
+        <!-- Semantic Theme Color Overrides (Default Dark/Green Mode) -->
+        <item name="appBackgroundColor">#121814</item>
+        <item name="cardBackgroundColor">#1C241E</item>
+        <item name="cardStrokeColor">#2E3B31</item>
+        <item name="textPrimaryColor">#FFFFFF</item>
+        <item name="textSecondaryColor">#9CA3AF</item>
+        <item name="dividerLineColor">#2E3B31</item>
+        <item name="dangerCardBgColor">#1C241E</item>
+
+        <!-- Disable/Hide System Status Bar -->
+        <item name="android:windowFullscreen">true</item>
+
+        <!-- Typography -->
+        <item name="fontFamily">sans-serif</item>
     </style>
 </resources>

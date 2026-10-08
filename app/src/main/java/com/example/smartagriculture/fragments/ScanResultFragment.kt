@@ -1,6 +1,8 @@
 package com.example.smartagriculture.fragments
 
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
@@ -65,6 +67,24 @@ class ScanResultFragment : Fragment(R.layout.fragment_scan_result) {
         binding?.tvConfidenceValue?.text = "${result.confidence}%"
         binding?.pbConfidence?.progress = result.confidence
         binding?.tvAiExplanation?.text = result.aiExplanation
+
+        // Dynamic Status Badge (Healthy, Uncertain, or Disease Detected)
+        val isHealthy = result.diseaseName.contains("healthy", ignoreCase = true)
+        val isUncertain = result.isLowConfidence || result.confidence < 70
+
+        if (isHealthy) {
+            binding?.tvBadge?.text = "Healthy"
+            binding?.tvBadge?.setTextColor(Color.parseColor("#10B981"))
+            binding?.tvBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#3310B981"))
+        } else if (isUncertain) {
+            binding?.tvBadge?.text = "Uncertain"
+            binding?.tvBadge?.setTextColor(Color.parseColor("#F59E0B"))
+            binding?.tvBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#33F59E0B"))
+        } else {
+            binding?.tvBadge?.text = "Disease Detected"
+            binding?.tvBadge?.setTextColor(Color.parseColor("#EF4444"))
+            binding?.tvBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#33EF4444"))
+        }
 
         binding?.btnBack?.setOnClickListener {
             findNavController().navigateUp()
@@ -162,12 +182,21 @@ class ScanResultFragment : Fragment(R.layout.fragment_scan_result) {
     }
 
     private fun saveToHistory(result: DiseaseAnalysisResult) {
+        val status = if (result.isLowConfidence || result.confidence < 70) {
+            "Uncertain"
+        } else if (result.diseaseName.contains("healthy", ignoreCase = true)) {
+            "Healthy"
+        } else {
+            "Diseased"
+        }
+
         val historyItem = ScanHistoryItem(
             imagePath = imageUriStr ?: "",
             diseaseName = result.diseaseName,
+            status = status,
             scientificName = result.scientificName,
             confidence = result.confidence,
-            isLowConfidence = result.isLowConfidence,
+            isLowConfidence = result.isLowConfidence || result.confidence < 70,
             aiExplanation = result.aiExplanation,
             organicCare = result.organicCare,
             chemicalCare = result.chemicalCare

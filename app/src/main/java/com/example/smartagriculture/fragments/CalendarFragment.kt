@@ -2,6 +2,8 @@ package com.example.smartagriculture.fragments
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -22,6 +25,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartagriculture.R
 import com.example.smartagriculture.adapter.CalendarAdapter
+import com.example.smartagriculture.network.RetrofitClient
+import com.example.smartagriculture.network.WeatherApiService
 import com.example.smartagriculture.viewmodel.CalendarViewModel
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
@@ -42,15 +47,16 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
         super.onViewCreated(view, savedInstanceState)
 
         checkNotificationPermission()
+        fetchWeatherBarData(view)
 
         val rvCalendar = view.findViewById<RecyclerView>(R.id.rvCalendar)
-        rvCalendar.layoutManager = LinearLayoutManager(requireContext())
+        rvCalendar?.layoutManager = LinearLayoutManager(requireContext())
 
         val adapter = CalendarAdapter(emptyList()) { activity ->
             viewModel.deleteActivity(activity)
             Toast.makeText(requireContext(), "Activity reminder removed.", Toast.LENGTH_SHORT).show()
         }
-        rvCalendar.adapter = adapter
+        rvCalendar?.adapter = adapter
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.activities.collect { activities ->
@@ -65,6 +71,58 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
         val btnAdd = view.findViewById<Button>(R.id.btnAddActivity)
         btnAdd?.setOnClickListener {
             showAddActivityDialog()
+        }
+    }
+
+    private fun fetchWeatherBarData(view: View) {
+        val tvWeatherIcon = view.findViewById<TextView>(R.id.tvWeatherIcon)
+        val tvWeatherTemp = view.findViewById<TextView>(R.id.tvWeatherTemp)
+        val tvWeatherRainProb = view.findViewById<TextView>(R.id.tvWeatherRainProb)
+        val tvWeatherHumidity = view.findViewById<TextView>(R.id.tvWeatherHumidity)
+        val tvSprayBadge = view.findViewById<TextView>(R.id.tvSprayBadge)
+        val tvWeatherAdvisory = view.findViewById<TextView>(R.id.tvWeatherAdvisory)
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val weatherApi = RetrofitClient.weatherRetrofit
+                    .create(WeatherApiService::class.java)
+                val response = weatherApi.getCurrentWeather(19.0760, 72.8777)
+
+                val temp = response.current_weather?.temperature ?: 28.0
+                val weatherCode = response.current_weather?.weathercode ?: 0
+                val rainProb = response.hourly?.precipitation_probability?.take(6)?.maxOrNull() ?: 10
+                val humidity = response.hourly?.relativehumidity_2m?.take(6)?.average()?.toInt() ?: 65
+
+                val isRainWarning = rainProb >= 40
+                val isHighHumidity = humidity >= 85
+
+                tvWeatherTemp?.text = "${temp.toInt()}°C"
+                tvWeatherRainProb?.text = "💧 $rainProb% Rain"
+                tvWeatherHumidity?.text = "RH: $humidity%"
+
+                val (icon, advisory) = when {
+                    isRainWarning -> "⛈️" to "Rain predicted ($rainProb% chance). Delay foliar spraying."
+                    isHighHumidity -> "🌧️" to "High humidity ($humidity%). Fungal spore risk elevated."
+                    weatherCode in 1..3 -> "⛅" to "Partly cloudy. Optimal conditions for field tasks."
+                    weatherCode >= 51 -> "🌧️" to "Precipitation active. Postpone spraying."
+                    else -> "☀️" to "Optimal weather for spraying and crop inspection."
+                }
+
+                tvWeatherIcon?.text = icon
+                tvWeatherAdvisory?.text = advisory
+
+                if (isRainWarning || weatherCode >= 51) {
+                    tvSprayBadge?.text = "⚠️ FOLIAR SPRAY WARNING"
+                    tvSprayBadge?.setTextColor(Color.parseColor("#856404"))
+                    tvSprayBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FFF3CD"))
+                } else {
+                    tvSprayBadge?.text = "✓ SPRAYING PERMITTED"
+                    tvSprayBadge?.setTextColor(Color.parseColor("#10B981"))
+                    tvSprayBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#3310B981"))
+                }
+            } catch (_: Exception) {
+                // Keep default fallback values on UI
+            }
         }
     }
 
