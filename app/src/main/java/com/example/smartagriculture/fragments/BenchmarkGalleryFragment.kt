@@ -1,6 +1,7 @@
 package com.example.smartagriculture.fragments
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -76,8 +77,13 @@ class BenchmarkGalleryFragment : Fragment(R.layout.fragment_benchmark_gallery) {
         tvGradCam: TextView?,
         tvDetails: TextView?,
     ) {
-        // 1. Create sample leaf Bitmap frame
-        val sampleBitmap = createSyntheticSampleLeafBitmap(sample.diseaseName)
+        // 1. Load real sample leaf Bitmap frame from assets with synthetic fallback
+        val sampleBitmap = try {
+            val inputStream = requireContext().assets.open(sample.imagePath)
+            BitmapFactory.decodeStream(inputStream) ?: createSyntheticSampleLeafBitmap(sample.diseaseName)
+        } catch (_: Exception) {
+            createSyntheticSampleLeafBitmap(sample.diseaseName)
+        }
 
         // 2. Pre-flight Quality Gate Latency (ms)
         val t0 = System.nanoTime()

@@ -1,16 +1,16 @@
-# Graph Report - Leaflens  (2026-10-07)
+# Graph Report - Leaflens  (2026-10-08)
 
 ## Corpus Check
-- 141 files · ~100,723,836 words
+- 150 files · ~100,975,579 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 707 nodes · 752 edges · 93 communities detected
-- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.8)
+- 774 nodes · 835 edges · 99 communities detected
+- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 51 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4db7afd8`
+- Built from commit: `799ee62f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -98,28 +98,34 @@
 - [[_COMMUNITY_Community 80|Community 80]]
 - [[_COMMUNITY_Community 81|Community 81]]
 - [[_COMMUNITY_Community 82|Community 82]]
+- [[_COMMUNITY_Community 83|Community 83]]
+- [[_COMMUNITY_Community 84|Community 84]]
 - [[_COMMUNITY_Community 85|Community 85]]
 - [[_COMMUNITY_Community 86|Community 86]]
 - [[_COMMUNITY_Community 87|Community 87]]
 - [[_COMMUNITY_Community 88|Community 88]]
-- [[_COMMUNITY_Community 89|Community 89]]
-- [[_COMMUNITY_Community 90|Community 90]]
 - [[_COMMUNITY_Community 91|Community 91]]
 - [[_COMMUNITY_Community 92|Community 92]]
+- [[_COMMUNITY_Community 93|Community 93]]
+- [[_COMMUNITY_Community 94|Community 94]]
 - [[_COMMUNITY_Community 95|Community 95]]
 - [[_COMMUNITY_Community 96|Community 96]]
+- [[_COMMUNITY_Community 97|Community 97]]
+- [[_COMMUNITY_Community 98|Community 98]]
+- [[_COMMUNITY_Community 101|Community 101]]
+- [[_COMMUNITY_Community 102|Community 102]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `CropHealthActivity` - 10 edges
-2. `CropHealthClassifier` - 10 edges
-3. `VoiceAssistantService` - 10 edges
-4. `FewShotRepositoryTest` - 10 edges
-5. `RecaptureCameraFragment` - 9 edges
-6. `ScanFragment` - 9 edges
-7. `TFLiteClassifier` - 9 edges
-8. `UserDao` - 8 edges
-9. `CropRepository` - 8 edges
-10. `CropActivityDao` - 7 edges
+1. `GradCamView` - 13 edges
+2. `FewShotRepositoryTest` - 13 edges
+3. `FewShotRepository` - 11 edges
+4. `EnrollPathogenFragment` - 10 edges
+5. `CropHealthActivity` - 10 edges
+6. `CropHealthClassifier` - 10 edges
+7. `VoiceAssistantService` - 10 edges
+8. `RecaptureCameraFragment` - 9 edges
+9. `ScanFragment` - 9 edges
+10. `TFLiteClassifier` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `RegisterScreen()` --calls--> `AuthHeader()`  [INFERRED]
@@ -133,19 +139,19 @@
 - `RegisterScreen()` --calls--> `AuthButton()`  [INFERRED]
   app/src/main/java/com/example/smartagriculture/compose/RegisterScreen.kt → app/src/main/java/com/example/smartagriculture/compose/components/AuthComponents.kt
 
-## Communities (104 total, 65 thin omitted)
+## Communities (111 total, 70 thin omitted)
 
 ### Community 0 - "Community 0"
+Cohesion: 0.07
+Nodes (6): PrototypeEntity, VectorTypeConverter, EnrollPathogenFragment, FewShotRepository, PrototypeMatch, FewShotRepositoryTest
+
+### Community 1 - "Community 1"
 Cohesion: 0.11
 Nodes (11): ClassResult, TFLiteClassifier, ScanHistoryItem, CloudSuccess, CropHealthUiState, CropHealthViewModel, Error, Idle (+3 more)
 
-### Community 1 - "Community 1"
+### Community 2 - "Community 2"
 Cohesion: 0.12
 Nodes (9): ScanResultFragment, DiagnosticDossier, PdfReportGenerator, onDone(), onError(), onStart(), TtsState, VoiceAssistantService (+1 more)
-
-### Community 2 - "Community 2"
-Cohesion: 0.1
-Nodes (5): PrototypeEntity, VectorTypeConverter, FewShotRepository, PrototypeMatch, FewShotRepositoryTest
 
 ### Community 3 - "Community 3"
 Cohesion: 0.13
@@ -153,119 +159,123 @@ Nodes (7): BenchmarkAdapter, BenchmarkGalleryFragment, SampleItem, ViewHolder, C
 
 ### Community 4 - "Community 4"
 Cohesion: 0.13
-Nodes (6): SchemesAdapter, SchemeViewHolder, SchemeEntity, SchemesFragment, Scheme, SchemesRepository
+Nodes (5): createBlendedBitmap(), generateJetHeatmapBitmap(), GradCamView, valueToJetColor(), GradCamViewTest
 
 ### Community 5 - "Community 5"
-Cohesion: 0.13
+Cohesion: 0.12
 Nodes (4): ScanAnalyzingFragment, ScanDetailsFragment, DiseaseAnalysisResult, GeminiService
 
 ### Community 6 - "Community 6"
+Cohesion: 0.13
+Nodes (6): SchemesAdapter, SchemeViewHolder, SchemeEntity, SchemesFragment, Scheme, SchemesRepository
+
+### Community 7 - "Community 7"
 Cohesion: 0.15
 Nodes (5): ChatMessageAdapter, ChatViewHolder, AskCropDoctorBottomSheet, newInstance(), ChatMessage
 
-### Community 7 - "Community 7"
+### Community 8 - "Community 8"
 Cohesion: 0.17
 Nodes (16): chatbot_chat(), ChatbotRequest, ChatbotResponse, CloudPredictionResponse, generate_gradcam_overlay(), get_online_schemes(), GovtScheme, health_check() (+8 more)
 
-### Community 8 - "Community 8"
+### Community 9 - "Community 9"
 Cohesion: 0.15
 Nodes (12): create_blurry_leaf_image_bytes(), create_sharp_leaf_image_bytes(), LeafLens AI - Backend Automated Integration Test Suite =========================, Validates that strict quality enforcement returns HTTP 400 Bad Request., Generates a high-contrast 224x224 synthetic leaf with edges (Laplacian Var > 100, Generates a uniform smooth green image with zero high frequencies (Laplacian Var, Validates that multipart uploads using either 'file' or 'image' field work., Validates that blurry input returns low-confidence rejection without raising 500 (+4 more)
 
-### Community 9 - "Community 9"
+### Community 10 - "Community 10"
 Cohesion: 0.16
 Nodes (9): AuthButton(), AuthHeader(), AuthTextField(), SocialButton(), SocialLoginButtons(), LoginScreen(), RegisterScreen(), LoginFragment (+1 more)
 
-### Community 10 - "Community 10"
+### Community 11 - "Community 11"
 Cohesion: 0.16
 Nodes (4): MarketAdapter, MarketViewHolder, MarketFragment, MarketPrice
 
-### Community 11 - "Community 11"
+### Community 12 - "Community 12"
 Cohesion: 0.16
 Nodes (14): embed_image_html(), get_color_map(), get_layer_vis_square(), load_image(), Resizes an image and returns it as a np.array      Arguments:     image -- a PIL, Returns an image embedded in HTML base64 format     (Based on Caffe's web_demo), Returns a vis_square for the given layer data      Arguments:     data -- a np.n, Visualize each image in a grid of size approx sqrt(n) by sqrt(n)     Returns a n (+6 more)
 
-### Community 12 - "Community 12"
+### Community 13 - "Community 13"
 Cohesion: 0.19
 Nodes (3): CropListAdapter, ViewHolder, AllCropsFragment
 
-### Community 13 - "Community 13"
+### Community 14 - "Community 14"
 Cohesion: 0.2
 Nodes (3): ScanHistoryAdapter, ViewHolder, HistoryFragment
 
-### Community 14 - "Community 14"
+### Community 15 - "Community 15"
 Cohesion: 0.15
 Nodes (5): CropDetailItem, CropDiseaseItem, CropTimelineStep, MyCropItem, CropRepository
 
-### Community 15 - "Community 15"
+### Community 16 - "Community 16"
 Cohesion: 0.21
 Nodes (3): CalendarAdapter, CalendarViewHolder, CalendarFragment
 
-### Community 16 - "Community 16"
+### Community 17 - "Community 17"
 Cohesion: 0.18
 Nodes (4): DashboardAdapter, ViewHolder, HomeFragment, DashboardItem
 
-### Community 17 - "Community 17"
+### Community 18 - "Community 18"
 Cohesion: 0.18
 Nodes (4): PestAdapter, PestViewHolder, PestFragment, Pest
 
-### Community 18 - "Community 18"
+### Community 19 - "Community 19"
 Cohesion: 0.22
 Nodes (3): CropDiseaseAdapter, ViewHolder, CropDetailsFragment
 
-### Community 19 - "Community 19"
+### Community 20 - "Community 20"
 Cohesion: 0.2
 Nodes (4): SoilAdapter, SoilViewHolder, SoilFragment, Soil
 
-### Community 21 - "Community 21"
+### Community 22 - "Community 22"
 Cohesion: 0.22
 Nodes (3): PopularCropAdapter, ViewHolder, CropGuideFragment
 
-### Community 25 - "Community 25"
+### Community 26 - "Community 26"
 Cohesion: 0.39
 Nodes (3): DetailedQualityResult, QualityGate, QualityResult
 
-### Community 31 - "Community 31"
+### Community 32 - "Community 32"
 Cohesion: 0.25
 Nodes (5): apply_temperature_scaling(), compute_ece(), LeafLens AI - Empirical Baseline Comparison & Robustness Evaluation ============, Computes Expected Calibration Error (ECE) across confidence bins., Scales logits by temperature T and applies softmax.
 
-### Community 38 - "Community 38"
+### Community 39 - "Community 39"
 Cohesion: 0.29
 Nodes (3): PlantVillage, Returns SplitGenerators., PlantVillage Dataset.
 
-### Community 48 - "Community 48"
+### Community 51 - "Community 51"
 Cohesion: 0.4
 Nodes (3): MandiApiService, MandiRecord, MandiResponse
 
-### Community 49 - "Community 49"
+### Community 52 - "Community 52"
 Cohesion: 0.4
 Nodes (3): CurrentWeather, WeatherApiService, WeatherResponse
 
-### Community 51 - "Community 51"
+### Community 54 - "Community 54"
 Cohesion: 0.5
 Nodes (3): InfectionGrade, SeverityAnalyzer, SeverityResult
 
-### Community 69 - "Community 69"
+### Community 75 - "Community 75"
 Cohesion: 0.83
 Nodes (3): create_data_zip(), main(), upload_files()
 
 ## Knowledge Gaps
 - **48 isolated node(s):** `AppConfig`, `AboutFragment`, `CropDetailItem`, `CropDiseaseItem`, `Crop` (+43 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **65 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **70 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `DiseaseAnalysisResult` connect `Community 5` to `Community 1`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `CropHealthClassifier` connect `Community 3` to `Community 5`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **Why does `ScanHistoryItem` connect `Community 0` to `Community 1`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **Are the 2 inferred relationships involving `CropHealthClassifier` (e.g. with `.onViewCreated()` and `.onViewCreated()`) actually correct?**
-  _`CropHealthClassifier` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `DiseaseAnalysisResult` connect `Community 5` to `Community 2`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `FewShotRepository` connect `Community 0` to `Community 5`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `ScanHistoryItem` connect `Community 1` to `Community 2`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Are the 3 inferred relationships involving `FewShotRepository` (e.g. with `.onViewCreated()` and `.registerPathogen()`) actually correct?**
+  _`FewShotRepository` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `AppConfig`, `AboutFragment`, `CropDetailItem` to the rest of the system?**
   _48 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11 - nodes in this community are weakly interconnected._

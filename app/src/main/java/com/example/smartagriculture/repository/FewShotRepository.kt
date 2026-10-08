@@ -19,6 +19,45 @@ data class PrototypeMatch(
 class FewShotRepository(private val prototypeDao: PrototypeDao) {
 
     /**
+     * Enrolls a new class prototype by calculating the centroid mean vector across 3 to 5 reference sample embeddings:
+     * c = (1/N) * sum(z_i), normalized to ||c||_2 = 1.0.
+     * Persists to local Room DB and returns the generated prototype ID.
+     */
+    suspend fun enrollPathogen(
+        className: String,
+        sampleEmbeddings: List<List<Double>>,
+    ): Long {
+        require(className.isNotBlank()) { "Class name cannot be blank." }
+        require(sampleEmbeddings.size in 3..5) { "Enrollment requires between 3 and 5 sample photos." }
+        val dim = sampleEmbeddings[0].size
+        require(dim > 0) { "Embedding dimension must be greater than zero." }
+        require(sampleEmbeddings.all { it.size == dim }) { "All sample embeddings must have matching dimensions." }
+
+        val centroid = DoubleArray(dim)
+        for (embedding in sampleEmbeddings) {
+            for (i in 0 until dim) {
+                centroid[i] += embedding[i] / sampleEmbeddings.size
+            }
+        }
+
+        val normalizedCentroid = normalizeVector(centroid.toList())
+        return savePrototype(className.trim(), normalizedCentroid)
+    }
+
+    /**
+     * Normalizes an N-dimensional vector to unit Euclidean length (||v|| = 1.0).
+     */
+    fun normalizeVector(vector: List<Double>): List<Double> {
+        var sumSquares = 0.0
+        for (v in vector) {
+            sumSquares += v * v
+        }
+        val norm = sqrt(sumSquares)
+        if (norm == 0.0) return vector
+        return vector.map { it / norm }
+    }
+
+    /**
      * Enrolls a new class prototype into local Room storage.
      */
     suspend fun savePrototype(className: String, embedding: List<Double>): Long {

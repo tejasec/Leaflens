@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#121814">
+    android:background="?attr/appBackgroundColor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:id="@+id/cvHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#1C241E"
+            app:cardBackgroundColor="?attr/cardBackgroundColor"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
             app:strokeColor="#10B981"
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Application Settings"
-                android:textColor="#FFFFFF"
+                android:textColor="?attr/textPrimaryColor"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"/>
@@ -41,10 +41,10 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#1C241E"
+            app:cardBackgroundColor="?attr/cardBackgroundColor"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp"
-            app:strokeColor="#2E3B31"
+            app:strokeColor="?attr/cardStrokeColor"
             app:strokeWidth="1dp"
             android:layout_marginBottom="16dp">
 
@@ -72,7 +72,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Push Notifications"
-                            android:textColor="#FFFFFF"
+                            android:textColor="?attr/textPrimaryColor"
                             android:textSize="15sp"
                             android:textStyle="bold" />
 
@@ -80,7 +80,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Spore risk alerts and weather warnings"
-                            android:textColor="#9CA3AF"
+                            android:textColor="?attr/textSecondaryColor"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -95,7 +95,51 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#2E3B31"
+                    android:background="?attr/dividerLineColor"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Light Mode Toggle -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Light Mode"
+                            android:textColor="?attr/textPrimaryColor"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Switch to bright daylight theme (defaults to dark/green)"
+                            android:textColor="?attr/textSecondaryColor"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchLightMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:useMaterialThemeColors="true" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/dividerLineColor"
                     android:layout_marginBottom="16dp" />
 
                 <!-- Language Selector -->
@@ -103,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="App Language"
-                    android:textColor="#FFFFFF"
+                    android:textColor="?attr/textPrimaryColor"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="4dp" />
@@ -120,7 +164,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#2E3B31"
+                    android:background="?attr/dividerLineColor"
                     android:layout_marginBottom="16dp" />
 
                 <!-- About & App Version -->
@@ -128,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="About Leaflens"
-                    android:textColor="#FFFFFF"
+                    android:textColor="?attr/textPrimaryColor"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -137,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:text="Version 1.0.0 (Build 100) — Edge AI Crop Assistant"
-                    android:textColor="#9CA3AF"
+                    android:textColor="?attr/textSecondaryColor"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -147,7 +191,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#1C241E"
+            app:cardBackgroundColor="?attr/dangerCardBgColor"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp"
             app:strokeColor="#EF4444"
@@ -172,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Clears all locally saved scan history, cached images, and user preferences."
-                    android:textColor="#9CA3AF"
+                    android:textColor="?attr/textSecondaryColor"
                     android:textSize="12sp"
                     android:layout_marginBottom="16dp" />
 

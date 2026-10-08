@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121814"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- Top Header Navigation -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_more"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Enroll Pathogen"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Register an uncataloged crop disease for instant offline recognition using 3 to 5 reference leaf photos."
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <!-- Card 1: Crop & Disease Name Input -->
+        <LinearLayout
+            android:id="@+id/cardInputs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#1C241E"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pathogen Identity"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Crop Species"
+                android:textColor="#9CA3AF"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/etCropSpecies"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#263228"
+                android:hint="e.g., Tomato, Corn, Wheat"
+                android:inputType="textCapWords"
+                android:paddingHorizontal="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Pathogen / Disease Name *"
+                android:textColor="#9CA3AF"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/etPathogenName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#263228"
+                android:hint="e.g., Yellow Leaf Curl Variant"
+                android:inputType="textCapWords"
+                android:paddingHorizontal="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Card 2: 3-5 Photo Intake Carousel / Grid -->
+        <LinearLayout
+            android:id="@+id/cardPhotos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#1C241E"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardInputs">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reference Photos (3–5)"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvShotCountBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_button"
+                    android:backgroundTint="#3310B981"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp"
+                    android:text="0 / 5"
+                    android:textColor="#10B981"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvShotCountStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0 of 5 photos added (Minimum 3 required to calculate centroid)"
+                android:textColor="#9CA3AF"
+                android:textSize="12sp" />
+
+            <!-- Horizontal Scrollable Row for 5 Photo Slots -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Slot 1 -->
+                    <FrameLayout
+                        android:id="@+id/cardSlot1"
+                        android:layout_width="88dp"
+                        android:layout_height="110dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#263228">
+
+                        <ImageView
+                            android:id="@+id/ivSlot1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/tvSlot1Placeholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Shot 1\n(Req)"
+                            android:textColor="#6B7280"
+                            android:textSize="11sp" />
+
+                        <ImageView
+                            android:id="@+id/btnDeleteSlot1"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/rounded_button"
+                            android:backgroundTint="#B3000000"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_more"
+                            android:visibility="gone"
+                            app:tint="#EF4444" />
+                    </FrameLayout>
+
+                    <!-- Slot 2 -->
+                    <FrameLayout
+                        android:id="@+id/cardSlot2"
+                        android:layout_width="88dp"
+                        android:layout_height="110dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#263228">
+
+                        <ImageView
+                            android:id="@+id/ivSlot2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/tvSlot2Placeholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Shot 2\n(Req)"
+                            android:textColor="#6B7280"
+                            android:textSize="11sp" />
+
+                        <ImageView
+                            android:id="@+id/btnDeleteSlot2"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/rounded_button"
+                            android:backgroundTint="#B3000000"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_more"
+                            android:visibility="gone"
+                            app:tint="#EF4444" />
+                    </FrameLayout>
+
+                    <!-- Slot 3 -->
+                    <FrameLayout
+                        android:id="@+id/cardSlot3"
+                        android:layout_width="88dp"
+                        android:layout_height="110dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#263228">
+
+                        <ImageView
+                            android:id="@+id/ivSlot3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/tvSlot3Placeholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Shot 3\n(Req)"
+                            android:textColor="#6B7280"
+                            android:textSize="11sp" />
+
+                        <ImageView
+                            android:id="@+id/btnDeleteSlot3"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/rounded_button"
+                            android:backgroundTint="#B3000000"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_more"
+                            android:visibility="gone"
+                            app:tint="#EF4444" />
+                    </FrameLayout>
+
+                    <!-- Slot 4 -->
+                    <FrameLayout
+                        android:id="@+id/cardSlot4"
+                        android:layout_width="88dp"
+                        android:layout_height="110dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#263228">
+
+                        <ImageView
+                            android:id="@+id/ivSlot4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/tvSlot4Placeholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Shot 4\n(Opt)"
+                            android:textColor="#6B7280"
+                            android:textSize="11sp" />
+
+                        <ImageView
+                            android:id="@+id/btnDeleteSlot4"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/rounded_button"
+                            android:backgroundTint="#B3000000"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_more"
+                            android:visibility="gone"
+                            app:tint="#EF4444" />
+                    </FrameLayout>
+
+                    <!-- Slot 5 -->
+                    <FrameLayout
+                        android:id="@+id/cardSlot5"
+                        android:layout_width="88dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#263228">
+
+                        <ImageView
+                            android:id="@+id/ivSlot5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/tvSlot5Placeholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Shot 5\n(Opt)"
+                            android:textColor="#6B7280"
+                            android:textSize="11sp" />
+
+                        <ImageView
+                            android:id="@+id/btnDeleteSlot5"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/rounded_button"
+                            android:backgroundTint="#B3000000"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_more"
+                            android:visibility="gone"
+                            app:tint="#EF4444" />
+                    </FrameLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Buttons to add photos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAddCamera"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:text="📷 Take Photo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="#2E3B31" />
+
+                <Button
+                    android:id="@+id/btnAddGallery"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:text="🖼️ Gallery"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="#2E3B31" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Information / Guarantee Badge -->
+        <LinearLayout
+            android:id="@+id/cardOfflineInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#1A10B981"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardPhotos">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Metric Few-Shot Adaptation registers the pathogen locally in under 5 ms without requiring cloud retraining or internet connectivity."
+                android:textColor="#10B981"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Primary Action Button -->
+        <Button
+            android:id="@+id/btnRegisterPathogen"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#10B981"
+            android:enabled="false"
+            android:text="Register Pathogen for Offline Use"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardOfflineInfo" />
+
+        <ProgressBar
+            android:id="@+id/pbRegistering"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:indeterminateTint="#FFFFFF"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/btnRegisterPathogen"
+            app:layout_constraintEnd_toEndOf="@id/btnRegisterPathogen"
+            app:layout_constraintStart_toStartOf="@id/btnRegisterPathogen"
+            app:layout_constraintTop_toTopOf="@id/btnRegisterPathogen" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -172,16 +172,32 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
+        <!-- Enroll Novel Disease Action -->
+        <Button
+            android:id="@+id/btnEnrollPathogen"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#10B981"
+            android:text="Enroll as New Pathogen (3–5 Photos) ➔"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardSuggestions" />
+
         <!-- Action Buttons -->
         <LinearLayout
             android:id="@+id/rowLowConfButtons"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardSuggestions">
+            app:layout_constraintTop_toBottomOf="@id/btnEnrollPathogen">
 
             <Button
                 android:id="@+id/btnRetakePhoto"

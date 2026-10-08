@@ -5,10 +5,10 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp"
-    app:cardBackgroundColor="#1C241E"
+    app:cardBackgroundColor="?attr/cardBackgroundColor"
     app:cardCornerRadius="16dp"
     app:cardElevation="3dp"
-    app:strokeColor="#2E3B31"
+    app:strokeColor="?attr/cardStrokeColor"
     app:strokeWidth="1dp">
 
     <LinearLayout
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="📅 CROP CALENDAR"
-                android:background="#2E3B31"
+                android:background="?attr/cardStrokeColor"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="3dp"
                 android:textColor="#10B981"
@@ -58,7 +58,7 @@
             android:text="Crop Activity"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF" />
+            android:textColor="?attr/textPrimaryColor" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="June - July"
-                android:textColor="#9CA3AF"/>
+                android:textColor="?attr/textSecondaryColor"/>
         </LinearLayout>
 
         <LinearLayout
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="October - November"
-                android:textColor="#9CA3AF"/>
+                android:textColor="?attr/textSecondaryColor"/>
         </LinearLayout>
 
         <TextView
@@ -108,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Description goes here."
-            android:textColor="#9CA3AF" />
+            android:textColor="?attr/textSecondaryColor" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

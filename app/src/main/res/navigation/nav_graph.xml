@@ -92,6 +92,9 @@
         <action
             android:id="@+id/action_homeFragment_to_benchmarkGalleryFragment"
             app:destination="@id/benchmarkGalleryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_enrollPathogenFragment"
+            app:destination="@id/enrollPathogenFragment" />
     </fragment>
 
     <fragment
@@ -388,7 +391,16 @@
         <action
             android:id="@+id/action_scanLowConfidenceFragment_to_scanResultFragment"
             app:destination="@id/scanResultFragment" />
+        <action
+            android:id="@+id/action_scanLowConfidenceFragment_to_enrollPathogenFragment"
+            app:destination="@id/enrollPathogenFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/enrollPathogenFragment"
+        android:name="com.example.smartagriculture.fragments.EnrollPathogenFragment"
+        android:label="EnrollPathogenFragment"
+        tools:layout="@layout/fragment_enroll_pathogen" />
 
     <fragment
         android:id="@+id/historyFragment"

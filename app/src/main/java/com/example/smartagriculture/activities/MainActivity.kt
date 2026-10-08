@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Read and apply saved theme preference before super.onCreate
+        com.example.smartagriculture.utils.ThemeManager.applyTheme(this)
+
         // Read and apply saved language preference before super.onCreate
         val prefs = getSharedPreferences("smart_agri_prefs", 0)
         val savedLang = prefs.getString("selected_language", null)

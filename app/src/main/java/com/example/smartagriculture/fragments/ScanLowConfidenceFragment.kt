@@ -48,6 +48,13 @@ class ScanLowConfidenceFragment : Fragment(R.layout.fragment_scan_low_confidence
             findNavController().popBackStack(R.id.scanFragment, false)
         }
 
+        binding?.btnEnrollPathogen?.setOnClickListener {
+            val bundle = bundleOf(
+                "initialImageUri" to imageUriStr
+            )
+            findNavController().navigate(R.id.action_scanLowConfidenceFragment_to_enrollPathogenFragment, bundle)
+        }
+
         binding?.btnContinueAnyway?.setOnClickListener {
             val bundle = bundleOf(
                 "imageUri" to imageUriStr,

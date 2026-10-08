@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -89,27 +90,26 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
     }
 
     private fun showAddActivityDialog() {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("➕ Add Crop Activity Reminder")
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_activity, null)
+        val alertDialog = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .create()
 
-        val inputLayout = LinearLayout(requireContext()).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(50, 20, 50, 10)
-        }
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        val etCrop = EditText(requireContext()).apply {
-            hint = "Crop Name (e.g. Tomato, Cotton)"
-        }
-        val etTitle = EditText(requireContext()).apply {
-            hint = "Activity Description (e.g. Top Dressing)"
-        }
+        val etCrop = dialogView.findViewById<EditText>(R.id.etCrop)
+        val etTitle = dialogView.findViewById<EditText>(R.id.etTitle)
+        val spinnerType = dialogView.findViewById<Spinner>(R.id.spinnerType)
+        val spinnerDelay = dialogView.findViewById<Spinner>(R.id.spinnerDelay)
+        val btnCancel = dialogView.findViewById<Button>(R.id.btnCancel)
+        val btnSchedule = dialogView.findViewById<Button>(R.id.btnSchedule)
 
-        val spinnerType = Spinner(requireContext())
         val types = listOf("FERTILIZER", "WATERING", "SPRAY", "HARVEST", "GENERAL")
-        val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, types)
-        spinnerType.adapter = spinnerAdapter
+        val typeAdapter = ArrayAdapter(requireContext(), R.layout.item_spinner_selected, types).apply {
+            setDropDownViewResource(R.layout.item_spinner_dropdown)
+        }
+        spinnerType.adapter = typeAdapter
 
-        val spinnerDelay = Spinner(requireContext())
         val delayOptions = listOf(
             "Schedule in 1 Minute (Test Alert)",
             "Schedule in 1 Day",
@@ -117,20 +117,19 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
             "Schedule in 7 Days",
             "Schedule in 14 Days"
         )
-        val delayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, delayOptions)
+        val delayAdapter = ArrayAdapter(requireContext(), R.layout.item_spinner_selected, delayOptions).apply {
+            setDropDownViewResource(R.layout.item_spinner_dropdown)
+        }
         spinnerDelay.adapter = delayAdapter
 
-        inputLayout.addView(etCrop)
-        inputLayout.addView(etTitle)
-        inputLayout.addView(spinnerType)
-        inputLayout.addView(spinnerDelay)
+        btnCancel.setOnClickListener {
+            alertDialog.dismiss()
+        }
 
-        builder.setView(inputLayout)
-
-        builder.setPositiveButton("Schedule & Save") { dialog, _ ->
+        btnSchedule.setOnClickListener {
             val crop = etCrop.text.toString().trim().ifBlank { "Crop" }
             val title = etTitle.text.toString().trim().ifBlank { "Farm Activity" }
-            val type = types[spinnerType.selectedItemPosition]
+            val type = types.getOrElse(spinnerType.selectedItemPosition) { "GENERAL" }
 
             val delayMillis = when (spinnerDelay.selectedItemPosition) {
                 0 -> TimeUnit.MINUTES.toMillis(1)
@@ -144,10 +143,9 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
 
             viewModel.addActivity(crop, title, type, scheduledDate)
             Toast.makeText(requireContext(), "Reminder scheduled successfully!", Toast.LENGTH_SHORT).show()
-            dialog.dismiss()
+            alertDialog.dismiss()
         }
 
-        builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
-        builder.show()
+        alertDialog.show()
     }
 }

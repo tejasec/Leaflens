@@ -17,11 +17,14 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.smartagriculture.R
 import com.example.smartagriculture.analysis.SeverityAnalyzer
+import com.example.smartagriculture.database.AppDatabase
 import com.example.smartagriculture.databinding.FragmentScanAnalyzingBinding
 import com.example.smartagriculture.ml.CropHealthClassifier
+import com.example.smartagriculture.ml.FeatureEmbeddingExtractor
 import com.example.smartagriculture.ml.GradCamEngine
 import com.example.smartagriculture.model.DiseaseAnalysisResult
 import com.example.smartagriculture.network.GeminiService
+import com.example.smartagriculture.repository.FewShotRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -76,20 +79,58 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
             delay(400)
             val activationMatrix = GradCamEngine.generateActivationMatrix(bitmap)
             val isBypassed = arguments?.getBoolean("bypassQualityGate", false) ?: arguments?.getBoolean("humanOverride", false) ?: false
-            val baseResult = if (classificationResult.predictions.isNotEmpty() && !classificationResult.isUncertain) {
+
+            // Check On-Device Few-Shot Prototypes for Novel / Uncataloged Pathogen (Feature 6)
+            val fewShotDao = AppDatabase.getDatabase(requireContext().applicationContext).prototypeDao()
+            val fewShotRepo = FewShotRepository(fewShotDao)
+            val queryEmbedding = FeatureEmbeddingExtractor.extractEmbedding(bitmap)
+            val fewShotMatch = fewShotRepo.classifyFewShot(queryEmbedding, threshold = 0.82)
+
+            var isLowConfidenceRoute = false
+            val baseResult = if (fewShotMatch != null) {
+                // Matched a locally enrolled pathogen!
+                val scorePct = (fewShotMatch.similarityScore * 100).toInt()
+                DiseaseAnalysisResult(
+                    diseaseName = fewShotMatch.className,
+                    scientificName = "Locally Enrolled Pathogen",
+                    confidence = scorePct,
+                    isLowConfidence = false,
+                    aiExplanation = "Diagnosed via on-device Few-Shot prototype (${String.format(java.util.Locale.US, "%.1f%%", fewShotMatch.similarityScore * 100)} similarity). ${severityResult.summary}",
+                    organicCare = "• Isolate infected crop foliage and sanitize field tools\n• Apply preventative organic bio-agent (Trichoderma / Neem extract)",
+                    chemicalCare = "• Consult local agrarian extension officer (KVK) for localized chemical spray guidelines",
+                    activationMatrix = activationMatrix,
+                )
+            } else if (classificationResult.predictions.isNotEmpty() && !classificationResult.isUncertain) {
                 val topDiagnosis = classificationResult.predictions[0]
                 DiseaseAnalysisResult(
                     diseaseName = topDiagnosis.label,
                     scientificName = "Pathogen species",
                     confidence = (topDiagnosis.confidence * 100).toInt(),
-                    isLowConfidence = classificationResult.isUncertain,
+                    isLowConfidence = false,
                     aiExplanation = "${classificationResult.feedbackMessage} ${severityResult.summary}",
                     organicCare = "• Neem oil extract (3%) or Trichoderma viride\n• Prune infected foliage and improve canopy airflow",
                     chemicalCare = "• Mancozeb 75% WP or Copper Oxychloride 50% WP (2.5g/L water)\n• Observe 7-day PHI and 24-hr REI safety intervals",
                     activationMatrix = activationMatrix,
                 )
             } else {
-                GeminiService.analyzeCropDisease(bitmap).copy(activationMatrix = activationMatrix)
+                // Uncertain / uncataloged disease -> Check cloud or route to low confidence screen
+                isLowConfidenceRoute = true
+                try {
+                    GeminiService.analyzeCropDisease(bitmap).copy(activationMatrix = activationMatrix)
+                } catch (e: Exception) {
+                    val label = if (classificationResult.predictions.isNotEmpty()) classificationResult.predictions[0].label else "Uncataloged Pathogen"
+                    val conf = if (classificationResult.predictions.isNotEmpty()) (classificationResult.predictions[0].confidence * 100).toInt() else 35
+                    DiseaseAnalysisResult(
+                        diseaseName = "$label (Uncertain)",
+                        scientificName = "Unconfirmed pathogen",
+                        confidence = conf,
+                        isLowConfidence = true,
+                        aiExplanation = "Uncertain diagnosis: The model could not confidently identify this disease with edge models. Enroll it under 'Enroll Pathogen' to teach the app.",
+                        organicCare = "• Isolate affected leaves to prevent spread\n• Avoid overhead irrigation",
+                        chemicalCare = "• Consult an agronomist before spraying broad-spectrum fungicides",
+                        activationMatrix = activationMatrix,
+                    )
+                }
             }
             tfliteClassifier.close()
 
@@ -111,8 +152,12 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
                 "activationMatrix" to activationMatrix,
             )
 
-            // Navigate to final Disease Analysis Result Screen
-            findNavController().navigate(R.id.action_scanAnalyzingFragment_to_scanResultFragment, bundle)
+            // If diagnosis is uncertain/low confidence, navigate to ScanLowConfidenceFragment (which offers "Enroll as New Pathogen ➔")
+            if (isLowConfidenceRoute && result.isLowConfidence) {
+                findNavController().navigate(R.id.action_scanAnalyzingFragment_to_scanLowConfidenceFragment, bundle)
+            } else {
+                findNavController().navigate(R.id.action_scanAnalyzingFragment_to_scanResultFragment, bundle)
+            }
         }
     }
 

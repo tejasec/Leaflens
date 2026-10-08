@@ -130,4 +130,38 @@ class FewShotRepositoryTest {
         assertEquals(1L, id)
         verify(prototypeDao).insertPrototype(any())
     }
+
+    @Test
+    fun testEnrollPathogen_valid3Shots_computesNormalizedCentroidAndSaves() = runTest {
+        whenever(prototypeDao.insertPrototype(any())).thenReturn(42L)
+
+        val shot1 = listOf(1.0, 0.0, 0.0)
+        val shot2 = listOf(0.8, 0.2, 0.0)
+        val shot3 = listOf(0.9, 0.1, 0.0)
+
+        val id = repository.enrollPathogen("Tomato - Novel Mosaic", listOf(shot1, shot2, shot3))
+
+        assertEquals(42L, id)
+        verify(prototypeDao).insertPrototype(org.mockito.kotlin.check { entity ->
+            assertEquals("Tomato - Novel Mosaic", entity.className)
+            assertEquals(3, entity.embedding.size)
+            // L2 norm must be 1.0
+            val norm = Math.sqrt(entity.embedding.sumOf { it * it })
+            assertEquals(1.0, norm, 0.0001)
+        })
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun testEnrollPathogen_fewerThan3Shots_throwsException() = runTest {
+        val shot1 = listOf(1.0, 0.0, 0.0)
+        val shot2 = listOf(0.8, 0.2, 0.0)
+        repository.enrollPathogen("Tomato - Novel Mosaic", listOf(shot1, shot2))
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun testEnrollPathogen_moreThan5Shots_throwsException() = runTest {
+        val shot = listOf(1.0, 0.0, 0.0)
+        repository.enrollPathogen("Tomato - Novel Mosaic", listOf(shot, shot, shot, shot, shot, shot))
+    }
 }
+

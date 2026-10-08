@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121814"
+    android:background="?attr/appBackgroundColor"
     android:padding="16dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#1C241E"
+        app:cardBackgroundColor="?attr/cardBackgroundColor"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
         app:strokeColor="#10B981"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Crop Pest Management Directory"
-            android:textColor="#FFFFFF"
+            android:textColor="?attr/textPrimaryColor"
             android:textSize="20sp"
             android:textStyle="bold"
             android:gravity="center"/>

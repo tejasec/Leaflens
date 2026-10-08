@@ -18,6 +18,19 @@
         <item name="colorSurfaceVariant">#242E27</item>
         <item name="colorOnSurface">#FFFFFF</item>
         <item name="colorOnSurfaceVariant">#9CA3AF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#9CA3AF</item>
+        <item name="android:editTextColor">#FFFFFF</item>
+        <item name="android:textColorHint">#6B7280</item>
+
+        <!-- Semantic Theme Color Overrides (Default Dark/Green Mode) -->
+        <item name="appBackgroundColor">#121814</item>
+        <item name="cardBackgroundColor">#1C241E</item>
+        <item name="cardStrokeColor">#2E3B31</item>
+        <item name="textPrimaryColor">#FFFFFF</item>
+        <item name="textSecondaryColor">#9CA3AF</item>
+        <item name="dividerLineColor">#2E3B31</item>
+        <item name="dangerCardBgColor">#1C241E</item>
 
         <!-- Disable/Hide System Status Bar -->
         <item name="android:windowFullscreen">true</item>
@@ -26,5 +39,45 @@
         <item name="fontFamily">sans-serif</item>
     </style>
 
+    <!-- Default Theme: Dark Forest & Emerald Green (100% Preserved) -->
     <style name="Theme.SmartAgriculture" parent="Base.Theme.SmartAgriculture" />
+
+    <!-- Light Theme: Clean Agricultural Daylight Mode -->
+    <style name="Theme.SmartAgriculture.Light" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        
+        <!-- Backgrounds & Surfaces -->
+        <item name="android:colorBackground">#F4F7F4</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorSurfaceVariant">#F0FDF4</item>
+        <item name="colorOnSurface">#111827</item>
+        <item name="colorOnSurfaceVariant">#6B7280</item>
+        <item name="android:textColorPrimary">#111827</item>
+        <item name="android:textColorSecondary">#6B7280</item>
+        <item name="android:editTextColor">#111827</item>
+        <item name="android:textColorHint">#9CA3AF</item>
+
+        <!-- Semantic Theme Color Overrides (Light Mode) -->
+        <item name="appBackgroundColor">#F4F7F4</item>
+        <item name="cardBackgroundColor">#FFFFFF</item>
+        <item name="cardStrokeColor">#E2E8F0</item>
+        <item name="textPrimaryColor">#111827</item>
+        <item name="textSecondaryColor">#6B7280</item>
+        <item name="dividerLineColor">#E5E7EB</item>
+        <item name="dangerCardBgColor">#FEF2F2</item>
+
+        <!-- Disable/Hide System Status Bar -->
+        <item name="android:windowFullscreen">true</item>
+
+        <!-- Typography -->
+        <item name="fontFamily">sans-serif</item>
+    </style>
 </resources>
