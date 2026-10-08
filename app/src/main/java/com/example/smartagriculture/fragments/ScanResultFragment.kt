@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.smartagriculture.R
 import com.example.smartagriculture.database.AppDatabase
 import com.example.smartagriculture.databinding.FragmentScanResultBinding
+import com.example.smartagriculture.ml.GradCamEngine
 import com.example.smartagriculture.model.DiseaseAnalysisResult
 import com.example.smartagriculture.model.ScanHistoryItem
 import com.example.smartagriculture.utils.DiagnosticDossier
@@ -70,9 +71,14 @@ class ScanResultFragment : Fragment(R.layout.fragment_scan_result) {
         }
 
         binding?.btnViewHeatmap?.setOnClickListener {
+            @Suppress("UNCHECKED_CAST")
+            val activationMatrix = result.activationMatrix
+                ?: (arguments?.getSerializable("activationMatrix") as? Array<FloatArray>)
+
             val bundle = bundleOf(
                 "imageUri" to imageUriStr,
-                "analysisResult" to result
+                "analysisResult" to result,
+                "activationMatrix" to activationMatrix,
             )
             findNavController().navigate(R.id.action_scanResultFragment_to_scanHeatmapFragment, bundle)
         }
@@ -104,6 +110,17 @@ class ScanResultFragment : Fragment(R.layout.fragment_scan_result) {
         // PDF Dossier Export & Share (Feature 11)
         binding?.btnExportPdf?.setOnClickListener {
             val leafBitmap = loadBitmapForPdf(imageUriStr)
+            @Suppress("UNCHECKED_CAST")
+            val activationMatrix = result.activationMatrix
+                ?: (arguments?.getSerializable("activationMatrix") as? Array<FloatArray>)
+                ?: leafBitmap?.let { GradCamEngine.generateActivationMatrix(it) }
+
+            val gradCamOverlay = if (leafBitmap != null && activationMatrix != null) {
+                GradCamEngine.createBlendedHeatmapBitmap(leafBitmap, activationMatrix, 0.70f)
+            } else {
+                leafBitmap
+            }
+
             val dossier = DiagnosticDossier(
                 cropSpecies = "Tomato",
                 diseaseName = result.diseaseName,
@@ -112,7 +129,7 @@ class ScanResultFragment : Fragment(R.layout.fragment_scan_result) {
                 organicTreatment = result.organicCare,
                 chemicalTreatment = result.chemicalCare,
                 originalLeafImage = leafBitmap,
-                gradCamOverlayImage = leafBitmap
+                gradCamOverlayImage = gradCamOverlay
             )
             try {
                 val pdfFile = PdfReportGenerator.generatePdfReport(requireContext(), dossier)

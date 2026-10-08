@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartagriculture.R
 import com.example.smartagriculture.ml.CropHealthClassifier
+import com.example.smartagriculture.ml.GradCamEngine
 import com.example.smartagriculture.quality.QualityGate
 import org.json.JSONObject
 import java.io.InputStream
@@ -92,8 +93,8 @@ class BenchmarkGalleryFragment : Fragment(R.layout.fragment_benchmark_gallery) {
 
         // 4. Grad-CAM Activation Latency (ms)
         val t4 = System.nanoTime()
-        val mockActivation = Array(7) { FloatArray(7) { (0..100).random() / 100.0f } }
-        val sumActivation = mockActivation.sumOf { row -> row.sum().toDouble() }
+        val realActivation = GradCamEngine.generateActivationMatrix(sampleBitmap)
+        val sumActivation = realActivation.sumOf { row -> row.sum().toDouble() }
         val t5 = System.nanoTime()
         val gradCamLatencyMs = (t5 - t4) / 1_000_000.0f
 

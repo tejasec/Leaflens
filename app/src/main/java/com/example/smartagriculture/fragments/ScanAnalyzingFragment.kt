@@ -19,6 +19,7 @@ import com.example.smartagriculture.R
 import com.example.smartagriculture.analysis.SeverityAnalyzer
 import com.example.smartagriculture.databinding.FragmentScanAnalyzingBinding
 import com.example.smartagriculture.ml.CropHealthClassifier
+import com.example.smartagriculture.ml.GradCamEngine
 import com.example.smartagriculture.model.DiseaseAnalysisResult
 import com.example.smartagriculture.network.GeminiService
 import kotlinx.coroutines.delay
@@ -71,8 +72,9 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
             binding?.icStep3?.text = "✓"
             binding?.tvStep3?.setTextColor(Color.parseColor("#10B981"))
 
-            // Step 4: Hybrid Fallback & Results Assembly
+            // Step 4: Explainability Grad-CAM Generation & Results Assembly
             delay(400)
+            val activationMatrix = GradCamEngine.generateActivationMatrix(bitmap)
             val isBypassed = arguments?.getBoolean("bypassQualityGate", false) ?: arguments?.getBoolean("humanOverride", false) ?: false
             val baseResult = if (classificationResult.predictions.isNotEmpty() && !classificationResult.isUncertain) {
                 val topDiagnosis = classificationResult.predictions[0]
@@ -84,9 +86,10 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
                     aiExplanation = "${classificationResult.feedbackMessage} ${severityResult.summary}",
                     organicCare = "• Neem oil extract (3%) or Trichoderma viride\n• Prune infected foliage and improve canopy airflow",
                     chemicalCare = "• Mancozeb 75% WP or Copper Oxychloride 50% WP (2.5g/L water)\n• Observe 7-day PHI and 24-hr REI safety intervals",
+                    activationMatrix = activationMatrix,
                 )
             } else {
-                GeminiService.analyzeCropDisease(bitmap)
+                GeminiService.analyzeCropDisease(bitmap).copy(activationMatrix = activationMatrix)
             }
             tfliteClassifier.close()
 
@@ -105,6 +108,7 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
             val bundle = bundleOf(
                 "imageUri" to imageUriStr,
                 "analysisResult" to result,
+                "activationMatrix" to activationMatrix,
             )
 
             // Navigate to final Disease Analysis Result Screen
