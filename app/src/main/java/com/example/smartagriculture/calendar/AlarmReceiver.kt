@@ -29,7 +29,8 @@ class AlarmReceiver : BroadcastReceiver() {
                             cropName = activity.cropName,
                             activityTitle = activity.activityTitle,
                             activityType = activity.activityType,
-                            scheduledTimeMillis = activity.scheduledDate
+                            scheduledTimeMillis = activity.scheduledDate,
+                            isDaily = activity.isDaily
                         )
                     }
                 } catch (e: Exception) {

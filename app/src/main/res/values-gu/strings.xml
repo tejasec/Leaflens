@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">લીફલેન્સ એઆઈ</string>
+    <string name="action_settings">સેટિંગ્સ</string>
+    <string name="title_diagnosis">પાક રોગ નિદાન</string>
+    <string name="status_healthy">સ્વસ્થ (Healthy)</string>
+    <string name="status_uncertain">અનિશ્ચિત / અમાન્ય પાન</string>
+    <string name="btn_listen_advisory">અવાજ સલાહ સાંભળો</string>
+    <string name="btn_stop_advisory">અવાજ રોકો</string>
+    <string name="btn_audio_error">ઓડિયો અનુપલબ્ધ / ફરી પ્રયાસ કરો</string>
+    <string name="label_crop">પાક</string>
+    <string name="label_confidence">ચોકસાઈ</string>
+    <string name="label_remedy">જૈવિક ઉપચાર</string>
+    <string name="label_chemical_remedy">રાસાયણિક ઉપચાર</string>
+    <string name="btn_export_whatsapp">વોટ્સએપ પર પીડીએફ શેર કરો</string>
+    <string name="btn_export_pdf">પીડીએફ નિદાન રિપોર્ટ નિકાસ કરો</string>
+    <string name="reading_advisory_in">%1$s માં સલાહ વાંચી રહ્યાં છીએ…</string>
+    <string name="voice_doctor_title">ઓડિયો ડોક્ટર સલાહ</string>
+    <string name="voice_doctor_subtitle">તમારી પ્રાદેશિક ભાષામાં નિદાન સલાહ સાંભળો</string>
+
+    <string-array name="language_array">
+        <item>English</item>
+        <item>हिंदी (Hindi)</item>
+        <item>मराठी (Marathi)</item>
+        <item>ગુજરાતી (Gujarati)</item>
+        <item>తెలుగు (Telugu)</item>
+        <item>தமிழ் (Tamil)</item>
+    </string-array>
+</resources>

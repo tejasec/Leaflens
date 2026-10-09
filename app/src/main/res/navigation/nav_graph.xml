@@ -90,11 +90,12 @@
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_benchmarkGalleryFragment"
-            app:destination="@id/benchmarkGalleryFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_enrollPathogenFragment"
-            app:destination="@id/enrollPathogenFragment" />
+            app:destination="@id/enrollPathogenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -332,7 +333,11 @@
         tools:layout="@layout/fragment_scan">
         <action
             android:id="@+id/action_scanFragment_to_scanQualityFragment"
-            app:destination="@id/scanQualityFragment" />
+            app:destination="@id/scanQualityFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -342,7 +347,11 @@
         tools:layout="@layout/fragment_scan_quality">
         <action
             android:id="@+id/action_scanQualityFragment_to_scanAnalyzingFragment"
-            app:destination="@id/scanAnalyzingFragment" />
+            app:destination="@id/scanAnalyzingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -393,13 +402,17 @@
             app:destination="@id/scanResultFragment" />
         <action
             android:id="@+id/action_scanLowConfidenceFragment_to_enrollPathogenFragment"
-            app:destination="@id/enrollPathogenFragment" />
+            app:destination="@id/enrollPathogenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/enrollPathogenFragment"
         android:name="com.example.smartagriculture.fragments.EnrollPathogenFragment"
-        android:label="EnrollPathogenFragment"
+        android:label="Teach Disease"
         tools:layout="@layout/fragment_enroll_pathogen" />
 
     <fragment
@@ -446,12 +459,6 @@
         android:name="com.example.smartagriculture.fragments.ReplaceHistoryFragment"
         android:label="ReplaceHistoryFragment"
         tools:layout="@layout/fragment_replace_history" />
-
-    <fragment
-        android:id="@+id/benchmarkGalleryFragment"
-        android:name="com.example.smartagriculture.fragments.BenchmarkGalleryFragment"
-        android:label="BenchmarkGalleryFragment"
-        tools:layout="@layout/fragment_benchmark_gallery" />
 
     <fragment
         android:id="@+id/pestDetailFragment"

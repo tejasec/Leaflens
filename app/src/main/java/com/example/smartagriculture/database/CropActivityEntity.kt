@@ -10,5 +10,6 @@ data class CropActivityEntity(
     val activityTitle: String,
     val scheduledDate: Long, // Epoch Millis
     val isCompleted: Boolean = false,
-    val activityType: String = "GENERAL" // e.g., "FERTILIZER", "WATERING", "SPRAY", "HARVEST"
+    val activityType: String = "GENERAL", // e.g., "FERTILIZER", "WATERING", "SPRAY", "HARVEST"
+    val isDaily: Boolean = false
 )

@@ -101,8 +101,9 @@
                 android:id="@+id/ivOriginalLeaf"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bg_1" />
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#26332A"
+                android:scaleType="centerCrop" />
 
             <!-- Custom Grad-CAM Heatmap Saliency View -->
             <com.example.smartagriculture.ml.GradCamView

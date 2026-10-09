@@ -69,7 +69,7 @@ class EnrollPathogenFragment : Fragment(R.layout.fragment_enroll_pathogen) {
                 val bitmap = loadBitmapFromUri(uri)
                 if (bitmap != null) {
                     addCapturedBitmap(bitmap)
-                    Toast.makeText(requireContext(), "Imported scan as Shot 1. Add 2 more photos to complete enrollment.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Imported scan as Shot 1. Add 2 more photos to teach disease.", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -82,7 +82,9 @@ class EnrollPathogenFragment : Fragment(R.layout.fragment_enroll_pathogen) {
 
     private fun setupListeners() {
         binding?.btnBack?.setOnClickListener {
-            findNavController().navigateUp()
+            if (!findNavController().navigateUp()) {
+                findNavController().popBackStack()
+            }
         }
 
         binding?.btnAddCamera?.setOnClickListener {
@@ -208,7 +210,7 @@ class EnrollPathogenFragment : Fragment(R.layout.fragment_enroll_pathogen) {
         }
 
         if (capturedBitmaps.size < 3) {
-            Toast.makeText(requireContext(), "At least 3 photos are required for enrollment.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "At least 3 photos are required to teach a disease.", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -235,13 +237,13 @@ class EnrollPathogenFragment : Fragment(R.layout.fragment_enroll_pathogen) {
 
                 Toast.makeText(
                     requireContext(),
-                    "✓ '$fullClassName' enrolled successfully for offline recognition!",
+                    "✓ '$fullClassName' taught successfully for offline recognition!",
                     Toast.LENGTH_LONG
                 ).show()
 
                 findNavController().popBackStack()
             } catch (e: Exception) {
-                Toast.makeText(requireContext(), "Enrollment failed: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Failed to teach disease: ${e.message}", Toast.LENGTH_LONG).show()
                 b.btnRegisterPathogen.isEnabled = true
                 b.pbRegistering.visibility = View.GONE
             }

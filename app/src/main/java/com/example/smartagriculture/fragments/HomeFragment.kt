@@ -19,8 +19,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(view)
 
         val items = listOf(
-            DashboardItem("Benchmark", R.drawable.ic_dash_benchmark, R.id.action_homeFragment_to_benchmarkGalleryFragment, "#3B82F6"),
-            DashboardItem("Enroll Pathogen", R.drawable.ic_dash_enroll, R.id.action_homeFragment_to_enrollPathogenFragment, "#10B981"),
+            DashboardItem("Teach Disease", R.drawable.ic_dash_enroll, R.id.action_homeFragment_to_enrollPathogenFragment, "#10B981"),
             DashboardItem("Schemes", R.drawable.ic_dash_schemes, R.id.action_homeFragment_to_schemesFragment, "#F59E0B"),
             DashboardItem("Soil Info", R.drawable.ic_dash_soil, R.id.action_homeFragment_to_soilFragment, "#10B981"),
             DashboardItem("Calendar", R.drawable.ic_dash_calendar, R.id.action_homeFragment_to_calendarFragment, "#EF4444"),

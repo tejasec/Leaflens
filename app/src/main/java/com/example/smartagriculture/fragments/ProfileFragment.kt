@@ -27,24 +27,25 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         val currentUser = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
         
         // Load details from SharedPreferences or Firebase
-        val savedName = prefs.getString("user_name", "Farmer User")
-        val savedEmail = currentUser?.email ?: prefs.getString("user_email", "farmer@leaflens.ai")
-        val savedLocation = prefs.getString("user_location", "Pune, Maharashtra")
-        val savedCrop = prefs.getString("user_crop", "Tomato & Wheat")
-        val savedPassword = prefs.getString("user_password", "••••••••")
+        val savedName = prefs.getString("user_name", "")
+        val savedEmail = currentUser?.email ?: prefs.getString("user_email", "")
+        val savedLocation = prefs.getString("user_location", "")
+        val savedCrop = prefs.getString("user_crop", "")
         
         etName?.setText(savedName)
         etEmail?.setText(savedEmail)
         etLocation?.setText(savedLocation)
         etCrop?.setText(savedCrop)
-        etPassword?.setText(savedPassword)
+
+        // Clear and disable plaintext password input in profile display for security
+        etPassword?.setText("••••••••")
+        etPassword?.isEnabled = false
         
         btnSave?.setOnClickListener {
             val name = etName?.text?.toString() ?: ""
             val email = etEmail?.text?.toString() ?: ""
             val location = etLocation?.text?.toString() ?: ""
             val crop = etCrop?.text?.toString() ?: ""
-            val password = etPassword?.text?.toString() ?: ""
             
             if (name.isNotEmpty() && email.isNotEmpty()) {
                 prefs.edit().apply {
@@ -52,7 +53,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     putString("user_email", email)
                     putString("user_location", location)
                     putString("user_crop", crop)
-                    putString("user_password", password)
+                    // REMOVED: Do NOT store user_password in SharedPreferences
+                    remove("user_password")
                     apply()
                 }
                 Toast.makeText(requireContext(), "Profile updated successfully!", Toast.LENGTH_SHORT).show()
@@ -62,7 +64,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
         
         tvForgotPassword.setOnClickListener {
-            Toast.makeText(requireContext(), "Password reset link sent to your email.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "To reset your password using your security hint, log out and choose 'Forgot Password?' on the Login screen.",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 }

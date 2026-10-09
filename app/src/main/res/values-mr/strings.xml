@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">लीफलेन्स एआय</string>
+    <string name="action_settings">सेटिंग्ज</string>
+    <string name="title_diagnosis">पिक रोग निदान</string>
+    <string name="status_healthy">निरोगी (Healthy)</string>
+    <string name="status_uncertain">अनिश्चित / अमान्य पान</string>
+    <string name="btn_listen_advisory">आवाज सल्ला ऐका</string>
+    <string name="btn_stop_advisory">आवाज थांबवा</string>
+    <string name="btn_audio_error">ऑडिओ अनुपलब्ध / पुन्हा प्रयत्न करा</string>
+    <string name="label_crop">पीक</string>
+    <string name="label_confidence">अचूकता</string>
+    <string name="label_remedy">सेंद्रिय उपाय</string>
+    <string name="label_chemical_remedy">रासायनिक उपाय</string>
+    <string name="btn_export_whatsapp">व्हॉट्सॲपवर पीडीएफ शेअर करा</string>
+    <string name="btn_export_pdf">पीडीएफ निदानात्मक अहवाल निर्यात करा</string>
+    <string name="reading_advisory_in">%1$s मध्ये सल्ला वाचत आहे…</string>
+    <string name="voice_doctor_title">ऑडिओ डॉक्टर सल्ला</string>
+    <string name="voice_doctor_subtitle">आपल्या प्रादेशिक भाषेत निदान सल्ला ऐका</string>
+
+    <string-array name="language_array">
+        <item>English</item>
+        <item>हिंदी (Hindi)</item>
+        <item>मराठी (Marathi)</item>
+        <item>ગુજરાતી (Gujarati)</item>
+        <item>తెలుగు (Telugu)</item>
+        <item>தமிழ் (Tamil)</item>
+    </string-array>
+</resources>

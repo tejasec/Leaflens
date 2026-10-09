@@ -148,14 +148,49 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Filter Chips: All vs Daily Routines -->
+    <LinearLayout
+        android:id="@+id/llCalendarFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/cvHeader">
+
+        <TextView
+            android:id="@+id/chipAllActivities"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="All Activities"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_chip_selected" />
+
+        <TextView
+            android:id="@+id/chipDailyRoutines"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="🔁 Daily Routines"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_chip_unselected" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCalendar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:paddingBottom="16dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/cvHeader"
+        app:layout_constraintTop_toBottomOf="@id/llCalendarFilters"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

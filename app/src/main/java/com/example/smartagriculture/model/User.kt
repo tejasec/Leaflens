@@ -9,7 +9,10 @@ data class User(
     val id: Int = 0,
     val name: String,
     val email: String,
-    val password: String,
+    val password: String, // Salted password hash
+    val passwordSalt: String? = null,
+    val passwordHintQuestion: String? = null,
+    val passwordHintAnswerHash: String? = null,
     val phone: String? = null,
     val language: String? = null
 )

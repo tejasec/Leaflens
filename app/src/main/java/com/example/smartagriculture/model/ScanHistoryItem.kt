@@ -11,12 +11,13 @@ data class ScanHistoryItem(
     val imagePath: String,
     val cropName: String = "Tomato",
     val diseaseName: String,
-    val status: String = "Diseased", // "Diseased", "Healthy", "Uncertain"
+    val status: String = "Diseased", // "Diseased", "Healthy", "Uncertain", "New Finding"
     val scientificName: String,
     val confidence: Int,
     val isLowConfidence: Boolean,
     val aiExplanation: String,
     val organicCare: String,
     val chemicalCare: String,
-    val timestamp: Long = System.currentTimeMillis()
+    val timestamp: Long = System.currentTimeMillis(),
+    val chatHistoryJson: String? = null
 ) : Serializable

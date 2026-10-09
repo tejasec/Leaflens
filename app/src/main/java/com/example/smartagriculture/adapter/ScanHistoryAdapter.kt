@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.smartagriculture.R
 import com.example.smartagriculture.model.ScanHistoryItem
+import com.example.smartagriculture.utils.ImageStorageManager
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -25,6 +26,7 @@ class ScanHistoryAdapter(
         val tvTitle: TextView = view.findViewById(R.id.tvItemTitle)
         val tvDate: TextView = view.findViewById(R.id.tvItemDate)
         val tvBadge: TextView = view.findViewById(R.id.tvItemBadge)
+        val tvChatIndicator: TextView = view.findViewById(R.id.tvChatIndicator)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,7 +39,7 @@ class ScanHistoryAdapter(
         val item = items[position]
 
         // Crop + Disease Title
-        val fullTitle = if (item.cropName.isNotBlank() && !item.diseaseName.startsWith(item.cropName)) {
+        val fullTitle = if (item.cropName.isNotBlank() && !item.diseaseName.startsWith(item.cropName, ignoreCase = true)) {
             "${item.cropName} ${item.diseaseName}"
         } else {
             item.diseaseName
@@ -65,19 +67,31 @@ class ScanHistoryAdapter(
                 holder.tvBadge.setTextColor(Color.parseColor("#F59E0B"))
                 holder.tvBadge.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#33F59E0B"))
             }
+            "New Finding" -> {
+                holder.tvBadge.setTextColor(Color.parseColor("#A78BFA"))
+                holder.tvBadge.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#338B5CF6"))
+            }
             else -> { // Diseased
                 holder.tvBadge.setTextColor(Color.parseColor("#EF4444"))
                 holder.tvBadge.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#33EF4444"))
             }
         }
 
-        if (item.imagePath.isNotBlank()) {
+        if (!item.chatHistoryJson.isNullOrBlank()) {
+            holder.tvChatIndicator.visibility = View.VISIBLE
+        } else {
+            holder.tvChatIndicator.visibility = View.GONE
+        }
+
+        val imageModel = ImageStorageManager.getImageModel(item.imagePath)
+        if (imageModel != null) {
             Glide.with(holder.itemView.context)
-                .load(item.imagePath)
-                .placeholder(R.drawable.bg_1)
+                .load(imageModel)
+                .placeholder(R.drawable.rounded_button)
+                .error(R.drawable.rounded_button)
                 .into(holder.ivThumb)
         } else {
-            holder.ivThumb.setImageResource(R.drawable.bg_1)
+            holder.ivThumb.setImageResource(R.drawable.rounded_button)
         }
 
         holder.itemView.setOnClickListener {

@@ -36,10 +36,35 @@
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tvDailyBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="🔁 DAILY"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#263B82F6"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:textColor="#3B82F6"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/btnEditActivity"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_edit"
+                app:tint="#3B82F6"
+                android:contentDescription="Edit"
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/btnDeleteActivity"

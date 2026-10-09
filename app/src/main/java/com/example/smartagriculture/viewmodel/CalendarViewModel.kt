@@ -8,8 +8,11 @@ import com.example.smartagriculture.database.AppDatabase
 import com.example.smartagriculture.database.CropActivityEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class CalendarViewModel(application: Application) : AndroidViewModel(application) {
@@ -19,6 +22,16 @@ class CalendarViewModel(application: Application) : AndroidViewModel(application
 
     private val _activities = MutableStateFlow<List<CropActivityEntity>>(emptyList())
     val activities: StateFlow<List<CropActivityEntity>> = _activities.asStateFlow()
+
+    private val _filterDailyOnly = MutableStateFlow(false)
+    val filterDailyOnly: StateFlow<Boolean> = _filterDailyOnly.asStateFlow()
+
+    val filteredActivities: StateFlow<List<CropActivityEntity>> = combine(
+        _activities,
+        _filterDailyOnly
+    ) { list, dailyOnly ->
+        if (dailyOnly) list.filter { it.isDaily } else list
+    }.stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     init {
         loadActivities()
@@ -32,11 +45,16 @@ class CalendarViewModel(application: Application) : AndroidViewModel(application
         }
     }
 
+    fun setFilterDailyOnly(dailyOnly: Boolean) {
+        _filterDailyOnly.value = dailyOnly
+    }
+
     fun addActivity(
         cropName: String,
         activityTitle: String,
         activityType: String,
-        scheduledDate: Long
+        scheduledDate: Long,
+        isDaily: Boolean = false
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             val activity = CropActivityEntity(
@@ -44,7 +62,8 @@ class CalendarViewModel(application: Application) : AndroidViewModel(application
                 activityTitle = activityTitle,
                 activityType = activityType,
                 scheduledDate = scheduledDate,
-                isCompleted = false
+                isCompleted = false,
+                isDaily = isDaily
             )
             val newId = cropActivityDao.insertActivity(activity)
 
@@ -54,8 +73,41 @@ class CalendarViewModel(application: Application) : AndroidViewModel(application
                 cropName = cropName,
                 activityTitle = activityTitle,
                 activityType = activityType,
-                scheduledTimeMillis = scheduledDate
+                scheduledTimeMillis = scheduledDate,
+                isDaily = isDaily
             )
+        }
+    }
+
+    fun updateActivity(
+        activity: CropActivityEntity,
+        newCropName: String,
+        newTitle: String,
+        newType: String,
+        newScheduledDate: Long,
+        newIsDaily: Boolean
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val updated = activity.copy(
+                cropName = newCropName,
+                activityTitle = newTitle,
+                activityType = newType,
+                scheduledDate = newScheduledDate,
+                isDaily = newIsDaily
+            )
+            cropActivityDao.updateActivity(updated)
+
+            scheduler.cancelReminder(activity.id)
+            if (!updated.isCompleted) {
+                scheduler.scheduleReminder(
+                    activityId = updated.id,
+                    cropName = newCropName,
+                    activityTitle = newTitle,
+                    activityType = newType,
+                    scheduledTimeMillis = newScheduledDate,
+                    isDaily = newIsDaily
+                )
+            }
         }
     }
 

@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.smartagriculture.R
 import com.example.smartagriculture.databinding.FragmentScanLowConfidenceBinding
 import com.example.smartagriculture.model.DiseaseAnalysisResult
+import com.example.smartagriculture.utils.ImageStorageManager
 
 class ScanLowConfidenceFragment : Fragment(R.layout.fragment_scan_low_confidence) {
 
@@ -25,9 +26,11 @@ class ScanLowConfidenceFragment : Fragment(R.layout.fragment_scan_low_confidence
 
         if (!imageUriStr.isNullOrBlank()) {
             binding?.ivLowConfLeaf?.let {
+                val model = ImageStorageManager.getImageModel(imageUriStr) ?: imageUriStr
                 Glide.with(this)
-                    .load(Uri.parse(imageUriStr))
-                    .placeholder(R.drawable.bg_1)
+                    .load(model)
+                    .placeholder(R.drawable.rounded_button)
+                    .error(R.drawable.rounded_button)
                     .into(it)
             }
         }

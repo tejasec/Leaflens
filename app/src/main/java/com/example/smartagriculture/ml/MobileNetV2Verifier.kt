@@ -48,17 +48,17 @@ object MobileNetV2Verifier {
                 assetLoaded = true
                 loadedModelPath = path
                 break
-            } catch (_: Exception) {
+            } catch (_: Throwable) {
                 // Try next path
             }
         }
 
         val labels = try {
             FileUtil.loadLabels(context, "models/labels.txt")
-        } catch (_: Exception) {
+        } catch (_: Throwable) {
             try {
                 FileUtil.loadLabels(context, "labels.txt")
-            } catch (_: Exception) {
+            } catch (_: Throwable) {
                 emptyList()
             }
         }
@@ -85,10 +85,12 @@ object MobileNetV2Verifier {
                 outputShapeValid = outputShape.size == 2 &&
                         outputShape[0] == 1 &&
                         outputShape[1] == expectedClasses
-            } catch (e: Exception) {
+            } catch (e: Throwable) {
                 Log.e(TAG, "Error inspecting tensor shapes", e)
             } finally {
-                tflite.close()
+                try {
+                    tflite.close()
+                } catch (_: Throwable) {}
             }
         }
 

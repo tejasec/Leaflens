@@ -16,8 +16,12 @@ import com.example.smartagriculture.R
 import com.example.smartagriculture.database.AppDatabase
 import com.example.smartagriculture.databinding.DialogRemoveHistoryBinding
 import com.example.smartagriculture.databinding.FragmentScanDetailsBinding
+import com.example.smartagriculture.model.ChatMessage
 import com.example.smartagriculture.model.DiseaseAnalysisResult
 import com.example.smartagriculture.model.ScanHistoryItem
+import com.example.smartagriculture.utils.ImageStorageManager
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -44,9 +48,11 @@ class ScanDetailsFragment : Fragment(R.layout.fragment_scan_details) {
         // Leaf Image
         if (item.imagePath.isNotBlank()) {
             binding?.ivDetailLeaf?.let {
+                val model = ImageStorageManager.getImageModel(item.imagePath) ?: item.imagePath
                 Glide.with(this)
-                    .load(Uri.parse(item.imagePath))
-                    .placeholder(R.drawable.bg_1)
+                    .load(model)
+                    .placeholder(R.drawable.rounded_button)
+                    .error(R.drawable.rounded_button)
                     .into(it)
             }
         }
@@ -75,21 +81,30 @@ class ScanDetailsFragment : Fragment(R.layout.fragment_scan_details) {
                 binding?.tvStatusBadge?.setTextColor(Color.parseColor("#F59E0B"))
                 binding?.tvStatusBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#33F59E0B"))
             }
+            "New Finding" -> {
+                binding?.tvStatusBadge?.setTextColor(Color.parseColor("#A78BFA"))
+                binding?.tvStatusBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#338B5CF6"))
+            }
             else -> {
                 binding?.tvStatusBadge?.setTextColor(Color.parseColor("#EF4444"))
                 binding?.tvStatusBadge?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#33EF4444"))
             }
         }
 
+        // Setup Chat Consultation Card
+        setupChatCard(item)
+
         binding?.btnBack?.setOnClickListener {
             findNavController().navigateUp()
         }
 
         val analysisResult = DiseaseAnalysisResult(
+            cropName = item.cropName,
             diseaseName = item.diseaseName,
             scientificName = item.scientificName,
             confidence = item.confidence,
             isLowConfidence = item.isLowConfidence,
+            isNewFinding = item.status.equals("New Finding", ignoreCase = true),
             aiExplanation = item.aiExplanation,
             organicCare = item.organicCare,
             chemicalCare = item.chemicalCare
@@ -118,6 +133,55 @@ class ScanDetailsFragment : Fragment(R.layout.fragment_scan_details) {
 
         binding?.btnRemoveFromHistory?.setOnClickListener {
             showRemoveDialog(item)
+        }
+    }
+
+    private fun setupChatCard(item: ScanHistoryItem) {
+        val messages = parseChatHistory(item.chatHistoryJson)
+        if (messages.isNotEmpty()) {
+            binding?.tvChatSummary?.text = "${messages.size} consultation messages saved • Tap to revisit"
+            binding?.btnOpenChatHistory?.text = "💬 Revisit Chat"
+            val lastMsg = messages.lastOrNull()
+            if (lastMsg != null) {
+                val sender = if (lastMsg.isUser) "You" else "Doctor"
+                binding?.tvChatLastMessage?.text = "$sender: ${lastMsg.message.take(120)}"
+                binding?.tvChatLastMessage?.visibility = View.VISIBLE
+            } else {
+                binding?.tvChatLastMessage?.visibility = View.GONE
+            }
+        } else {
+            binding?.tvChatSummary?.text = "No consultation saved yet. Ask about treatments, dosage, and care."
+            binding?.btnOpenChatHistory?.text = "💬 Ask Doctor"
+            binding?.tvChatLastMessage?.visibility = View.GONE
+        }
+
+        binding?.btnOpenChatHistory?.setOnClickListener {
+            val bottomSheet = AskCropDoctorBottomSheet.newInstance(
+                diseaseName = item.diseaseName,
+                scientificName = item.scientificName,
+                confidence = item.confidence,
+                organicCare = item.organicCare,
+                chemicalCare = item.chemicalCare,
+                scanId = item.id,
+                chatHistoryJson = item.chatHistoryJson
+            )
+            bottomSheet.onChatUpdated = { updatedMessages ->
+                val updatedJson = Gson().toJson(updatedMessages)
+                val updatedItem = item.copy(chatHistoryJson = updatedJson)
+                scanItem = updatedItem
+                setupChatCard(updatedItem)
+            }
+            bottomSheet.show(childFragmentManager, "AskCropDoctorBottomSheet")
+        }
+    }
+
+    private fun parseChatHistory(json: String?): List<ChatMessage> {
+        if (json.isNullOrBlank()) return emptyList()
+        return try {
+            val type = object : TypeToken<List<ChatMessage>>() {}.type
+            Gson().fromJson(json, type) ?: emptyList()
+        } catch (_: Exception) {
+            emptyList()
         }
     }
 

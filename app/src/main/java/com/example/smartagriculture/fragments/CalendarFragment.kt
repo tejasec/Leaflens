@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Spinner
@@ -25,6 +26,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartagriculture.R
 import com.example.smartagriculture.adapter.CalendarAdapter
+import com.example.smartagriculture.database.CropActivityEntity
 import com.example.smartagriculture.network.RetrofitClient
 import com.example.smartagriculture.network.WeatherApiService
 import com.example.smartagriculture.viewmodel.CalendarViewModel
@@ -52,15 +54,40 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
         val rvCalendar = view.findViewById<RecyclerView>(R.id.rvCalendar)
         rvCalendar?.layoutManager = LinearLayoutManager(requireContext())
 
-        val adapter = CalendarAdapter(emptyList()) { activity ->
-            viewModel.deleteActivity(activity)
-            Toast.makeText(requireContext(), "Activity reminder removed.", Toast.LENGTH_SHORT).show()
-        }
+        val adapter = CalendarAdapter(
+            activityList = emptyList(),
+            onEditClick = { activity ->
+                showEditActivityDialog(activity)
+            },
+            onDeleteClick = { activity ->
+                viewModel.deleteActivity(activity)
+                Toast.makeText(requireContext(), "Activity reminder removed.", Toast.LENGTH_SHORT).show()
+            }
+        )
         rvCalendar?.adapter = adapter
 
+        val chipAll = view.findViewById<TextView>(R.id.chipAllActivities)
+        val chipDaily = view.findViewById<TextView>(R.id.chipDailyRoutines)
+
+        chipAll?.setOnClickListener {
+            viewModel.setFilterDailyOnly(false)
+            chipAll.setBackgroundResource(R.drawable.bg_chip_selected)
+            chipAll.setTextColor(Color.WHITE)
+            chipDaily?.setBackgroundResource(R.drawable.bg_chip_unselected)
+            chipDaily?.setTextColor(Color.parseColor("#9CA3AF"))
+        }
+
+        chipDaily?.setOnClickListener {
+            viewModel.setFilterDailyOnly(true)
+            chipDaily.setBackgroundResource(R.drawable.bg_chip_selected)
+            chipDaily.setTextColor(Color.WHITE)
+            chipAll?.setBackgroundResource(R.drawable.bg_chip_unselected)
+            chipAll?.setTextColor(Color.parseColor("#9CA3AF"))
+        }
+
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.activities.collect { activities ->
-                if (activities.isEmpty()) {
+            viewModel.filteredActivities.collect { activities ->
+                if (activities.isEmpty() && !viewModel.filterDailyOnly.value) {
                     seedDefaultActivities()
                 } else {
                     adapter.updateList(activities)
@@ -140,11 +167,13 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
 
     private fun seedDefaultActivities() {
         val now = System.currentTimeMillis()
-        viewModel.addActivity("Rice (Kharif)", "First Top Dressing (Urea)", "FERTILIZER", now + TimeUnit.DAYS.toMillis(1))
-        viewModel.addActivity("Wheat (Rabi)", "Crown Root Irrigation", "WATERING", now + TimeUnit.DAYS.toMillis(3))
-        viewModel.addActivity("Cotton", "Bollworm Pest Inspection & Neem Spray", "SPRAY", now + TimeUnit.DAYS.toMillis(5))
-        viewModel.addActivity("Maize", "Zinc Sulphate Foliar Application", "FERTILIZER", now + TimeUnit.DAYS.toMillis(7))
-        viewModel.addActivity("Sugarcane", "Harvest & Trash Mulching", "HARVEST", now + TimeUnit.DAYS.toMillis(14))
+        viewModel.addActivity("Rice (Kharif)", "First Top Dressing (Urea)", "FERTILIZER", now + TimeUnit.DAYS.toMillis(1), isDaily = false)
+        viewModel.addActivity("Tomato", "Morning Field Inspection & Scouting", "SPRAY", now + TimeUnit.HOURS.toMillis(2), isDaily = true)
+        viewModel.addActivity("Wheat (Rabi)", "Crown Root Irrigation", "WATERING", now + TimeUnit.DAYS.toMillis(3), isDaily = false)
+        viewModel.addActivity("Vegetables", "Drip Irrigation Moisture Check", "WATERING", now + TimeUnit.HOURS.toMillis(4), isDaily = true)
+        viewModel.addActivity("Cotton", "Bollworm Pest Inspection & Neem Spray", "SPRAY", now + TimeUnit.DAYS.toMillis(5), isDaily = false)
+        viewModel.addActivity("Maize", "Zinc Sulphate Foliar Application", "FERTILIZER", now + TimeUnit.DAYS.toMillis(7), isDaily = false)
+        viewModel.addActivity("Sugarcane", "Harvest & Trash Mulching", "HARVEST", now + TimeUnit.DAYS.toMillis(14), isDaily = false)
     }
 
     private fun showAddActivityDialog() {
@@ -159,6 +188,7 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
         val etTitle = dialogView.findViewById<EditText>(R.id.etTitle)
         val spinnerType = dialogView.findViewById<Spinner>(R.id.spinnerType)
         val spinnerDelay = dialogView.findViewById<Spinner>(R.id.spinnerDelay)
+        val cbIsDaily = dialogView.findViewById<CheckBox>(R.id.cbIsDaily)
         val btnCancel = dialogView.findViewById<Button>(R.id.btnCancel)
         val btnSchedule = dialogView.findViewById<Button>(R.id.btnSchedule)
 
@@ -188,6 +218,7 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
             val crop = etCrop.text.toString().trim().ifBlank { "Crop" }
             val title = etTitle.text.toString().trim().ifBlank { "Farm Activity" }
             val type = types.getOrElse(spinnerType.selectedItemPosition) { "GENERAL" }
+            val isDaily = cbIsDaily?.isChecked ?: false
 
             val delayMillis = when (spinnerDelay.selectedItemPosition) {
                 0 -> TimeUnit.MINUTES.toMillis(1)
@@ -199,8 +230,87 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
             }
             val scheduledDate = System.currentTimeMillis() + delayMillis
 
-            viewModel.addActivity(crop, title, type, scheduledDate)
+            viewModel.addActivity(crop, title, type, scheduledDate, isDaily = isDaily)
             Toast.makeText(requireContext(), "Reminder scheduled successfully!", Toast.LENGTH_SHORT).show()
+            alertDialog.dismiss()
+        }
+
+        alertDialog.show()
+    }
+
+    private fun showEditActivityDialog(activity: CropActivityEntity) {
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_activity, null)
+        val alertDialog = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .create()
+
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        val tvDialogTitle = dialogView.findViewById<TextView>(R.id.tvDialogTitle)
+        val etCrop = dialogView.findViewById<EditText>(R.id.etCrop)
+        val etTitle = dialogView.findViewById<EditText>(R.id.etTitle)
+        val spinnerType = dialogView.findViewById<Spinner>(R.id.spinnerType)
+        val spinnerDelay = dialogView.findViewById<Spinner>(R.id.spinnerDelay)
+        val cbIsDaily = dialogView.findViewById<CheckBox>(R.id.cbIsDaily)
+        val btnCancel = dialogView.findViewById<Button>(R.id.btnCancel)
+        val btnSchedule = dialogView.findViewById<Button>(R.id.btnSchedule)
+
+        tvDialogTitle?.text = "✏️ Edit Crop Activity Reminder"
+        etCrop?.setText(activity.cropName)
+        etTitle?.setText(activity.activityTitle)
+        cbIsDaily?.isChecked = activity.isDaily
+        btnSchedule?.text = "Update & Save"
+
+        val types = listOf("FERTILIZER", "WATERING", "SPRAY", "HARVEST", "GENERAL")
+        val typeAdapter = ArrayAdapter(requireContext(), R.layout.item_spinner_selected, types).apply {
+            setDropDownViewResource(R.layout.item_spinner_dropdown)
+        }
+        spinnerType.adapter = typeAdapter
+        val typeIndex = types.indexOf(activity.activityType.uppercase()).takeIf { it >= 0 } ?: 0
+        spinnerType.setSelection(typeIndex)
+
+        val delayOptions = listOf(
+            "Keep Current Scheduled Time",
+            "Reschedule in 1 Minute (Test Alert)",
+            "Reschedule in 1 Day",
+            "Reschedule in 3 Days",
+            "Reschedule in 7 Days",
+            "Reschedule in 14 Days"
+        )
+        val delayAdapter = ArrayAdapter(requireContext(), R.layout.item_spinner_selected, delayOptions).apply {
+            setDropDownViewResource(R.layout.item_spinner_dropdown)
+        }
+        spinnerDelay.adapter = delayAdapter
+
+        btnCancel.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
+        btnSchedule.setOnClickListener {
+            val crop = etCrop.text.toString().trim().ifBlank { activity.cropName }
+            val title = etTitle.text.toString().trim().ifBlank { activity.activityTitle }
+            val type = types.getOrElse(spinnerType.selectedItemPosition) { activity.activityType }
+            val isDaily = cbIsDaily?.isChecked ?: false
+
+            val scheduledDate = when (spinnerDelay.selectedItemPosition) {
+                0 -> activity.scheduledDate
+                1 -> System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(1)
+                2 -> System.currentTimeMillis() + TimeUnit.DAYS.toMillis(1)
+                3 -> System.currentTimeMillis() + TimeUnit.DAYS.toMillis(3)
+                4 -> System.currentTimeMillis() + TimeUnit.DAYS.toMillis(7)
+                5 -> System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14)
+                else -> activity.scheduledDate
+            }
+
+            viewModel.updateActivity(
+                activity = activity,
+                newCropName = crop,
+                newTitle = title,
+                newType = type,
+                newScheduledDate = scheduledDate,
+                newIsDaily = isDaily
+            )
+            Toast.makeText(requireContext(), "Reminder updated successfully!", Toast.LENGTH_SHORT).show()
             alertDialog.dismiss()
         }
 

@@ -46,7 +46,13 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
             if (selectedLanguage != null) {
                 if (AppConfig.IS_AUTH_ENABLED) {
-                    findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+                    val firebaseUser = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+                    val isSessionActive = firebaseUser != null || prefs.getBoolean("is_logged_in", false)
+                    if (isSessionActive) {
+                        findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                    } else {
+                        findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+                    }
                 } else {
                     findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
                 }

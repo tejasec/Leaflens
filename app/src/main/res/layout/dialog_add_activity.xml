@@ -105,7 +105,17 @@
                 android:layout_height="48dp"
                 android:background="@drawable/bg_spinner_selector"
                 android:popupBackground="?attr/cardBackgroundColor"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginBottom="16dp" />
+
+            <CheckBox
+                android:id="@+id/cbIsDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔁 Repeat Daily (Daily Routine)"
+                android:textColor="?attr/textPrimaryColor"
+                android:buttonTint="#10B981"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

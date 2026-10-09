@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">लीफ़लेंस एआई</string>
+    <string name="action_settings">सेटिंग्स</string>
+    <string name="title_diagnosis">फसल रोग निदान</string>
+    <string name="status_healthy">स्वस्थ (Healthy)</string>
+    <string name="status_uncertain">अनिश्चित / अमान्य पत्ता</string>
+    <string name="btn_listen_advisory">आवाज़ सलाह सुनें</string>
+    <string name="btn_stop_advisory">आवाज़ रोकें</string>
+    <string name="btn_audio_error">ऑडियो अनुपलब्ध / पुनः प्रयास करें</string>
+    <string name="label_crop">फसल</string>
+    <string name="label_confidence">सटीकता</string>
+    <string name="label_remedy">जैविक उपचार</string>
+    <string name="label_chemical_remedy">रासायनिक उपचार</string>
+    <string name="btn_export_whatsapp">व्हाट्सएप पर पीडीएफ साझा करें</string>
+    <string name="btn_export_pdf">पीडीएफ डायग्नोस्टिक डोजियर निर्यात करें</string>
+    <string name="reading_advisory_in">%1$s में निदान सलाह पढ़ रहे हैं…</string>
+    <string name="voice_doctor_title">ऑडियो डॉक्टर सलाह</string>
+    <string name="voice_doctor_subtitle">अपनी क्षेत्रीय भाषा में निदान सुनें</string>
+
+    <string-array name="language_array">
+        <item>English</item>
+        <item>हिंदी (Hindi)</item>
+        <item>मराठी (Marathi)</item>
+        <item>ગુજરાતી (Gujarati)</item>
+        <item>తెలుగు (Telugu)</item>
+        <item>தமிழ் (Tamil)</item>
+    </string-array>
+</resources>

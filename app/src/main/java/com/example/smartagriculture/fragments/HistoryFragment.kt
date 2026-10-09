@@ -75,6 +75,7 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         binding?.chipHealthy?.setOnClickListener { setFilter("Healthy", binding?.chipHealthy) }
         binding?.chipDiseased?.setOnClickListener { setFilter("Diseased", binding?.chipDiseased) }
         binding?.chipUncertain?.setOnClickListener { setFilter("Uncertain", binding?.chipUncertain) }
+        binding?.chipNewFinding?.setOnClickListener { setFilter("New Finding", binding?.chipNewFinding) }
     }
 
     private fun setFilter(filter: String, selectedChip: TextView?) {
@@ -95,6 +96,9 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         binding?.chipUncertain?.backgroundTintList = unselectedBg
         binding?.chipUncertain?.setTextColor(Color.parseColor("#F59E0B"))
 
+        binding?.chipNewFinding?.backgroundTintList = unselectedBg
+        binding?.chipNewFinding?.setTextColor(Color.parseColor("#A78BFA"))
+
         // Active selected style
         when (filter) {
             "All" -> {
@@ -111,6 +115,10 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
             }
             "Uncertain" -> {
                 selectedChip?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#F59E0B"))
+                selectedChip?.setTextColor(Color.WHITE)
+            }
+            "New Finding" -> {
+                selectedChip?.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#8B5CF6"))
                 selectedChip?.setTextColor(Color.WHITE)
             }
         }
@@ -134,6 +142,7 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
                 "Healthy" -> itemStatus.equals("Healthy", ignoreCase = true)
                 "Diseased" -> itemStatus.equals("Diseased", ignoreCase = true)
                 "Uncertain" -> itemStatus.equals("Uncertain", ignoreCase = true)
+                "New Finding" -> itemStatus.equals("New Finding", ignoreCase = true)
                 else -> true
             }
 

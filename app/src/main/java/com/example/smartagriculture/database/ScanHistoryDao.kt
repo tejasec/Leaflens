@@ -22,6 +22,9 @@ interface ScanHistoryDao {
     @Query("SELECT * FROM scan_history WHERE id = :id LIMIT 1")
     suspend fun getScanById(id: Long): ScanHistoryItem?
 
+    @Query("UPDATE scan_history SET chatHistoryJson = :chatHistoryJson WHERE id = :id")
+    suspend fun updateChatHistory(id: Long, chatHistoryJson: String)
+
     @Query("DELETE FROM scan_history WHERE id = :id")
     suspend fun deleteScan(id: Long)
 }

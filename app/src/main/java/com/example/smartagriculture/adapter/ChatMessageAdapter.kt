@@ -44,4 +44,12 @@ class ChatMessageAdapter(
         messages.add(message)
         notifyItemInserted(messages.size - 1)
     }
+
+    fun setMessages(newMessages: List<ChatMessage>) {
+        messages.clear()
+        messages.addAll(newMessages)
+        notifyDataSetChanged()
+    }
+
+    fun getMessages(): List<ChatMessage> = messages.toList()
 }

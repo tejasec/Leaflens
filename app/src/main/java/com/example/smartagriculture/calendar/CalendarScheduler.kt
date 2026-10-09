@@ -17,7 +17,8 @@ class CalendarScheduler(private val context: Context) {
         cropName: String,
         activityTitle: String,
         activityType: String,
-        scheduledTimeMillis: Long
+        scheduledTimeMillis: Long,
+        isDaily: Boolean = false
     ) {
         val delayMillis = scheduledTimeMillis - System.currentTimeMillis()
         val effectiveDelay = if (delayMillis > 0) delayMillis else 0L
@@ -25,8 +26,11 @@ class CalendarScheduler(private val context: Context) {
         val data = workDataOf(
             "ID" to activityId,
             "TITLE" to "$cropName: $activityTitle",
-            "MESSAGE" to "Scheduled farm activity ($activityType) is due now.",
-            "TYPE" to activityType
+            "MESSAGE" to if (isDaily) "Daily routine ($activityType) is due now." else "Scheduled farm activity ($activityType) is due now.",
+            "TYPE" to activityType,
+            "IS_DAILY" to isDaily,
+            "CROP_NAME" to cropName,
+            "ACTIVITY_TITLE" to activityTitle
         )
 
         val workRequest = OneTimeWorkRequestBuilder<CalendarReminderWorker>()

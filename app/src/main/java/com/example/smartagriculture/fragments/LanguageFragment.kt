@@ -29,16 +29,30 @@ class LanguageFragment : Fragment(R.layout.fragment_language) {
         )
         binding?.spinnerLanguage?.adapter = adapter
 
+        // Pre-select currently saved language
+        val prefs = requireContext().getSharedPreferences("smart_agri_prefs", 0)
+        val currentLang = prefs.getString("selected_language", "en") ?: "en"
+        val initialIndex = when (currentLang) {
+            "hi" -> 1
+            "mr" -> 2
+            "gu" -> 3
+            "te" -> 4
+            "ta" -> 5
+            else -> 0
+        }
+        binding?.spinnerLanguage?.setSelection(initialIndex)
+
         binding?.btnContinue?.setOnClickListener {
             val selectedLanguage = binding?.spinnerLanguage?.selectedItem.toString()
-            val languageCode = when (selectedLanguage) {
-                "English" -> "en"
-                "हिंदी" -> "hi"
-                "ਪੰਜਾਬੀ" -> "pa"
+            val languageCode = when {
+                selectedLanguage.contains("हिंदी") || selectedLanguage.contains("Hindi", ignoreCase = true) -> "hi"
+                selectedLanguage.contains("मराठी") || selectedLanguage.contains("Marathi", ignoreCase = true) -> "mr"
+                selectedLanguage.contains("ગુજરાતી") || selectedLanguage.contains("Gujarati", ignoreCase = true) -> "gu"
+                selectedLanguage.contains("తెలుగు") || selectedLanguage.contains("Telugu", ignoreCase = true) -> "te"
+                selectedLanguage.contains("தமிழ்") || selectedLanguage.contains("Tamil", ignoreCase = true) -> "ta"
                 else -> "en"
             }
 
-            val prefs = requireContext().getSharedPreferences("smart_agri_prefs", 0)
             prefs.edit().putString("selected_language", languageCode).apply()
 
             // Apply locale immediately using AppCompatDelegate

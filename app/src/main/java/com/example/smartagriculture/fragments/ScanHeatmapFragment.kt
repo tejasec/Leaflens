@@ -2,6 +2,7 @@ package com.example.smartagriculture.fragments
 
 import android.content.res.ColorStateList
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.ImageDecoder
 import android.net.Uri
@@ -17,6 +18,7 @@ import com.example.smartagriculture.R
 import com.example.smartagriculture.databinding.FragmentScanHeatmapBinding
 import com.example.smartagriculture.ml.GradCamEngine
 import com.example.smartagriculture.model.DiseaseAnalysisResult
+import com.example.smartagriculture.utils.ImageStorageManager
 
 /**
  * Fragment displaying explainable AI (XAI) Grad-CAM visual attention overlays.
@@ -41,9 +43,11 @@ class ScanHeatmapFragment : Fragment(R.layout.fragment_scan_heatmap) {
         // 2. Load preview into background ImageView
         if (!imageUriStr.isNullOrBlank()) {
             binding?.ivOriginalLeaf?.let {
+                val model = ImageStorageManager.getImageModel(imageUriStr) ?: imageUriStr
                 Glide.with(this)
-                    .load(Uri.parse(imageUriStr))
-                    .placeholder(R.drawable.bg_1)
+                    .load(model)
+                    .placeholder(R.drawable.rounded_button)
+                    .error(R.drawable.rounded_button)
                     .into(it)
             }
         }
@@ -153,6 +157,13 @@ class ScanHeatmapFragment : Fragment(R.layout.fragment_scan_heatmap) {
 
     private fun loadBitmapFromUri(uriStr: String?): Bitmap? {
         if (uriStr.isNullOrBlank()) return null
+        if (uriStr.startsWith("/")) {
+            val file = java.io.File(uriStr)
+            if (file.exists()) {
+                val decoded = BitmapFactory.decodeFile(uriStr)
+                if (decoded != null) return decoded
+            }
+        }
         return try {
             val uri = Uri.parse(uriStr)
             val decoded = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {

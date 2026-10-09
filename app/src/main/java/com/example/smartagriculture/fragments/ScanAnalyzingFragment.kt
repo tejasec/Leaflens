@@ -1,6 +1,7 @@
 package com.example.smartagriculture.fragments
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.ImageDecoder
@@ -25,6 +26,7 @@ import com.example.smartagriculture.ml.GradCamEngine
 import com.example.smartagriculture.model.DiseaseAnalysisResult
 import com.example.smartagriculture.network.GeminiService
 import com.example.smartagriculture.repository.FewShotRepository
+import com.example.smartagriculture.utils.ImageStorageManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -46,9 +48,11 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
         // Load thumbnail preview
         if (!imageUriStr.isNullOrBlank()) {
             binding?.ivAnalyzingLeaf?.let {
+                val model = ImageStorageManager.getImageModel(imageUriStr) ?: imageUriStr
                 Glide.with(this)
-                    .load(Uri.parse(imageUriStr))
-                    .placeholder(R.drawable.bg_1)
+                    .load(model)
+                    .placeholder(R.drawable.rounded_button)
+                    .error(R.drawable.rounded_button)
                     .into(it)
             }
         }
@@ -91,10 +95,12 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
                 // Matched a locally enrolled pathogen!
                 val scorePct = (fewShotMatch.similarityScore * 100).toInt()
                 DiseaseAnalysisResult(
+                    cropName = "Locally Enrolled",
                     diseaseName = fewShotMatch.className,
                     scientificName = "Locally Enrolled Pathogen",
                     confidence = scorePct,
                     isLowConfidence = false,
+                    isNewFinding = true,
                     aiExplanation = "Diagnosed via on-device Few-Shot prototype (${String.format(java.util.Locale.US, "%.1f%%", fewShotMatch.similarityScore * 100)} similarity). ${severityResult.summary}",
                     organicCare = "• Isolate infected crop foliage and sanitize field tools\n• Apply preventative organic bio-agent (Trichoderma / Neem extract)",
                     chemicalCare = "• Consult local agrarian extension officer (KVK) for localized chemical spray guidelines",
@@ -102,30 +108,44 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
                 )
             } else if (classificationResult.predictions.isNotEmpty() && !classificationResult.isUncertain) {
                 val topDiagnosis = classificationResult.predictions[0]
+                val parts = topDiagnosis.label.split(" - ")
+                val detectedCrop = if (parts.size > 1) parts[0].trim() else "Crop"
+                val detectedDisease = if (parts.size > 1) parts[1].trim() else topDiagnosis.label
+
                 DiseaseAnalysisResult(
-                    diseaseName = topDiagnosis.label,
+                    cropName = detectedCrop,
+                    diseaseName = detectedDisease,
                     scientificName = "Pathogen species",
                     confidence = (topDiagnosis.confidence * 100).toInt(),
                     isLowConfidence = false,
+                    isNewFinding = false,
                     aiExplanation = "${classificationResult.feedbackMessage} ${severityResult.summary}",
                     organicCare = "• Neem oil extract (3%) or Trichoderma viride\n• Prune infected foliage and improve canopy airflow",
                     chemicalCare = "• Mancozeb 75% WP or Copper Oxychloride 50% WP (2.5g/L water)\n• Observe 7-day PHI and 24-hr REI safety intervals",
                     activationMatrix = activationMatrix,
                 )
             } else {
-                // Uncertain / uncataloged disease -> Check cloud or route to low confidence screen
-                isLowConfidenceRoute = true
+                // Uncertain / uncataloged disease -> Gemini AI scans and identifies plant & disease
                 try {
-                    GeminiService.analyzeCropDisease(bitmap).copy(activationMatrix = activationMatrix)
+                    val geminiResult = GeminiService.analyzeCropDisease(bitmap).copy(activationMatrix = activationMatrix)
+                    if (geminiResult.isNewFinding || !geminiResult.isLowConfidence) {
+                        isLowConfidenceRoute = false
+                    } else {
+                        isLowConfidenceRoute = true
+                    }
+                    geminiResult
                 } catch (e: Exception) {
+                    isLowConfidenceRoute = true
                     val label = if (classificationResult.predictions.isNotEmpty()) classificationResult.predictions[0].label else "Uncataloged Pathogen"
                     val conf = if (classificationResult.predictions.isNotEmpty()) (classificationResult.predictions[0].confidence * 100).toInt() else 35
                     DiseaseAnalysisResult(
+                        cropName = "Unknown Plant",
                         diseaseName = "$label (Uncertain)",
                         scientificName = "Unconfirmed pathogen",
                         confidence = conf,
                         isLowConfidence = true,
-                        aiExplanation = "Uncertain diagnosis: The model could not confidently identify this disease with edge models. Enroll it under 'Enroll Pathogen' to teach the app.",
+                        isNewFinding = true,
+                        aiExplanation = "Uncertain diagnosis: The model could not confidently identify this disease with edge models. Teach it under 'Teach Disease' to register it for offline diagnosis.",
                         organicCare = "• Isolate affected leaves to prevent spread\n• Avoid overhead irrigation",
                         chemicalCare = "• Consult an agronomist before spraying broad-spectrum fungicides",
                         activationMatrix = activationMatrix,
@@ -165,6 +185,13 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
         if (uriStr.isNullOrBlank()) {
             return createFallbackBitmap()
         }
+        if (uriStr.startsWith("/")) {
+            val file = java.io.File(uriStr)
+            if (file.exists()) {
+                val decoded = BitmapFactory.decodeFile(uriStr)
+                if (decoded != null) return decoded
+            }
+        }
         return try {
             val uri = Uri.parse(uriStr)
             val decoded = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -189,9 +216,7 @@ class ScanAnalyzingFragment : Fragment(R.layout.fragment_scan_analyzing) {
     private fun createFallbackBitmap(): Bitmap {
         val bitmap = Bitmap.createBitmap(400, 400, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
-        val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.bg_1)
-        drawable?.setBounds(0, 0, canvas.width, canvas.height)
-        drawable?.draw(canvas)
+        canvas.drawColor(Color.parseColor("#1B2E20"))
         return bitmap
     }
 

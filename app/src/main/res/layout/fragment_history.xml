@@ -185,12 +185,27 @@
                 android:id="@+id/chipUncertain"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="#1C241E"
                 android:gravity="center"
                 android:paddingHorizontal="16dp"
                 android:text="Uncertain"
                 android:textColor="#F59E0B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Chip: New Finding -->
+            <TextView
+                android:id="@+id/chipNewFinding"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#1C241E"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="New Finding"
+                android:textColor="#A78BFA"
                 android:textSize="13sp"
                 android:textStyle="bold" />
         </LinearLayout>

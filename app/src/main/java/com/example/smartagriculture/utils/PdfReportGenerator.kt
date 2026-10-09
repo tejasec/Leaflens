@@ -43,6 +43,23 @@ object PdfReportGenerator {
     /**
      * Generates a standard A4 PDF document file in app cache directory.
      */
+    fun generateDiagnosticDossier(context: Context, payload: com.example.smartagriculture.pdf.DiagnosisPayload): File {
+        val dossier = DiagnosticDossier(
+            cropSpecies = if (payload.cropName.isNotBlank()) payload.cropName else "Crop",
+            diseaseName = payload.diseaseName,
+            calibratedConfidence = payload.confidenceScore,
+            healthIndexScore = if (payload.isHealthy) 100f else (100f - payload.confidenceScore * 100f).coerceIn(0f, 100f),
+            organicTreatment = payload.organicRemedy,
+            chemicalTreatment = payload.chemicalRemedy,
+            originalLeafImage = null,
+            gradCamOverlayImage = null
+        )
+        return generatePdfReport(context, dossier)
+    }
+
+    /**
+     * Generates a standard A4 PDF document file in app cache directory.
+     */
     fun generatePdfReport(context: Context, dossier: DiagnosticDossier): File {
         val document = PdfDocument()
         val pageInfo = PdfDocument.PageInfo.Builder(A4_WIDTH, A4_HEIGHT, 1).create()

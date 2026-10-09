@@ -38,8 +38,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Verify MobileNetV2 Edge Model Implementation & Bounds
-        MobileNetV2Verifier.verifyImplementation(this)
+        // Verify MobileNetV2 Edge Model Implementation & Bounds safely
+        try {
+            MobileNetV2Verifier.verifyImplementation(this)
+        } catch (t: Throwable) {
+            android.util.Log.e("MainActivity", "Model verification skipped or failed on startup", t)
+        }
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
@@ -75,5 +79,7 @@ class MainActivity : AppCompatActivity() {
         val controller = WindowCompat.getInsetsController(window, window.decorView)
         controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         controller.hide(WindowInsetsCompat.Type.statusBars())
+        controller.isAppearanceLightStatusBars = false
+        controller.isAppearanceLightNavigationBars = false
     }
 }

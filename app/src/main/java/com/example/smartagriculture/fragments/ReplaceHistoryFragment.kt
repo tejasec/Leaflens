@@ -12,6 +12,7 @@ import com.example.smartagriculture.R
 import com.example.smartagriculture.database.AppDatabase
 import com.example.smartagriculture.databinding.FragmentReplaceHistoryBinding
 import com.example.smartagriculture.model.ScanHistoryItem
+import com.example.smartagriculture.utils.ImageStorageManager
 import kotlinx.coroutines.launch
 
 class ReplaceHistoryFragment : Fragment(R.layout.fragment_replace_history) {
@@ -33,9 +34,11 @@ class ReplaceHistoryFragment : Fragment(R.layout.fragment_replace_history) {
         // Load Old Image
         if (item != null && item.imagePath.isNotBlank()) {
             binding?.ivOldImage?.let {
+                val model = ImageStorageManager.getImageModel(item.imagePath) ?: item.imagePath
                 Glide.with(this)
-                    .load(Uri.parse(item.imagePath))
-                    .placeholder(R.drawable.bg_1)
+                    .load(model)
+                    .placeholder(R.drawable.rounded_button)
+                    .error(R.drawable.rounded_button)
                     .into(it)
             }
         }
@@ -43,9 +46,11 @@ class ReplaceHistoryFragment : Fragment(R.layout.fragment_replace_history) {
         // Load New Image
         if (!newImageUriStr.isNullOrBlank()) {
             binding?.ivNewImage?.let {
+                val model = ImageStorageManager.getImageModel(newImageUriStr) ?: newImageUriStr
                 Glide.with(this)
-                    .load(Uri.parse(newImageUriStr))
-                    .placeholder(R.drawable.bg_1)
+                    .load(model)
+                    .placeholder(R.drawable.rounded_button)
+                    .error(R.drawable.rounded_button)
                     .into(it)
             }
         }
@@ -55,7 +60,8 @@ class ReplaceHistoryFragment : Fragment(R.layout.fragment_replace_history) {
 
         binding?.btnConfirmReplace?.setOnClickListener {
             if (item != null && !newImageUriStr.isNullOrBlank()) {
-                val updatedItem = item.copy(imagePath = newImageUriStr!!)
+                val persistentPath = ImageStorageManager.persistScanImage(requireContext(), newImageUriStr)
+                val updatedItem = item.copy(imagePath = persistentPath)
                 lifecycleScope.launch {
                     val db = AppDatabase.getDatabase(requireContext())
                     db.scanHistoryDao().updateScan(updatedItem)

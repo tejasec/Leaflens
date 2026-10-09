@@ -14,11 +14,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartagriculture.R
 import com.example.smartagriculture.adapter.ChatMessageAdapter
+import com.example.smartagriculture.database.AppDatabase
 import com.example.smartagriculture.model.ChatMessage
 import com.example.smartagriculture.network.GeminiService
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
 
 class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
@@ -28,6 +31,10 @@ class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
     private var confidence: Int = 87
     private var organicCare: String = ""
     private var chemicalCare: String = ""
+    private var scanId: Long = 0L
+    private var chatHistoryJson: String? = null
+
+    var onChatUpdated: ((List<ChatMessage>) -> Unit)? = null
 
     private lateinit var chatAdapter: ChatMessageAdapter
     private var rvChat: RecyclerView? = null
@@ -42,6 +49,8 @@ class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
         confidence = arguments?.getInt(ARG_CONFIDENCE, 87) ?: 87
         organicCare = arguments?.getString(ARG_ORGANIC_CARE) ?: ""
         chemicalCare = arguments?.getString(ARG_CHEMICAL_CARE) ?: ""
+        scanId = arguments?.getLong(ARG_SCAN_ID, 0L) ?: 0L
+        chatHistoryJson = arguments?.getString(ARG_CHAT_HISTORY_JSON)
     }
 
     override fun onCreateView(
@@ -71,9 +80,14 @@ class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
         rvChat?.layoutManager = LinearLayoutManager(requireContext())
         rvChat?.adapter = chatAdapter
 
-        // Initial Doctor Greeting Contextual Message
-        val initialGreeting = "Hello! I am your Crop Doctor AI Assistant. Your crop has been diagnosed with $diseaseName ($scientificName) at $confidence% confidence. Ask me any question about spray intervals, organic fertilizers, dosages, or preventative measures!"
-        chatAdapter.addMessage(ChatMessage(initialGreeting, isUser = false))
+        // Pre-load existing consultation history or display initial greeting
+        val savedMessages = parseChatHistory(chatHistoryJson)
+        if (savedMessages.isNotEmpty()) {
+            chatAdapter.setMessages(savedMessages)
+        } else {
+            val initialGreeting = "Hello! I am your Crop Doctor AI Assistant. Your crop has been diagnosed with $diseaseName ($scientificName) at $confidence% confidence. Ask me any question about spray intervals, organic fertilizers, dosages, or preventative measures!"
+            chatAdapter.addMessage(ChatMessage(initialGreeting, isUser = false))
+        }
 
         // Quick Suggestion Chips
         view.findViewById<TextView>(R.id.chipSprayIntervals)?.setOnClickListener {
@@ -98,6 +112,7 @@ class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
     private fun sendQuestion(userText: String) {
         chatAdapter.addMessage(ChatMessage(userText, isUser = true))
         rvChat?.smoothScrollToPosition(chatAdapter.itemCount - 1)
+        persistMessages()
 
         pbSending?.visibility = View.VISIBLE
         btnSend?.visibility = View.GONE
@@ -114,12 +129,40 @@ class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
                 )
                 chatAdapter.addMessage(ChatMessage(doctorReply, isUser = false))
                 rvChat?.smoothScrollToPosition(chatAdapter.itemCount - 1)
+                persistMessages()
             } catch (_: Exception) {
                 chatAdapter.addMessage(ChatMessage("For $diseaseName, apply copper-based fungicide at 7-10 day intervals and spray neem oil for organic protection.", isUser = false))
+                persistMessages()
             } finally {
                 pbSending?.visibility = View.GONE
                 btnSend?.visibility = View.VISIBLE
             }
+        }
+    }
+
+    private fun persistMessages() {
+        val allMessages = chatAdapter.getMessages()
+        onChatUpdated?.invoke(allMessages)
+        if (scanId > 0) {
+            lifecycleScope.launch {
+                try {
+                    val db = AppDatabase.getDatabase(requireContext().applicationContext)
+                    val json = Gson().toJson(allMessages)
+                    db.scanHistoryDao().updateChatHistory(scanId, json)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+
+    private fun parseChatHistory(json: String?): List<ChatMessage> {
+        if (json.isNullOrBlank()) return emptyList()
+        return try {
+            val type = object : TypeToken<List<ChatMessage>>() {}.type
+            Gson().fromJson(json, type) ?: emptyList()
+        } catch (_: Exception) {
+            emptyList()
         }
     }
 
@@ -141,13 +184,17 @@ class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
         private const val ARG_CONFIDENCE = "confidence"
         private const val ARG_ORGANIC_CARE = "organicCare"
         private const val ARG_CHEMICAL_CARE = "chemicalCare"
+        private const val ARG_SCAN_ID = "scanId"
+        private const val ARG_CHAT_HISTORY_JSON = "chatHistoryJson"
 
         fun newInstance(
             diseaseName: String,
             scientificName: String,
             confidence: Int,
             organicCare: String = "",
-            chemicalCare: String = ""
+            chemicalCare: String = "",
+            scanId: Long = 0L,
+            chatHistoryJson: String? = null
         ): AskCropDoctorBottomSheet {
             return AskCropDoctorBottomSheet().apply {
                 arguments = Bundle().apply {
@@ -156,6 +203,8 @@ class AskCropDoctorBottomSheet : BottomSheetDialogFragment() {
                     putInt(ARG_CONFIDENCE, confidence)
                     putString(ARG_ORGANIC_CARE, organicCare)
                     putString(ARG_CHEMICAL_CARE, chemicalCare)
+                    putLong(ARG_SCAN_ID, scanId)
+                    putString(ARG_CHAT_HISTORY_JSON, chatHistoryJson)
                 }
             }
         }

@@ -4,6 +4,8 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -21,6 +23,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.smartagriculture.R
 import com.example.smartagriculture.databinding.FragmentScanBinding
 import com.example.smartagriculture.model.ScanHistoryItem
+import com.example.smartagriculture.utils.ImageStorageManager
 import java.io.File
 import java.io.FileOutputStream
 import java.util.concurrent.ExecutorService
@@ -45,7 +48,10 @@ class RecaptureCameraFragment : Fragment(R.layout.fragment_scan) {
     private val galleryLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
-        uri?.let { navigateToReplace(it.toString()) }
+        uri?.let {
+            val persistedPath = ImageStorageManager.ingestCaptureUri(requireContext(), it)
+            navigateToReplace(persistedPath)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -110,20 +116,25 @@ class RecaptureCameraFragment : Fragment(R.layout.fragment_scan) {
     }
 
     private fun takePhoto() {
+        val capturesDir = ImageStorageManager.getCapturesDir(requireContext())
+        val photoFile = File(capturesDir, "recapture_${System.currentTimeMillis()}.jpg")
+
         val imageCapture = imageCapture
         if (imageCapture == null) {
-            val photoFile = File(requireContext().cacheDir, "recapture_${System.currentTimeMillis()}.jpg")
-            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.bg_1)
             val bitmap = Bitmap.createBitmap(600, 600, Bitmap.Config.ARGB_8888)
             val canvas = Canvas(bitmap)
-            drawable?.setBounds(0, 0, canvas.width, canvas.height)
-            drawable?.draw(canvas)
-            FileOutputStream(photoFile).use { bitmap.compress(Bitmap.CompressFormat.JPEG, 90, it) }
-            navigateToReplace(Uri.fromFile(photoFile).toString())
+            canvas.drawColor(Color.parseColor("#1B2E20"))
+            val strokePaint = Paint().apply {
+                color = Color.parseColor("#10B981")
+                style = Paint.Style.STROKE
+                strokeWidth = 6f
+            }
+            canvas.drawRect(40f, 40f, 560f, 560f, strokePaint)
+            ImageStorageManager.saveBitmapToFile(bitmap, photoFile)
+            navigateToReplace(photoFile.absolutePath)
             return
         }
 
-        val photoFile = File(requireContext().cacheDir, "recapture_${System.currentTimeMillis()}.jpg")
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
 
         imageCapture.takePicture(
@@ -135,8 +146,7 @@ class RecaptureCameraFragment : Fragment(R.layout.fragment_scan) {
                 }
 
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    val savedUri = Uri.fromFile(photoFile)
-                    navigateToReplace(savedUri.toString())
+                    navigateToReplace(photoFile.absolutePath)
                 }
             }
         )

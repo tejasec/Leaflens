@@ -14,6 +14,7 @@ import java.util.Locale
 
 class CalendarAdapter(
     private var activityList: List<CropActivityEntity>,
+    private val onEditClick: ((CropActivityEntity) -> Unit)? = null,
     private val onDeleteClick: ((CropActivityEntity) -> Unit)? = null
 ) : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
 
@@ -27,10 +28,12 @@ class CalendarAdapter(
 
     class CalendarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvActivityType: TextView = itemView.findViewById(R.id.tvActivityType)
+        val tvDailyBadge: TextView = itemView.findViewById(R.id.tvDailyBadge)
         val tvCropName: TextView = itemView.findViewById(R.id.tvCropName)
         val tvSowing: TextView = itemView.findViewById(R.id.tvSowing)
         val tvHarvest: TextView = itemView.findViewById(R.id.tvHarvest)
         val tvDescription: TextView = itemView.findViewById(R.id.tvDescription)
+        val btnEditActivity: ImageView = itemView.findViewById(R.id.btnEditActivity)
         val btnDeleteActivity: ImageView = itemView.findViewById(R.id.btnDeleteActivity)
     }
 
@@ -52,12 +55,18 @@ class CalendarAdapter(
             else -> "📅"
         }
         holder.tvActivityType.text = "$emoji ${activity.activityType.uppercase()}"
+        holder.tvDailyBadge.visibility = if (activity.isDaily) View.VISIBLE else View.GONE
 
         val dateStr = dateFormat.format(Date(activity.scheduledDate))
         val timeStr = timeFormat.format(Date(activity.scheduledDate))
         holder.tvSowing.text = dateStr
         holder.tvHarvest.text = timeStr
         holder.tvDescription.text = if (activity.isCompleted) "Status: Completed ✓" else "Status: Scheduled Reminder Active 🔔"
+
+        holder.btnEditActivity.visibility = View.VISIBLE
+        holder.btnEditActivity.setOnClickListener {
+            onEditClick?.invoke(activity)
+        }
 
         holder.btnDeleteActivity.visibility = View.VISIBLE
         holder.btnDeleteActivity.setOnClickListener {

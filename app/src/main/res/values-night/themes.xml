@@ -12,24 +12,24 @@
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
         
         <!-- Backgrounds & Surfaces -->
-        <item name="android:colorBackground">#121814</item>
-        <item name="colorSurface">#1C241E</item>
-        <item name="colorSurfaceVariant">#242E27</item>
-        <item name="colorOnSurface">#FFFFFF</item>
-        <item name="colorOnSurfaceVariant">#9CA3AF</item>
-        <item name="android:textColorPrimary">#FFFFFF</item>
-        <item name="android:textColorSecondary">#9CA3AF</item>
-        <item name="android:editTextColor">#FFFFFF</item>
-        <item name="android:textColorHint">#6B7280</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorSurfaceVariant">@color/surface_variant_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary_dark</item>
+        <item name="android:textColorSecondary">@color/text_secondary_dark</item>
+        <item name="android:editTextColor">@color/text_primary_dark</item>
+        <item name="android:textColorHint">@color/text_hint_dark</item>
 
         <!-- Semantic Theme Color Overrides (Default Dark/Green Mode) -->
-        <item name="appBackgroundColor">#121814</item>
-        <item name="cardBackgroundColor">#1C241E</item>
-        <item name="cardStrokeColor">#2E3B31</item>
-        <item name="textPrimaryColor">#FFFFFF</item>
-        <item name="textSecondaryColor">#9CA3AF</item>
-        <item name="dividerLineColor">#2E3B31</item>
-        <item name="dangerCardBgColor">#1C241E</item>
+        <item name="appBackgroundColor">@color/bg_dark</item>
+        <item name="cardBackgroundColor">@color/surface_dark</item>
+        <item name="cardStrokeColor">@color/card_stroke_dark</item>
+        <item name="textPrimaryColor">@color/text_primary_dark</item>
+        <item name="textSecondaryColor">@color/text_secondary_dark</item>
+        <item name="dividerLineColor">@color/card_stroke_dark</item>
+        <item name="dangerCardBgColor">@color/surface_dark</item>
 
         <!-- Disable/Hide System Status Bar -->
         <item name="android:windowFullscreen">true</item>

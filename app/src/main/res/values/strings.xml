@@ -1,9 +1,28 @@
 <resources>
-    <string name="app_name">Leaflens AI</string>
+    <string name="app_name">LeafLens AI</string>
     <string name="action_settings">Settings</string>
+    <string name="title_diagnosis">Crop Disease Diagnosis</string>
+    <string name="status_healthy">Healthy</string>
+    <string name="status_uncertain">Uncertain / Unrecognized Leaf</string>
+    <string name="btn_listen_advisory">Listen to Voice Advisory</string>
+    <string name="btn_stop_advisory">Stop Voice Advisory</string>
+    <string name="btn_audio_error">Audio Unavailable / Retry</string>
+    <string name="label_crop">Crop</string>
+    <string name="label_confidence">Confidence</string>
+    <string name="label_remedy">Organic Remedy</string>
+    <string name="label_chemical_remedy">Chemical Treatment</string>
+    <string name="btn_export_whatsapp">Export &amp; Share PDF on WhatsApp</string>
+    <string name="btn_export_pdf">Export PDF Diagnostic Dossier</string>
+    <string name="reading_advisory_in">Reading diagnostic advisory in %1$s…</string>
+    <string name="voice_doctor_title">Audio Doctor Advisory</string>
+    <string name="voice_doctor_subtitle">Listen to spoken diagnosis in your regional language</string>
+
     <string-array name="language_array">
         <item>English</item>
-        <item>हिंदी</item>
-        <item>ਪੰਜਾਬੀ</item>
+        <item>हिंदी (Hindi)</item>
+        <item>मराठी (Marathi)</item>
+        <item>ગુજરાતી (Gujarati)</item>
+        <item>తెలుగు (Telugu)</item>
+        <item>தமிழ் (Tamil)</item>
     </string-array>
 </resources>

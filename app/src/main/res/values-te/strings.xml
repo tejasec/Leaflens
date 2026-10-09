@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">లీఫ్‌లెన్స్ AI</string>
+    <string name="action_settings">సెట్టింగ్‌లు</string>
+    <string name="title_diagnosis">పంట తెగుళ్ల నిర్ధారణ</string>
+    <string name="status_healthy">ఆరోగ్యకరమైన (Healthy)</string>
+    <string name="status_uncertain">అనిశ్చిత / గుర్తించని ఆకు</string>
+    <string name="btn_listen_advisory">వాయిస్ సలహా వినండి</string>
+    <string name="btn_stop_advisory">వాయిస్ ఆపండి</string>
+    <string name="btn_audio_error">ఆడియో అందుబాటులో లేదు / మళ్లీ ప్రయత్నించండి</string>
+    <string name="label_crop">పంట</string>
+    <string name="label_confidence">ఖచ్చితత్వం</string>
+    <string name="label_remedy">సేంద్రీయ నివారణ</string>
+    <string name="label_chemical_remedy">రసాయన నివారణ</string>
+    <string name="btn_export_whatsapp">వాట్సాప్‌లో PDF ని షేర్ చేయండి</string>
+    <string name="btn_export_pdf">PDF డయాగ్నస్టిక్ నివేదికను ఎగుమతి చేయండి</string>
+    <string name="reading_advisory_in">%1$s లో సలహా చదువుతోంది…</string>
+    <string name="voice_doctor_title">ఆడియో డాక్టర్ సలహా</string>
+    <string name="voice_doctor_subtitle">మీ ప్రాంతీయ భాషలో వ్యాధి నిర్ధారణ సలహాను వినండి</string>
+
+    <string-array name="language_array">
+        <item>English</item>
+        <item>हिंदी (Hindi)</item>
+        <item>मराठी (Marathi)</item>
+        <item>ગુજરાતી (Gujarati)</item>
+        <item>తెలుగు (Telugu)</item>
+        <item>தமிழ் (Tamil)</item>
+    </string-array>
+</resources>

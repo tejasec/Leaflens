@@ -63,29 +63,38 @@ object GeminiService {
 
     suspend fun analyzeCropDisease(bitmap: Bitmap): DiseaseAnalysisResult {
         if (generativeModel == null) {
-            delay(2000) // simulate AI inference delay
+            delay(1500) // simulate AI inference delay
             return DiseaseAnalysisResult(
-                diseaseName = "Tomato Early Blight",
-                scientificName = "Alternaria solani",
-                confidence = 87,
+                cropName = "Mango",
+                diseaseName = "Anthracnose",
+                scientificName = "Colletotrichum gloeosporioides",
+                confidence = 88,
                 isLowConfidence = false,
-                aiExplanation = "The highlighted regions show brown concentric spots on leaves indicating fungal infection typical of Early Blight.",
-                organicCare = "• Remove affected leaves and dispose of them properly\n• Improve air circulation and avoid overhead watering\n• Use neem oil spray (5 ml per litre of water)\n• Apply compost to improve soil health",
-                chemicalCare = "• Apply copper-based fungicide at initial symptom appearance\n• Spray Chlorothalonil or Mancozeb at 7-10 day intervals\n• Rotate fungicide classes to prevent resistance"
+                isNewFinding = true,
+                aiExplanation = "Foliar scanning via Gemini AI identified Mangifera indica (Mango) foliage with dark irregular necrotic lesions characteristic of Anthracnose fungal infection.",
+                organicCare = "• Prune and dispose of infected twigs and fallen leaves\n• Improve tree canopy aeration\n• Apply preventative spray of 5% Neem Seed Kernel Extract (NSKE) or Trichoderma viride",
+                chemicalCare = "• Spray Copper Oxychloride 50% WP (3.0g/L water) or Carbendazim 50% WP (1.0g/L)\n• Apply Mancozeb 75% WP at 10-14 day intervals during humid weather\n• Observe 14-day PHI"
             )
         }
 
         val prompt = """
-            Analyze this plant/leaf image for agricultural disease diagnosis.
+            Analyze this plant/leaf image for agricultural identification and disease diagnosis.
+            Identify:
+            1. What plant, crop, or leaf species this is (e.g. Mango, Cotton, Wheat, Rose, Papaya, Tomato, Apple, Corn, Rice, Potato, etc.).
+            2. Any foliar disease or condition present (or "Healthy" if no disease).
+            3. Note: The local database only covers 5 standard crops: Apple, Corn, Potato, Rice, Tomato. Any other plant/crop or uncataloged condition is a "New Finding".
+            
             Respond strictly in valid JSON format with no markdown formatting or backticks:
             {
-                "diseaseName": "Name of the disease (or Healthy)",
+                "cropName": "Identified common name of the plant or crop (e.g., Mango, Cotton, Wheat, Rose, Papaya, Tomato, etc.)",
+                "diseaseName": "Name of the disease or condition (or Healthy)",
                 "scientificName": "Scientific or pathogen name",
-                "confidence": 85,
+                "confidence": 88,
                 "isLowConfidence": false,
-                "aiExplanation": "Clear explanation of visual symptoms detected.",
-                "organicCare": "Bullet points for organic treatments",
-                "chemicalCare": "Bullet points for chemical treatments"
+                "isNewFinding": true,
+                "aiExplanation": "Clear explanation of the plant identification and visual symptoms detected.",
+                "organicCare": "Bullet points for organic treatments or preventative care",
+                "chemicalCare": "Bullet points for chemical treatments with dosages and safety intervals"
             }
             If the image is blurry, non-plant, or uncertain, set confidence below 60 and set isLowConfidence to true.
         """.trimIndent()
@@ -99,24 +108,35 @@ object GeminiService {
             val jsonText = response.text?.replace("```json", "")?.replace("```", "")?.trim() ?: ""
             val json = Gson().fromJson(jsonText, JsonObject::class.java)
 
+            val detectedCrop = json.get("cropName")?.asString ?: "Unknown Plant"
+            val detectedDisease = json.get("diseaseName")?.asString ?: "Uncataloged Condition"
+            val isExplicitNew = json.get("isNewFinding")?.asBoolean ?: false
+            val isKnownDatasetCrop = listOf("apple", "corn", "maize", "potato", "rice", "tomato")
+                .any { detectedCrop.contains(it, ignoreCase = true) }
+            val isNewFinding = !isKnownDatasetCrop || isExplicitNew
+
             DiseaseAnalysisResult(
-                diseaseName = json.get("diseaseName")?.asString ?: "Tomato Early Blight",
-                scientificName = json.get("scientificName")?.asString ?: "Alternaria solani",
-                confidence = json.get("confidence")?.asInt ?: 87,
+                cropName = detectedCrop,
+                diseaseName = detectedDisease,
+                scientificName = json.get("scientificName")?.asString ?: "Botanical species",
+                confidence = json.get("confidence")?.asInt ?: 85,
                 isLowConfidence = json.get("isLowConfidence")?.asBoolean ?: false,
-                aiExplanation = json.get("aiExplanation")?.asString ?: "Highlighted areas indicate fungal spots.",
-                organicCare = json.get("organicCare")?.asString ?: "• Remove affected leaves and spray neem oil.",
-                chemicalCare = json.get("chemicalCare")?.asString ?: "• Apply copper-based fungicide."
+                isNewFinding = isNewFinding,
+                aiExplanation = json.get("aiExplanation")?.asString ?: "Foliar analysis conducted via Gemini AI.",
+                organicCare = json.get("organicCare")?.asString ?: "• Prune affected foliage and apply organic bio-agents.",
+                chemicalCare = json.get("chemicalCare")?.asString ?: "• Consult local agrarian officer before applying chemical sprays."
             )
         } catch (e: Exception) {
             DiseaseAnalysisResult(
-                diseaseName = "Tomato Early Blight",
-                scientificName = "Alternaria solani",
-                confidence = 87,
-                isLowConfidence = false,
-                aiExplanation = "The highlighted regions show fungal spot symptoms typical of Early Blight.",
-                organicCare = "• Remove affected leaves and dispose of them properly\n• Improve air circulation and avoid overhead watering\n• Use neem oil spray (5 ml per litre of water)\n• Apply compost to improve soil health",
-                chemicalCare = "• Apply copper-based fungicide at initial symptom appearance\n• Spray Chlorothalonil or Mancozeb at 7-10 day intervals\n• Rotate fungicide classes to prevent resistance"
+                cropName = "Unknown Plant",
+                diseaseName = "Uncataloged Pathogen",
+                scientificName = "Unidentified species",
+                confidence = 50,
+                isLowConfidence = true,
+                isNewFinding = true,
+                aiExplanation = "AI identified visual symptoms that are not cataloged in the local model database.",
+                organicCare = "• Isolate affected leaves to prevent spread\n• Avoid overhead irrigation",
+                chemicalCare = "• Consult an agronomist before spraying broad-spectrum fungicides"
             )
         }
     }

@@ -10,7 +10,9 @@ data class DiseaseAnalysisResult(
     val aiExplanation: String,
     val organicCare: String,
     val chemicalCare: String,
-    val activationMatrix: Array<FloatArray>? = null
+    val activationMatrix: Array<FloatArray>? = null,
+    val cropName: String = "Crop",
+    val isNewFinding: Boolean = false
 ) : Serializable {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -25,6 +27,8 @@ data class DiseaseAnalysisResult(
         if (aiExplanation != other.aiExplanation) return false
         if (organicCare != other.organicCare) return false
         if (chemicalCare != other.chemicalCare) return false
+        if (cropName != other.cropName) return false
+        if (isNewFinding != other.isNewFinding) return false
         if (activationMatrix != null) {
             if (other.activationMatrix == null) return false
             if (!activationMatrix.contentDeepEquals(other.activationMatrix)) return false
@@ -41,6 +45,8 @@ data class DiseaseAnalysisResult(
         result = 31 * result + aiExplanation.hashCode()
         result = 31 * result + organicCare.hashCode()
         result = 31 * result + chemicalCare.hashCode()
+        result = 31 * result + cropName.hashCode()
+        result = 31 * result + isNewFinding.hashCode()
         result = 31 * result + (activationMatrix?.contentDeepHashCode() ?: 0)
         return result
     }

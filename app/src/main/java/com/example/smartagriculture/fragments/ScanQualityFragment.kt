@@ -1,6 +1,7 @@
 package com.example.smartagriculture.fragments
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.ImageDecoder
@@ -17,6 +18,7 @@ import com.bumptech.glide.Glide
 import com.example.smartagriculture.R
 import com.example.smartagriculture.databinding.FragmentScanQualityBinding
 import com.example.smartagriculture.quality.QualityGate
+import com.example.smartagriculture.utils.ImageStorageManager
 
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
@@ -41,13 +43,15 @@ class ScanQualityFragment : Fragment(R.layout.fragment_scan_quality) {
 
         if (!imageUriStr.isNullOrBlank()) {
             binding?.ivCapturedLeaf?.let {
+                val model = ImageStorageManager.getImageModel(imageUriStr) ?: imageUriStr
                 Glide.with(this)
-                    .load(Uri.parse(imageUriStr))
-                    .placeholder(R.drawable.bg_1)
+                    .load(model)
+                    .placeholder(R.drawable.rounded_button)
+                    .error(R.drawable.rounded_button)
                     .into(it)
             }
         } else {
-            binding?.ivCapturedLeaf?.setImageResource(R.drawable.bg_1)
+            binding?.ivCapturedLeaf?.setImageResource(R.drawable.rounded_button)
         }
 
         // Show loading state while evaluating image quality asynchronously
@@ -142,6 +146,13 @@ class ScanQualityFragment : Fragment(R.layout.fragment_scan_quality) {
 
     private fun loadBitmapFromUri(uriStr: String?): Bitmap {
         if (uriStr.isNullOrBlank()) return createFallbackBitmap()
+        if (uriStr.startsWith("/")) {
+            val file = java.io.File(uriStr)
+            if (file.exists()) {
+                val decoded = BitmapFactory.decodeFile(uriStr)
+                if (decoded != null) return decoded
+            }
+        }
         return try {
             val uri = Uri.parse(uriStr)
             val decoded = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -166,9 +177,7 @@ class ScanQualityFragment : Fragment(R.layout.fragment_scan_quality) {
     private fun createFallbackBitmap(): Bitmap {
         val bitmap = Bitmap.createBitmap(400, 400, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
-        val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.bg_1)
-        drawable?.setBounds(0, 0, canvas.width, canvas.height)
-        drawable?.draw(canvas)
+        canvas.drawColor(Color.parseColor("#1B2E20"))
         return bitmap
     }
 
